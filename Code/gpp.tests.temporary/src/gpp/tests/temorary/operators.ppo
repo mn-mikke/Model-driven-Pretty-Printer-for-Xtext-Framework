@@ -1,0 +1,44 @@
+enum blanks  = {TAB,WS};
+
+poperator H [gpp.formatting.HorizontalOperatorImplementation]:
+	int hs=1
+	{[blanks]} hc = WS
+;
+
+poperator V [gpp.formatting.VerticalOperatorImplementation]:
+	int vs=1
+;
+
+poperator A [gpp.formatting.TableOperatorImplementation]:
+	int hs=1
+	{[blanks]} hc = WS
+	int vs=1
+	{[blanks]} sc = WS
+;
+
+poperator R [gpp.formatting.RowOperatorImplementation];
+
+poperator HV [gpp.formatting.HorizontalIfPossibleOperatorImplementation]:
+	int hs=1
+	{[blanks]} hc = WS
+	int vs=1
+;
+
+poperator HOV [gpp.formatting.HorizontalOrVerticalPossibleOperatorImplementation]:
+	int hs=1
+	{[blanks]} hc = WS
+	int vs=1
+;
+
+poperator I [gpp.formatting.IndentOperatorImplementation]:
+	int is=5
+	{[blanks]} ic = WS
+;
+
+hloperator F[gpp.highlighting.DefaultHighlightOperatorImplementation]:
+	{normal, bold} w = normal
+	{normal, italic} i = normal
+	string c = "#000000"
+	string b = "#ffffff"
+;
+

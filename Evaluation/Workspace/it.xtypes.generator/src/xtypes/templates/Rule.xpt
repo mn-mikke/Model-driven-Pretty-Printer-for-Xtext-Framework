@@ -1,0 +1,154 @@
+«IMPORT it::xtypes::typesystem»
+
+«EXTENSION xtypes::extensions::Extensions»
+«EXTENSION xtypes::extensions::Types»
+«EXTENSION xtypes::extensions::Rule»
+«EXTENSION org::eclipse::xtend::util::stdlib::counter»
+
+«DEFINE main FOR Rule-»
+«nowGenerating("rule for " + this.name)»
+«counterReset("idx")»
+«LET this.getAllVariableDeclarations() AS variables»
+«FILE packageToDir(this.containingTypeSystem.getGeneratedTypeSystemRulePackage()) + "/" 
+	+ this.name.toFirstUpper() + "TypeRule.java"-»
+package «this.containingTypeSystem.getGeneratedTypeSystemRulePackage()»;
+
+import it.xtypes.runtime.RuntimeRule;
+import it.xtypes.runtime.RuleFailedException;
+import it.xtypes.runtime.TypingJudgmentEnvironment;
+import it.xtypes.runtime.Variable;
+
+public class «ruleToClassName()» extends «this.baseRuleClassName()» {
+
+	«FOREACH variables AS variableDeclaration»
+	protected Variable<«variableDeclaration.getVariableType().getQualifiedTypeName()»> «variableDeclaration.getVariableGeneratedName()» =
+		«EXPAND Variable::createVariable FOR variableDeclaration.getVariableType()»;
+	«ENDFOREACH»
+
+	«IF this.getLeftVariable() == null-»
+	protected Variable<«this.typejudgment.typingstatement.left.getExpressionType().getQualifiedTypeName()»> 
+		left_var;«ENDIF»
+
+	«IF this.getRightVariable() == null-»
+	protected Variable<«this.typejudgment.typingstatement.right.getExpressionType().getQualifiedTypeName()»> 
+		right_var;«ENDIF»
+
+	«FOREACH this.getAllEnvironmentIds() AS environment»
+	protected TypingJudgmentEnvironment «environment.environmentId.getEnvGeneratedName()» =
+		new TypingJudgmentEnvironment();
+	«ENDFOREACH»
+
+	public «ruleToClassName()»() {
+		this("«this.name»",
+			"«this.typejudgment.typejudgmentsymbol»",
+			"«this.typejudgment.typingstatement.relation»");
+	}
+	
+	public «ruleToClassName()»(String ruleName, String typeJudgmentSymbol,
+			String typeStatementRelation) {
+		super(ruleName, typeJudgmentSymbol, typeStatementRelation);
+	}
+
+	@Override
+	public Variable<«this.typejudgment.typingstatement.left.getExpressionType().getQualifiedTypeName()»> getLeft() {
+		«EXPAND getLeftVariable FOR this-»
+	}
+
+	@Override
+	public Variable<«this.typejudgment.typingstatement.right.getExpressionType().getQualifiedTypeName()»> getRight() {
+		«EXPAND getRightVariable FOR this-»
+	}
+	
+	@Override
+	public TypingJudgmentEnvironment getEnvironment() {
+		return «((EnvironmentId)this.typejudgment.environment).getEnvGeneratedName()»;
+	}
+
+	@Override
+	public void setEnvironment(TypingJudgmentEnvironment environment) {
+		if (environment != null)
+		«((EnvironmentId)this.typejudgment.environment).getEnvGeneratedName()» = environment;
+	}
+	
+	@Override
+	public RuntimeRule newInstance() {
+		return new «ruleToClassName()»("«this.name»",
+			"«this.typejudgment.typejudgmentsymbol»",
+			"«this.typejudgment.typingstatement.relation»");
+	}
+
+	@Override
+	public void applyImpl() throws RuleFailedException {
+		«EXPAND applyImpl FOR this»
+		«EXPAND finalApplyImpl FOR this»
+	}
+	
+	«IF this.typejudgment.error != null-»
+	@Override
+	protected String ruleFailureMessage() {
+		return «EXPAND Expression::errorImpl FOR this.typejudgment.error.failureError»;
+	}«ENDIF»
+	
+	«LET this.containingTypeSystem.getJudgmentFailMessage(
+		this.typejudgment.typejudgmentsymbol,
+		this.typejudgment.typingstatement.relation) AS failMessage»
+	«IF failMessage != null-»
+	@Override
+	protected String failMessage() {
+		return "«failMessage»";
+	}«ENDIF»«ENDLET»
+	
+}
+«ENDFILE-»
+«ENDLET»
+«ENDDEFINE»
+
+«DEFINE getRightVariable FOR Rule-»
+«IF this.getRightVariable() != null-»
+return «this.getRightVariable().getVariableGeneratedName()»;«ELSE-»
+if (right_var == null)
+	right_var = «EXPAND Variable::createVariable FOR this.typejudgment.typingstatement.right»;
+return right_var;«ENDIF»
+«ENDDEFINE»
+
+«DEFINE getLeftVariable FOR Rule-»
+«IF this.getLeftVariable() != null-»
+return «this.getLeftVariable().getVariableGeneratedName()»;«ELSE-»
+if (left_var == null)
+	left_var = «EXPAND Variable::createVariable FOR this.typejudgment.typingstatement.left»;
+return left_var;«ENDIF»
+«ENDDEFINE»
+
+«DEFINE applyImpl FOR RuleWithPremises»
+«EXPAND Judgment::judgImpl FOREACH this.premises»
+«ENDDEFINE»
+
+«DEFINE applyImpl FOR Rule-»
+// axiom
+«ENDDEFINE»
+
+«DEFINE finalApplyImpl FOR Rule-»
+«EXPAND finalApplyImpl(this) FOR this.typejudgment.typingstatement.right»
+«ENDDEFINE»
+
+«DEFINE finalApplyImpl(Rule rule) FOR TypingStatementExpression-»
+«EXPAND Judgment::preprocExp FOREACH this.getStatementsToExecuteBefore()»
+getRight().setValue(«EXPAND Expression::mainExprImpl FOR this»);
+«ENDDEFINE»
+
+«DEFINE finalApplyImpl(Rule rule) FOR VariableDeclarationWithType»
+// final check for variable initialization
+«EXPAND checkInit FOR this»
+«ENDDEFINE»
+
+«DEFINE checkInit FOR VariableDeclaration»
+/* check «this.getVariableGeneratedName()» */
+if («this.getVariableGeneratedName()».getValue() == null) {
+	«this.getVariableGeneratedName()».setValue(
+			«EXPAND Variable::createDefaultVariableValue FOR this.getVariableType()»);
+}
+«ENDDEFINE»
+
+«DEFINE finalApplyImpl(Rule rule) FOR StringConstant-»«ENDDEFINE»
+
+

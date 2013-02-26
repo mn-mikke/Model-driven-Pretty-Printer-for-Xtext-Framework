@@ -1,0 +1,67 @@
+«IMPORT org::eclipse::xtext»
+
+«EXTENSION gpp::boxmodel::provider::BoxModelFromDslProviderFragment»
+«EXTENSION org::eclipse::xtext::generator::Naming»
+«EXTENSION org::eclipse::xtext::GrammarUtil»
+
+«DEFINE addToPluginXmlRt(String boxModelUri) FOR Grammar»«ENDDEFINE»
+
+«DEFINE addToPluginXmlUi(String boxModelUri) FOR Grammar»«ENDDEFINE»
+
+«DEFINE addToStandaloneSetup(String boxModelUri) FOR Grammar»«ENDDEFINE»
+
+«DEFINE generate(String boxModelUri) FOR Grammar»
+	«EXPAND BoxModelFromDslProvider(boxModelUri)»
+«ENDDEFINE»
+
+«DEFINE BoxModelFromDslProvider(String boxModelUri) FOR Grammar»
+«FILE boxModelProviderName().asPath()+".java" SRC_GEN-»
+package «boxModelProviderName().toJavaPackage()»;
+
+import java.io.File;
+import com.google.inject.Injector;
+import com.google.inject.Singleton;
+import gpp.boxmodel.BoxModelStandaloneSetup;
+import gpp.boxmodel.boxModel.BoxModel;
+import gpp.boxmodel.utils.BoxModelFromDslProvider;
+import gpp.boxmodel.utils.IBoxModelProvider;
+import org.eclipse.emf.common.util.URI;
+
+@Singleton
+public class «boxModelProviderName().toSimpleName()» implements IBoxModelProvider
+{
+	private final static String BOX_MODEL_URI = "«boxModelUri»";
+	
+	private BoxModel boxModel = null;
+	
+	private String getProjectAbsolutePath()
+	{
+		 java.security.ProtectionDomain pd = this.getClass().getProtectionDomain();
+		 if ( pd == null ) return null;
+		 java.security.CodeSource cs = pd.getCodeSource();
+		 if ( cs == null ) return null;
+		 java.net.URL url = cs.getLocation();
+		 if ( url == null ) return null;
+		 java.io.File f = new File(url.getFile());
+		 return f.getAbsolutePath();
+	}
+	
+	private BoxModel loadBoxModel()
+	{
+		Injector injector = new BoxModelStandaloneSetup().createInjectorAndDoEMFRegistration();
+		BoxModelFromDslProvider provider = injector.getInstance(BoxModelFromDslProvider.class);
+		provider.initialize(URI.createFileURI(getProjectAbsolutePath() + BOX_MODEL_URI), null);
+		return provider.getBoxModel();
+	}
+
+	public BoxModel getBoxModel()
+	{
+		if(boxModel == null)
+		{
+			boxModel = loadBoxModel();
+		}
+		return boxModel;
+	}
+}
+«ENDFILE»
+«ENDDEFINE»

@@ -1,0 +1,107 @@
+
+grammar expr.ExprDemo with org.eclipse.xtext.common.Terminals
+
+generate exprDemo "http://www.ExprDemo.expr"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+
+Model:
+	(isTested?="tested")? "model" name=ID
+	(usings+=Using)*
+	(elements+=Element |
+	 functions+=FunctionDeclaration)*;
+	
+Using:
+	"using" importedNamespace=ImportID;
+	
+// ... and ID with .* at the end.
+ImportID:
+	ID ('.' '*');	
+	
+Element:
+	VarDecl | Formula | EnumDecl | Assert | Return;
+	
+FunctionDeclaration returns Symbol:
+	{FunctionDeclaration} "function" type=Type name=ID "(" 
+		(params+=Parameter  ("," params+=Parameter)* )?  ")" "{"		// FUNC
+		(elements+=Element)*
+	"}";	
+	
+Return:
+	"return" expr=Expr ";";	
+	
+Parameter returns Symbol:
+	{Parameter} type=Type name=ID;
+	
+Assert:
+	"assert" actual=Expr "is" expected=Expr (":" msg=Expr)?; 	
+	
+EnumDecl:	
+	"enum" name=ID "{"
+		(literals+=EnumLiteral)*
+	"}";
+	
+EnumLiteral returns Symbol:
+	{EnumLiteral} name=ID;
+
+	
+VarDecl returns Symbol:
+	{VarDecl} (readonly?="readonly")? "var" type=Type name=ID ("=" init=Expr)? ";";
+
+Type:
+	PrimitiveType | ArrayType;
+	
+PrimitiveType:
+	IntType | BoolType | FloatType | EnumType | StringType; 
+	
+ArrayType:
+	{ArrayType} "array" "[" baseType=Type "]";
+	
+EnumType:
+	 enumRef=[EnumDecl];
+	
+IntType:
+	 {IntType} "int";
+	
+BoolType:
+	{BoolType} "bool";
+
+FloatType:
+	{FloatType} "float";
+
+StringType:
+	{StringType} "string";
+
+Formula returns Symbol:
+	{Formula} "calc" type=Type name=ID "=" expr=Expr ";";
+	
+Expr:
+	Comparison;
+
+Comparison returns Expression:
+	Addition ({Equals.left=current}"==" right=Addition)?;
+
+	
+Addition returns Expression:
+	Multiplication ({Plus.left=current}"+" right=Multiplication)*;
+	
+Multiplication returns Expression:
+	PostfixOperators ( {Multi.left=current} "*" right=PostfixOperators)*; 
+	
+PostfixOperators returns Expression:
+	Atomic ({ArrayAccess.expr=current} "[" index=Expr "]")?;
+	
+Atomic returns Expression:
+	{SymbolRef} symbol=[Symbol|QID] ("(" (actuals+=Expr)? ("," actuals+=Expr)* ")")? |	// FUNC
+	{NumberLiteral} value=NUMBER | 
+	{StringLiteral} value=STRING;
+	
+terminal NUMBER:
+	('0'..'9')* ('.' ('0'..'9')+)?;
+	
+terminal INT returns ecore::EInt: 
+	"$$$don't use this anymore$$$";
+
+QID:
+	ID ("." ID)*;

@@ -1,0 +1,16 @@
+operators "platform:/resource/gpp/settings/operators.ppo"
+
+Terminals: 
+	INT: <F c="#0000FF">
+	ML_COMMENT: <F i=italic, c="#00FF00">,<MC>
+	SL_COMMENT: <F i=italic, c="#00FF00">,<SC>
+	Keyword["^\\w.*$"]: <F c="#FF0000">
+	default: <F>
+
+Non-terminals:
+	root : <V>,<I>
+
+	
+
+
+

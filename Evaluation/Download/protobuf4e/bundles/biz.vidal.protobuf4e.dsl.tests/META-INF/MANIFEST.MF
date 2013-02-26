@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Protobuf4e Tests
+Bundle-SymbolicName: biz.vidal.protobuf4e.dsl.tests
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Cédric Vidal
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

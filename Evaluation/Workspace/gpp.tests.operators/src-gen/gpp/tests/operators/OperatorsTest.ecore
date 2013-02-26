@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="operatorsTest"
+    nsURI="http://www.tests.gpp/operators/OperatorsTest" nsPrefix="operatorsTest">
+  <eClassifiers xsi:type="ecore:EClass" name="BoxModelOperators">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//Import"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operatorDefinitions" upperBound="-1"
+        eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//OperatorDefinition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumerations" upperBound="-1"
+        eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//GlobalEnum"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intConstants" upperBound="-1"
+        eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//IntConstant"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stringConstants" upperBound="-1"
+        eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//StringConstant"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringConstant" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//Constant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntConstant" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//Constant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperatorDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicOperatorDefinition" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//OperatorDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="implementation" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterDefinition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionalOperatorDefinition" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//BasicOperatorDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="HighlightOperatorDefinition" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//BasicOperatorDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TransformingOperatorDefinition" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//BasicOperatorDefinition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AliasOperatorDefinition" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//OperatorDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operator" eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//OperatorDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterApplication"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterApplication">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedParameter" eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterApplicationValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringParameterDefinition" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//StringParameterValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntParameterDefinition" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//IntParameterValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumParameterDefinition" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alternatives" upperBound="-1"
+        eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//EnumAlternative"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumeration" eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//GlobalEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//EnumAlternative"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalEnum">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alternatives" upperBound="-1"
+        eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//EnumAlternative"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumAlternative" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//Constant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringParameterValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterApplicationValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstantReferenceValue" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterApplicationValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//Constant"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringValue" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//StringParameterValue platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterApplicationValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringConstantApplication" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//StringParameterValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//StringConstant"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntParameterValue"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntValue" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterApplicationValue platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//IntParameterValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntConstantApplication" eSuperTypes="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//IntParameterValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//IntConstant"/>
+  </eClassifiers>
+</ecore:EPackage>

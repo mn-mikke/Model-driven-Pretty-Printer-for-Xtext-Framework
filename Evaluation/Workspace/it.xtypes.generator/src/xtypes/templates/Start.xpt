@@ -1,0 +1,19 @@
+«IMPORT it::xtypes::typesystem»
+
+«EXTENSION xtypes::extensions::Extensions»
+«EXTENSION xtypes::extensions::Types»
+«EXTENSION xtypes::extensions::Methods»
+«EXTENSION xtypes::extensions::TypeSystem»
+
+«DEFINE main FOR TypeSystemDefinition-»
+«setCurrentTypeSystemDefinition(this)»
+«setCurrentModelPackage(this.getModelPackage())»
+«nowGenerating("type system for " + this.typeSystemName())»
+«startingGenerationFor(this)»
+«EXPAND TypeSystem::main FOR this»
+«nowGenerating("validator for " + this.typeSystemName())»
+«EXPAND Validator::main FOR this»
+«nowGenerating("base rule for " + this.typeSystemName())»
+«EXPAND BaseRule::main FOR this»
+«EXPAND Rule::main FOREACH this.rules»
+«ENDDEFINE»

@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="ASCII"?>
+<!DOCTYPE boxModel:BoxModel [
+<!ENTITY _1 "platform:/plugin/gpp.tests.operators/src/gpp/tests/operators/OperatorsTest.xtext">
+<!ENTITY _2 "platform:/plugin/gpp/settings/operators.ppo">
+<!ENTITY _3 "classpath:/org/eclipse/xtext/common/Terminals.xtext">
+]>
+<boxModel:BoxModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:boxModel="http://www.boxmodel.gpp/BoxModel" xmlns:boxModelOperators="http://www.boxmodel.gpp/operators/BoxModelOperators">
+  <xtextFile importURI="platform:/plugin/gpp.tests.operators/src/gpp/tests/operators/OperatorsTest.xtext"/>
+  <operatorsSection>
+    <imports importURI="platform:/plugin/gpp/settings/operators.ppo"/>
+  </operatorsSection>
+  <formatting>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/BoxModelOperators"/>
+      <content name="BoxModelOperators.1">
+        <operator href="&_2;#//@operatorDefinitions.1"/>
+        <parameters>
+          <referencedParameter href="&_2;#//@operatorDefinitions.1/@parameters.0"/>
+          <value xsi:type="boxModelOperators:IntValue" value="2"/>
+        </parameters>
+        <content xsi:type="boxModel:GroupBox">
+          <elements xsi:type="boxModel:ParserRuleOperatorApplication" name="BoxModelOperators.1.1">
+            <operator href="&_2;#//@operatorDefinitions.1"/>
+            <content xsi:type="boxModel:AssignmentBox">
+              <assignment href="&_1;#//@rules.0/@alternatives/@elements.0"/>
+              <terminal xsi:type="boxModel:Reference">
+                <element href="&_1;#//@rules.0/@alternatives/@elements.0/@terminal"/>
+              </terminal>
+            </content>
+          </elements>
+          <elements xsi:type="boxModel:MultipleBox" parenthesized="true" type="|">
+            <elements xsi:type="boxModel:AssignmentBox">
+              <assignment href="&_1;#//@rules.0/@alternatives/@elements.1/@elements.0"/>
+              <terminal xsi:type="boxModel:Reference">
+                <element href="&_1;#//@rules.0/@alternatives/@elements.1/@elements.0/@terminal"/>
+              </terminal>
+            </elements>
+            <elements xsi:type="boxModel:AssignmentBox">
+              <assignment href="&_1;#//@rules.0/@alternatives/@elements.1/@elements.1"/>
+              <terminal xsi:type="boxModel:Reference">
+                <element href="&_1;#//@rules.0/@alternatives/@elements.1/@elements.1/@terminal"/>
+              </terminal>
+            </elements>
+            <elements xsi:type="boxModel:AssignmentBox">
+              <assignment href="&_1;#//@rules.0/@alternatives/@elements.1/@elements.2"/>
+              <terminal xsi:type="boxModel:Reference">
+                <element href="&_1;#//@rules.0/@alternatives/@elements.1/@elements.2/@terminal"/>
+              </terminal>
+            </elements>
+            <elements xsi:type="boxModel:AssignmentBox">
+              <assignment href="&_1;#//@rules.0/@alternatives/@elements.1/@elements.3"/>
+              <terminal xsi:type="boxModel:Reference">
+                <element href="&_1;#//@rules.0/@alternatives/@elements.1/@elements.3/@terminal"/>
+              </terminal>
+            </elements>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/StringConstant"/>
+      <content name="StringConstant.1">
+        <operator href="&_2;#//@operatorDefinitions.0"/>
+        <content xsi:type="boxModel:GroupBox">
+          <elements xsi:type="boxModel:MultipleBox" parenthesized="true" type="|">
+            <elements xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.1/@alternatives/@elements.0/@elements.0"/>
+            </elements>
+            <elements xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.1/@alternatives/@elements.0/@elements.1"/>
+            </elements>
+          </elements>
+          <elements xsi:type="boxModel:AssignmentBox">
+            <assignment href="&_1;#//@rules.1/@alternatives/@elements.1"/>
+            <terminal xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.1/@alternatives/@elements.1/@terminal"/>
+            </terminal>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.1/@alternatives/@elements.2"/>
+          </elements>
+          <elements xsi:type="boxModel:AssignmentBox">
+            <assignment href="&_1;#//@rules.1/@alternatives/@elements.3"/>
+            <terminal xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.1/@alternatives/@elements.3/@terminal"/>
+            </terminal>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/IntConstant"/>
+      <content name="IntConstant.1">
+        <operator href="&_2;#//@operatorDefinitions.0"/>
+        <content xsi:type="boxModel:GroupBox">
+          <elements xsi:type="boxModel:MultipleBox" parenthesized="true" type="|">
+            <elements xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.2/@alternatives/@elements.0/@elements.0"/>
+            </elements>
+            <elements xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.2/@alternatives/@elements.0/@elements.1"/>
+            </elements>
+          </elements>
+          <elements xsi:type="boxModel:AssignmentBox">
+            <assignment href="&_1;#//@rules.2/@alternatives/@elements.1"/>
+            <terminal xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.2/@alternatives/@elements.1/@terminal"/>
+            </terminal>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.2/@alternatives/@elements.2"/>
+          </elements>
+          <elements xsi:type="boxModel:AssignmentBox">
+            <assignment href="&_1;#//@rules.2/@alternatives/@elements.3"/>
+            <terminal xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.2/@alternatives/@elements.3/@terminal"/>
+            </terminal>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/Import"/>
+      <content name="Import.1">
+        <operator href="&_2;#//@operatorDefinitions.0"/>
+        <content xsi:type="boxModel:GroupBox">
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.3/@alternatives/@elements.0"/>
+          </elements>
+          <elements xsi:type="boxModel:AssignmentBox">
+            <assignment href="&_1;#//@rules.3/@alternatives/@elements.1"/>
+            <terminal xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.3/@alternatives/@elements.1/@terminal"/>
+            </terminal>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/OperatorImplementationString"/>
+      <content name="OperatorImplementationString.1">
+        <operator href="&_2;#//@operatorDefinitions.0"/>
+        <parameters>
+          <referencedParameter href="&_2;#//@operatorDefinitions.0/@parameters.0"/>
+          <value xsi:type="boxModelOperators:IntValue"/>
+        </parameters>
+        <content xsi:type="boxModel:GroupBox">
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.4/@alternatives/@elements.0"/>
+          </elements>
+          <elements xsi:type="boxModel:GroupBox" parenthesized="true">
+            <elements xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.4/@alternatives/@elements.1/@elements.0"/>
+            </elements>
+            <elements xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.4/@alternatives/@elements.1/@elements.1"/>
+            </elements>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/OperatorDefinition"/>
+      <content name="OperatorDefinition.1">
+        <operator href="&_2;#//@operatorDefinitions.1"/>
+        <content xsi:type="boxModel:MultipleBox" type="|">
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.5/@alternatives/@elements.0"/>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.5/@alternatives/@elements.1"/>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/BasicOperatorDefinition"/>
+      <content name="BasicOperatorDefinition.1">
+        <operator href="&_2;#//@operatorDefinitions.0"/>
+        <parameters>
+          <referencedParameter href="&_2;#//@operatorDefinitions.0/@parameters.0"/>
+          <value xsi:type="boxModelOperators:IntValue"/>
+        </parameters>
+        <content xsi:type="boxModel:GroupBox">
+          <elements xsi:type="boxModel:ParserRuleOperatorApplication" name="BasicOperatorDefinition.1.1">
+            <operator href="&_2;#//@operatorDefinitions.0"/>
+            <content xsi:type="boxModel:GroupBox">
+              <elements xsi:type="boxModel:MultipleBox" parenthesized="true" type="|">
+                <elements xsi:type="boxModel:Reference">
+                  <element href="&_1;#//@rules.6/@alternatives/@elements.0/@elements.0"/>
+                </elements>
+                <elements xsi:type="boxModel:Reference">
+                  <element href="&_1;#//@rules.6/@alternatives/@elements.0/@elements.1"/>
+                </elements>
+                <elements xsi:type="boxModel:Reference">
+                  <element href="&_1;#//@rules.6/@alternatives/@elements.0/@elements.2"/>
+                </elements>
+              </elements>
+              <elements xsi:type="boxModel:AssignmentBox">
+                <assignment href="&_1;#//@rules.6/@alternatives/@elements.1"/>
+                <terminal xsi:type="boxModel:Reference">
+                  <element href="&_1;#//@rules.6/@alternatives/@elements.1/@terminal"/>
+                </terminal>
+              </elements>
+            </content>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.6/@alternatives/@elements.2"/>
+          </elements>
+          <elements xsi:type="boxModel:AssignmentBox">
+            <assignment href="&_1;#//@rules.6/@alternatives/@elements.3"/>
+            <terminal xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.6/@alternatives/@elements.3/@terminal"/>
+            </terminal>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.6/@alternatives/@elements.4"/>
+          </elements>
+          <elements xsi:type="boxModel:ParserRuleOperatorApplication" name="BasicOperatorDefinition.1.2">
+            <operator href="&_2;#//@operatorDefinitions.1"/>
+            <content xsi:type="boxModel:GroupBox">
+              <elements xsi:type="boxModel:GroupBox" parenthesized="true">
+                <elements xsi:type="boxModel:Reference">
+                  <element href="&_1;#//@rules.6/@alternatives/@elements.5/@elements.0"/>
+                </elements>
+                <elements xsi:type="boxModel:ParserRuleOperatorApplication" name="BasicOperatorDefinition.1.2.1">
+                  <operator href="&_2;#//@operatorDefinitions.6"/>
+                  <content xsi:type="boxModel:ParserRuleOperatorApplication" name="BasicOperatorDefinition.1.2.1.1">
+                    <operator href="&_2;#//@operatorDefinitions.2"/>
+                    <content xsi:type="boxModel:AssignmentBox">
+                      <assignment href="&_1;#//@rules.6/@alternatives/@elements.5/@elements.1"/>
+                      <terminal xsi:type="boxModel:Reference">
+                        <element href="&_1;#//@rules.6/@alternatives/@elements.5/@elements.1/@terminal"/>
+                      </terminal>
+                    </content>
+                  </content>
+                </elements>
+              </elements>
+              <elements xsi:type="boxModel:Reference">
+                <element href="&_1;#//@rules.6/@alternatives/@elements.6"/>
+              </elements>
+            </content>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/PositionalOperatorDefinition"/>
+      <content name="PositionalOperatorDefinition.1">
+        <operator href="&_2;#//@operatorDefinitions.0"/>
+        <content xsi:type="boxModel:MultipleBox" parenthesized="true" type="|">
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.7/@alternatives/@elements.1/@elements.0"/>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.7/@alternatives/@elements.1/@elements.1"/>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/HighlightOperatorDefinition"/>
+      <content name="HighlightOperatorDefinition.1">
+        <operator href="&_2;#//@operatorDefinitions.0"/>
+        <content xsi:type="boxModel:MultipleBox" parenthesized="true" type="|">
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.8/@alternatives/@elements.1/@elements.0"/>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.8/@alternatives/@elements.1/@elements.1"/>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/TransformingOperatorDefinition"/>
+      <content name="TransformingOperatorDefinition.1">
+        <operator href="&_2;#//@operatorDefinitions.0"/>
+        <content xsi:type="boxModel:MultipleBox" parenthesized="true" type="|">
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.9/@alternatives/@elements.1/@elements.0"/>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.9/@alternatives/@elements.1/@elements.1"/>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/AliasOperatorDefinition"/>
+      <content name="AliasOperatorDefinition.1">
+        <operator href="&_2;#//@operatorDefinitions.0"/>
+        <parameters>
+          <referencedParameter href="&_2;#//@operatorDefinitions.0/@parameters.0"/>
+          <value xsi:type="boxModelOperators:IntValue"/>
+        </parameters>
+        <content xsi:type="boxModel:GroupBox">
+          <elements xsi:type="boxModel:ParserRuleOperatorApplication" name="AliasOperatorDefinition.1.1">
+            <operator href="&_2;#//@operatorDefinitions.0"/>
+            <content xsi:type="boxModel:GroupBox">
+              <elements xsi:type="boxModel:Reference">
+                <element href="&_1;#//@rules.10/@alternatives/@elements.0"/>
+              </elements>
+              <elements xsi:type="boxModel:AssignmentBox">
+                <assignment href="&_1;#//@rules.10/@alternatives/@elements.1"/>
+                <terminal xsi:type="boxModel:Reference">
+                  <element href="&_1;#//@rules.10/@alternatives/@elements.1/@terminal"/>
+                </terminal>
+              </elements>
+              <elements xsi:type="boxModel:ParserRuleOperatorApplication" name="AliasOperatorDefinition.1.1.1">
+                <operator href="&_2;#//@operatorDefinitions.0"/>
+                <parameters>
+                  <referencedParameter href="&_2;#//@operatorDefinitions.0/@parameters.0"/>
+                  <value xsi:type="boxModelOperators:IntValue"/>
+                </parameters>
+                <content xsi:type="boxModel:GroupBox">
+                  <elements xsi:type="boxModel:Reference">
+                    <element href="&_1;#//@rules.10/@alternatives/@elements.2"/>
+                  </elements>
+                  <elements xsi:type="boxModel:AssignmentBox">
+                    <assignment href="&_1;#//@rules.10/@alternatives/@elements.3"/>
+                    <terminal xsi:type="boxModel:Reference">
+                      <element href="&_1;#//@rules.10/@alternatives/@elements.3/@terminal"/>
+                    </terminal>
+                  </elements>
+                  <elements xsi:type="boxModel:Reference">
+                    <element href="&_1;#//@rules.10/@alternatives/@elements.4"/>
+                  </elements>
+                </content>
+              </elements>
+            </content>
+          </elements>
+          <elements xsi:type="boxModel:ParserRuleOperatorApplication" name="AliasOperatorDefinition.1.2">
+            <operator href="&_2;#//@operatorDefinitions.1"/>
+            <content xsi:type="boxModel:GroupBox">
+              <elements xsi:type="boxModel:GroupBox" parenthesized="true">
+                <elements xsi:type="boxModel:Reference">
+                  <element href="&_1;#//@rules.10/@alternatives/@elements.5/@elements.0"/>
+                </elements>
+                <elements xsi:type="boxModel:ParserRuleOperatorApplication" name="AliasOperatorDefinition.1.2.1">
+                  <operator href="&_2;#//@operatorDefinitions.6"/>
+                  <content xsi:type="boxModel:AssignmentBox">
+                    <assignment href="&_1;#//@rules.10/@alternatives/@elements.5/@elements.1"/>
+                    <terminal xsi:type="boxModel:Reference">
+                      <element href="&_1;#//@rules.10/@alternatives/@elements.5/@elements.1/@terminal"/>
+                    </terminal>
+                  </content>
+                </elements>
+              </elements>
+              <elements xsi:type="boxModel:Reference">
+                <element href="&_1;#//@rules.10/@alternatives/@elements.6"/>
+              </elements>
+            </content>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/ParameterApplication"/>
+      <content name="ParameterApplication.1">
+        <operator href="&_2;#//@operatorDefinitions.0"/>
+        <content xsi:type="boxModel:GroupBox">
+          <elements xsi:type="boxModel:AssignmentBox">
+            <assignment href="&_1;#//@rules.11/@alternatives/@elements.0"/>
+            <terminal xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.11/@alternatives/@elements.0/@terminal"/>
+            </terminal>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.11/@alternatives/@elements.1"/>
+          </elements>
+          <elements xsi:type="boxModel:AssignmentBox">
+            <assignment href="&_1;#//@rules.11/@alternatives/@elements.2"/>
+            <terminal xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.11/@alternatives/@elements.2/@terminal"/>
+            </terminal>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/ParameterDefinition"/>
+      <content name="ParameterDefinition.1">
+        <operator href="&_2;#//@operatorDefinitions.2"/>
+        <parameters>
+          <referencedParameter href="&_2;#//@operatorDefinitions.2/@parameters.4"/>
+          <value xsi:type="boxModelOperators:StringValue" value="cr"/>
+        </parameters>
+        <content xsi:type="boxModel:MultipleBox" type="|">
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.12/@alternatives/@elements.0"/>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.12/@alternatives/@elements.1"/>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.12/@alternatives/@elements.2"/>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/StringParameterDefinition"/>
+      <content name="StringParameterDefinition.1">
+        <operator href="&_2;#//@operatorDefinitions.3"/>
+        <content xsi:type="boxModel:GroupBox">
+          <elements xsi:type="boxModel:MultipleBox" parenthesized="true" type="|">
+            <elements xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.13/@alternatives/@elements.0/@elements.0"/>
+            </elements>
+            <elements xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.13/@alternatives/@elements.0/@elements.1"/>
+            </elements>
+          </elements>
+          <elements xsi:type="boxModel:AssignmentBox">
+            <assignment href="&_1;#//@rules.13/@alternatives/@elements.1"/>
+            <terminal xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.13/@alternatives/@elements.1/@terminal"/>
+            </terminal>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.13/@alternatives/@elements.2"/>
+          </elements>
+          <elements xsi:type="boxModel:AssignmentBox">
+            <assignment href="&_1;#//@rules.13/@alternatives/@elements.3"/>
+            <terminal xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.13/@alternatives/@elements.3/@terminal"/>
+            </terminal>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/IntParameterDefinition"/>
+      <content name="IntParameterDefinition.1">
+        <operator href="&_2;#//@operatorDefinitions.3"/>
+        <content xsi:type="boxModel:GroupBox">
+          <elements xsi:type="boxModel:MultipleBox" parenthesized="true" type="|">
+            <elements xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.14/@alternatives/@elements.0/@elements.0"/>
+            </elements>
+            <elements xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.14/@alternatives/@elements.0/@elements.1"/>
+            </elements>
+          </elements>
+          <elements xsi:type="boxModel:AssignmentBox">
+            <assignment href="&_1;#//@rules.14/@alternatives/@elements.1"/>
+            <terminal xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.14/@alternatives/@elements.1/@terminal"/>
+            </terminal>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.14/@alternatives/@elements.2"/>
+          </elements>
+          <elements xsi:type="boxModel:AssignmentBox">
+            <assignment href="&_1;#//@rules.14/@alternatives/@elements.3"/>
+            <terminal xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.14/@alternatives/@elements.3/@terminal"/>
+            </terminal>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/EnumParameterDefinition"/>
+      <content name="EnumParameterDefinition.1">
+        <operator href="&_2;#//@operatorDefinitions.3"/>
+        <content xsi:type="boxModel:GroupBox">
+          <elements xsi:type="boxModel:ParserRuleOperatorApplication" name="EnumParameterDefinition.1.1">
+            <operator href="&_2;#//@operatorDefinitions.0"/>
+            <parameters>
+              <referencedParameter href="&_2;#//@operatorDefinitions.0/@parameters.0"/>
+              <value xsi:type="boxModelOperators:IntValue"/>
+            </parameters>
+            <content xsi:type="boxModel:GroupBox">
+              <elements xsi:type="boxModel:Reference">
+                <element href="&_1;#//@rules.15/@alternatives/@elements.0"/>
+              </elements>
+              <elements xsi:type="boxModel:MultipleBox" parenthesized="true" type="|">
+                <elements xsi:type="boxModel:GroupBox">
+                  <elements xsi:type="boxModel:AssignmentBox">
+                    <assignment href="&_1;#//@rules.15/@alternatives/@elements.1/@elements.0/@elements.0"/>
+                    <terminal xsi:type="boxModel:Reference">
+                      <element href="&_1;#//@rules.15/@alternatives/@elements.1/@elements.0/@elements.0/@terminal"/>
+                    </terminal>
+                  </elements>
+                  <elements xsi:type="boxModel:ParserRuleOperatorApplication" name="EnumParameterDefinition.1.1.1">
+                    <operator href="&_2;#//@operatorDefinitions.0"/>
+                    <content xsi:type="boxModel:GroupBox" parenthesized="true">
+                      <elements xsi:type="boxModel:Reference">
+                        <element href="&_1;#//@rules.15/@alternatives/@elements.1/@elements.0/@elements.1/@elements.0"/>
+                      </elements>
+                      <elements xsi:type="boxModel:AssignmentBox">
+                        <assignment href="&_1;#//@rules.15/@alternatives/@elements.1/@elements.0/@elements.1/@elements.1"/>
+                        <terminal xsi:type="boxModel:Reference">
+                          <element href="&_1;#//@rules.15/@alternatives/@elements.1/@elements.0/@elements.1/@elements.1/@terminal"/>
+                        </terminal>
+                      </elements>
+                    </content>
+                  </elements>
+                </elements>
+                <elements xsi:type="boxModel:GroupBox">
+                  <elements xsi:type="boxModel:Reference">
+                    <element href="&_1;#//@rules.15/@alternatives/@elements.1/@elements.1/@elements.0"/>
+                  </elements>
+                  <elements xsi:type="boxModel:AssignmentBox">
+                    <assignment href="&_1;#//@rules.15/@alternatives/@elements.1/@elements.1/@elements.1"/>
+                    <terminal xsi:type="boxModel:Reference">
+                      <element href="&_1;#//@rules.15/@alternatives/@elements.1/@elements.1/@elements.1/@terminal"/>
+                    </terminal>
+                  </elements>
+                  <elements xsi:type="boxModel:Reference">
+                    <element href="&_1;#//@rules.15/@alternatives/@elements.1/@elements.1/@elements.2"/>
+                  </elements>
+                </elements>
+              </elements>
+              <elements xsi:type="boxModel:Reference">
+                <element href="&_1;#//@rules.15/@alternatives/@elements.2"/>
+              </elements>
+            </content>
+          </elements>
+          <elements xsi:type="boxModel:AssignmentBox">
+            <assignment href="&_1;#//@rules.15/@alternatives/@elements.3"/>
+            <terminal xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.15/@alternatives/@elements.3/@terminal"/>
+            </terminal>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.15/@alternatives/@elements.4"/>
+          </elements>
+          <elements xsi:type="boxModel:AssignmentBox">
+            <assignment href="&_1;#//@rules.15/@alternatives/@elements.5"/>
+            <terminal xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.15/@alternatives/@elements.5/@terminal"/>
+            </terminal>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/GlobalEnum"/>
+      <content name="GlobalEnum.1">
+        <operator href="&_2;#//@operatorDefinitions.0"/>
+        <content xsi:type="boxModel:GroupBox">
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.16/@alternatives/@elements.0"/>
+          </elements>
+          <elements xsi:type="boxModel:AssignmentBox">
+            <assignment href="&_1;#//@rules.16/@alternatives/@elements.1"/>
+            <terminal xsi:type="boxModel:Reference">
+              <element href="&_1;#//@rules.16/@alternatives/@elements.1/@terminal"/>
+            </terminal>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.16/@alternatives/@elements.2"/>
+          </elements>
+          <elements xsi:type="boxModel:ParserRuleOperatorApplication" name="GlobalEnum.1.1">
+            <operator href="&_2;#//@operatorDefinitions.0"/>
+            <parameters>
+              <referencedParameter href="&_2;#//@operatorDefinitions.0/@parameters.0"/>
+              <value xsi:type="boxModelOperators:IntValue"/>
+            </parameters>
+            <content xsi:type="boxModel:GroupBox">
+              <elements xsi:type="boxModel:Reference">
+                <element href="&_1;#//@rules.16/@alternatives/@elements.3"/>
+              </elements>
+              <elements xsi:type="boxModel:AssignmentBox">
+                <assignment href="&_1;#//@rules.16/@alternatives/@elements.4"/>
+                <terminal xsi:type="boxModel:Reference">
+                  <element href="&_1;#//@rules.16/@alternatives/@elements.4/@terminal"/>
+                </terminal>
+              </elements>
+              <elements xsi:type="boxModel:ParserRuleOperatorApplication" name="GlobalEnum.1.1.1">
+                <operator href="&_2;#//@operatorDefinitions.0"/>
+                <content xsi:type="boxModel:GroupBox" parenthesized="true">
+                  <elements xsi:type="boxModel:Reference">
+                    <element href="&_1;#//@rules.16/@alternatives/@elements.5/@elements.0"/>
+                  </elements>
+                  <elements xsi:type="boxModel:AssignmentBox">
+                    <assignment href="&_1;#//@rules.16/@alternatives/@elements.5/@elements.1"/>
+                    <terminal xsi:type="boxModel:Reference">
+                      <element href="&_1;#//@rules.16/@alternatives/@elements.5/@elements.1/@terminal"/>
+                    </terminal>
+                  </elements>
+                </content>
+              </elements>
+              <elements xsi:type="boxModel:Reference">
+                <element href="&_1;#//@rules.16/@alternatives/@elements.6"/>
+              </elements>
+            </content>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/EnumAlternative"/>
+      <content name="EnumAlternative.1">
+        <operator href="&_2;#//@operatorDefinitions.1"/>
+        <content xsi:type="boxModel:AssignmentBox">
+          <assignment href="&_1;#//@rules.17/@alternatives"/>
+          <terminal xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.17/@alternatives/@terminal"/>
+          </terminal>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/StringParameterValue"/>
+      <content name="StringParameterValue.1">
+        <operator href="&_2;#//@operatorDefinitions.1"/>
+        <content xsi:type="boxModel:MultipleBox" type="|">
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.18/@alternatives/@elements.0"/>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.18/@alternatives/@elements.1"/>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/ParameterApplicationValue"/>
+      <content name="ParameterApplicationValue.1">
+        <operator href="&_2;#//@operatorDefinitions.1"/>
+        <content xsi:type="boxModel:MultipleBox" type="|">
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.19/@alternatives/@elements.0"/>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.19/@alternatives/@elements.1"/>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.19/@alternatives/@elements.2"/>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/ConstantReferenceValue"/>
+      <content name="ConstantReferenceValue.1">
+        <operator href="&_2;#//@operatorDefinitions.1"/>
+        <content xsi:type="boxModel:AssignmentBox">
+          <assignment href="&_1;#//@rules.20/@alternatives"/>
+          <terminal xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.20/@alternatives/@terminal"/>
+          </terminal>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/Constant"/>
+      <content name="Constant.1">
+        <operator href="&_2;#//@operatorDefinitions.1"/>
+        <content xsi:type="boxModel:MultipleBox" type="|">
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.21/@alternatives/@elements.0"/>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.21/@alternatives/@elements.1"/>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.21/@alternatives/@elements.2"/>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/StringValue"/>
+      <content name="StringValue.1">
+        <operator href="&_2;#//@operatorDefinitions.1"/>
+        <content xsi:type="boxModel:AssignmentBox">
+          <assignment href="&_1;#//@rules.22/@alternatives"/>
+          <terminal xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.22/@alternatives/@terminal"/>
+          </terminal>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/StringConstantApplication"/>
+      <content name="StringConstantApplication.1">
+        <operator href="&_2;#//@operatorDefinitions.1"/>
+        <content xsi:type="boxModel:AssignmentBox">
+          <assignment href="&_1;#//@rules.23/@alternatives"/>
+          <terminal xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.23/@alternatives/@terminal"/>
+          </terminal>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/IntParameterValue"/>
+      <content name="IntParameterValue.1">
+        <operator href="&_2;#//@operatorDefinitions.1"/>
+        <content xsi:type="boxModel:MultipleBox" type="|">
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.24/@alternatives/@elements.0"/>
+          </elements>
+          <elements xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.24/@alternatives/@elements.1"/>
+          </elements>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/IntValue"/>
+      <content name="IntValue.1">
+        <operator href="&_2;#//@operatorDefinitions.1"/>
+        <content xsi:type="boxModel:AssignmentBox">
+          <assignment href="&_1;#//@rules.25/@alternatives"/>
+          <terminal xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.25/@alternatives/@terminal"/>
+          </terminal>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <parserRuleFormatings>
+      <rule href="&_1;#XtextFragmentProvider::gpp.tests.operators.OperatorsTest/IntConstantApplication"/>
+      <content name="IntConstantApplication.1">
+        <operator href="&_2;#//@operatorDefinitions.1"/>
+        <content xsi:type="boxModel:AssignmentBox">
+          <assignment href="&_1;#//@rules.26/@alternatives"/>
+          <terminal xsi:type="boxModel:Reference">
+            <element href="&_1;#//@rules.26/@alternatives/@terminal"/>
+          </terminal>
+        </content>
+      </content>
+    </parserRuleFormatings>
+    <terminalRuleFormattings>
+      <rule href="&_3;#XtextFragmentProvider::org.eclipse.xtext.common.Terminals/INT"/>
+      <content name="INT">
+        <operator href="&_2;#//@operatorDefinitions.8"/>
+        <parameters>
+          <referencedParameter href="&_2;#//@operatorDefinitions.8/@parameters.0"/>
+          <value xsi:type="boxModelOperators:ConstantReferenceValue">
+            <value href="&_2;#//@operatorDefinitions.8/@parameters.0/@alternatives.1"/>
+          </value>
+        </parameters>
+      </content>
+    </terminalRuleFormattings>
+    <terminalRuleFormattings>
+      <rule href="&_3;#XtextFragmentProvider::org.eclipse.xtext.common.Terminals/ML_COMMENT"/>
+      <content name="ML_COMMENT">
+        <operator href="&_2;#//@operatorDefinitions.8"/>
+        <parameters>
+          <referencedParameter href="&_2;#//@operatorDefinitions.8/@parameters.1"/>
+          <value xsi:type="boxModelOperators:ConstantReferenceValue">
+            <value href="&_2;#//@operatorDefinitions.8/@parameters.1/@alternatives.1"/>
+          </value>
+        </parameters>
+        <parameters>
+          <referencedParameter href="&_2;#//@operatorDefinitions.8/@parameters.2"/>
+          <value xsi:type="boxModelOperators:StringValue" value="#00FF00"/>
+        </parameters>
+      </content>
+      <content name="ML_COMMENT">
+        <operator href="&_2;#//@operatorDefinitions.10"/>
+      </content>
+    </terminalRuleFormattings>
+    <terminalRuleFormattings>
+      <rule href="&_3;#XtextFragmentProvider::org.eclipse.xtext.common.Terminals/SL_COMMENT"/>
+      <content name="SL_COMMENT">
+        <operator href="&_2;#//@operatorDefinitions.8"/>
+        <parameters>
+          <referencedParameter href="&_2;#//@operatorDefinitions.8/@parameters.1"/>
+          <value xsi:type="boxModelOperators:ConstantReferenceValue">
+            <value href="&_2;#//@operatorDefinitions.8/@parameters.1/@alternatives.1"/>
+          </value>
+        </parameters>
+        <parameters>
+          <referencedParameter href="&_2;#//@operatorDefinitions.8/@parameters.2"/>
+          <value xsi:type="boxModelOperators:StringValue" value="#00FF00"/>
+        </parameters>
+      </content>
+      <content name="SL_COMMENT">
+        <operator href="&_2;#//@operatorDefinitions.9"/>
+      </content>
+    </terminalRuleFormattings>
+    <keywordTerminalRuleFormattings name="Keyword" pattern="^\w.*$">
+      <content name="Keyword">
+        <operator href="&_2;#//@operatorDefinitions.8"/>
+        <parameters>
+          <referencedParameter href="&_2;#//@operatorDefinitions.8/@parameters.2"/>
+          <value xsi:type="boxModelOperators:StringValue" value="#FF0000"/>
+        </parameters>
+      </content>
+    </keywordTerminalRuleFormattings>
+    <defaultTerminalRuleFormatting name="Default">
+      <content name="Default">
+        <operator href="&_2;#//@operatorDefinitions.8"/>
+      </content>
+    </defaultTerminalRuleFormatting>
+  </formatting>
+  <end/>
+</boxModel:BoxModel>

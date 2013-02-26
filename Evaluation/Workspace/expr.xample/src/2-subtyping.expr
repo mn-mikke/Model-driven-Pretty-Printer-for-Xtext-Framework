@@ -1,0 +1,11 @@
+model subtyping
+
+calc int t1 = 2;       // works
+calc int t2 = 2.2;     // error: float cannot be assigned to int
+calc float t3 = 2.2;   // works 
+calc float t4 = 2;     // works; int can be assigned to float
+calc int t5 = 2 + 2;   // works; type of plus is int 
+calc int t6 = 2 + 2.3; // error: common type of 2 and 2.3 is float 
+                       //        which cannot be assigned to int
+  
+   

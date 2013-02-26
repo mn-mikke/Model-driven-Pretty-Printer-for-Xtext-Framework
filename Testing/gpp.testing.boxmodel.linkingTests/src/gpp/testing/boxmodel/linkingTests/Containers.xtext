@@ -1,0 +1,106 @@
+grammar gpp.testing.boxmodel.Containers with org.eclipse.xtext.common.Terminals
+
+generate tests "http://www.testing.gpp/boxmodel/Containers"
+
+RootRule:
+	group=Group1 | group=Group2 | group=Group3 | group=Group4 & unorderedGroup=UnorderedGroup 
+	(alternatives1=Alternatives1a|alternatives1=Alternatives1b)
+	(alternatives2=Alternatives1c|(alternatives2=Alternatives2a|alternatives2=Alternatives2b))
+	mix?=Mix1 | mix ?= Mix2
+;
+
+
+Mix1:
+	groups+=Group1 groups+=Group2 groups+=Group1 | unorderedGroup+=UnorderedGroup & unorderedGroup+=UnorderedGroup & unorderedGroup+=UnorderedGroup |
+	groups+=Group1 groups+=Group2 groups+=Group1 | unorderedGroup+=UnorderedGroup & unorderedGroup+=UnorderedGroup & unorderedGroup+=UnorderedGroup | 
+	groups+=Group1 groups+=Group2 groups+=Group1 | unorderedGroup+=UnorderedGroup & unorderedGroup+=UnorderedGroup & unorderedGroup+=UnorderedGroup 
+;
+
+Mix2:
+	groups+=Group1 groups+=Group2 ((groups+=Group1 | unorderedGroup+=UnorderedGroup) & (unorderedGroup+=UnorderedGroup & (unorderedGroup+=UnorderedGroup |
+	groups+=Group1 (groups+=Group2 groups+=Group1 | unorderedGroup+=UnorderedGroup) & unorderedGroup+=UnorderedGroup) & unorderedGroup+=UnorderedGroup | 
+	groups+=Group1 groups+=Group2 groups+=Group1 | unorderedGroup+=UnorderedGroup) & unorderedGroup+=UnorderedGroup) & unorderedGroup+=UnorderedGroup
+
+;
+
+Group1:
+	Rule1
+	'fas'
+	'fad'
+	'fasd'
+	a=Rule2
+;
+
+Group2:
+	'fa'
+	Rule1
+	'fas'
+	'fad'
+	'fasd'
+	a=Rule2
+;
+
+Group3:
+	((('fa'
+	Rule1
+	'fas')
+	'fad')
+	'fasd')
+	(ab+=Rule2
+	'fas'
+	('fad'
+	'fasd')
+	ab+=Rule2)
+;
+
+Group4:
+	((('fa'
+	Rule1
+	'fas')
+	'fad')
+	'fasd')
+	(ab+=Rule2
+	'fas'
+	('fad'
+	'fasd')
+	ab+=Rule2)
+;
+
+Alternatives1a:
+	Rule1|Rule2|Rule3|Rule4|Rule5|Rule6
+;
+
+Alternatives1b:
+	(Rule1|Rule2|Rule3|Rule4|Rule5|Rule6)
+;
+
+Alternatives1c:
+	(Rule1|Rule2|Rule3|Rule4|Rule5|Rule6)
+;
+
+Alternatives2a:
+	((Rule1|(Rule2|Rule3))|Rule4|(Rule5|Rule6))
+;
+
+Alternatives2b:
+	(Rule1)|((Rule2|Rule3))|(Rule4|(Rule5|Rule6))
+;
+
+UnorderedGroup:
+	rule1=Rule1 &
+	'fas' &
+	'fad' &
+	'fasd' &
+	rule2=Rule2
+;
+
+Alternatives:
+	rule=Rule2	
+;
+
+Rule1: name1=ID;
+Rule2: name2?=STRING;
+Rule3: name3+=INT;
+Rule4: name4=Rule3;
+Rule5: name5='?';
+Rule6: name6=[Rule4];

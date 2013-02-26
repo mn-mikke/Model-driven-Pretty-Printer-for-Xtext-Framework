@@ -1,0 +1,17 @@
+«IMPORT org::eclipse::xtext»
+
+«EXTENSION org::eclipse::xtext::GrammarUtil»
+
+«DEFINE addToPluginXmlRt(String fileContent, String filePath) FOR Grammar»«ENDDEFINE»
+
+«DEFINE addToPluginXmlUi(String fileContent, String filePath) FOR Grammar»«ENDDEFINE»
+
+«DEFINE addToStandaloneSetup(String fileContent, String filePath) FOR Grammar»«ENDDEFINE»
+
+«DEFINE generate(String fileContent, String filePath) FOR Grammar»
+	«EXPAND DefaultBoxModel(fileContent, filePath)»
+«ENDDEFINE»
+
+«DEFINE DefaultBoxModel(String fileContent, String filePath) FOR Grammar»
+«FILE filePath SRC-»«fileContent»«ENDFILE»
+«ENDDEFINE»

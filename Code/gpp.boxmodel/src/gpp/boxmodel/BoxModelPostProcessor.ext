@@ -1,0 +1,27 @@
+import ecore;
+import xtext;
+import boxModel;
+
+process(xtext::GeneratedMetamodel this) :
+  process(ePackage)
+;
+
+process(ecore::EPackage this) :
+	this.eClassifiers.typeSelect(ecore::EClass).process()
+;
+
+process(EClass this) :
+    switch (name) {
+		case "TerminalRuleOperatorApplication": this.eStructuralFeatures.add(createAttribute("name",org::eclipse::emf::ecore::EcorePackage::eINSTANCE.getEClassifier("EString")))
+        case "ParserRuleOperatorApplication": this.eStructuralFeatures.add(createAttribute("name", org::eclipse::emf::ecore::EcorePackage::eINSTANCE.getEClassifier("EString")))
+        default:    null
+    }
+;
+
+createAttribute(String name, EClassifier type):	
+	let attribute = new ecore::EAttribute :
+		attribute.setName(name) ->
+		attribute.setEType(type) ->
+		attribute.setUpperBound(1)->
+	    attribute.setLowerBound(0)-> //The feature is not mandatory.
+		attribute;

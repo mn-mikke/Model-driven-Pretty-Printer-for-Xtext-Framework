@@ -1,0 +1,143 @@
+\select@language {czech}
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Introduction}{8}
+\contentsline {section}{\numberline {1.1}Motivation}{8}
+\contentsline {section}{\numberline {1.2}Goals}{9}
+\contentsline {section}{\numberline {1.3}Structure of the Thesis}{9}
+\contentsline {chapter}{\numberline {2}Overview of Xtext Framework}{10}
+\contentsline {section}{\numberline {2.1}Domain of Use}{10}
+\contentsline {section}{\numberline {2.2}Workflow}{10}
+\contentsline {subsection}{\numberline {2.2.1}Runtime Concepts}{11}
+\contentsline {subsubsection}{Code Formatting}{12}
+\contentsline {subsubsection}{Linking}{12}
+\contentsline {subsubsection}{Scoping}{12}
+\contentsline {subsubsection}{Validation}{12}
+\contentsline {subsection}{\numberline {2.2.2}IDE Concepts}{12}
+\contentsline {subsubsection}{Content Assist}{12}
+\contentsline {subsubsection}{Outline View}{13}
+\contentsline {subsubsection}{Labeling}{13}
+\contentsline {subsubsection}{Quick Fixes}{13}
+\contentsline {subsubsection}{Template Proposals}{13}
+\contentsline {subsubsection}{Syntax Coloring}{13}
+\contentsline {subsection}{\numberline {2.2.3}Configuration}{13}
+\contentsline {subsubsection}{Modeling Workflow Engine}{14}
+\contentsline {subsubsection}{Google Guice}{14}
+\contentsline {section}{\numberline {2.3}The Grammar Language}{15}
+\contentsline {subsection}{\numberline {2.3.1}Common Declarations}{16}
+\contentsline {subsubsection}{Declaration of the Grammar}{16}
+\contentsline {subsubsection}{Output Meta-model}{16}
+\contentsline {subsubsection}{Input Meta-models}{17}
+\contentsline {subsection}{\numberline {2.3.2}Grammar Rules}{17}
+\contentsline {subsubsection}{Terminal Rules}{17}
+\contentsline {subsubsection}{Enums}{17}
+\contentsline {subsubsection}{Parser Rules}{18}
+\contentsline {subsection}{\numberline {2.3.3}Defining Elements of the Parser Rule}{18}
+\contentsline {subsubsection}{Essential Elements}{18}
+\contentsline {subsubsection}{Composite Elements}{19}
+\contentsline {subsubsection}{Definition of Occurrence}{20}
+\contentsline {section}{\numberline {2.4}Code Formatting}{21}
+\contentsline {subsubsection}{OneWhitespaceFormatter}{21}
+\contentsline {subsubsection}{AbstractDeclarativeFormatter}{21}
+\contentsline {section}{\numberline {2.5}Syntax Highlighting}{26}
+\contentsline {subsection}{\numberline {2.5.1}Text Styles}{26}
+\contentsline {subsection}{\numberline {2.5.2}Lexical Highlighting}{28}
+\contentsline {subsection}{\numberline {2.5.3}Semantic Highlighting}{29}
+\contentsline {chapter}{\numberline {3}Pretty Printers using Box Models}{31}
+\contentsline {section}{\numberline {3.1}Pretty Printer}{31}
+\contentsline {subsubsection}{Ad-hoc Pretty Printer}{31}
+\contentsline {subsubsection}{Generic Pretty Printer}{32}
+\contentsline {section}{\numberline {3.2}Box Representation}{33}
+\contentsline {subsection}{\numberline {3.2.1}Box}{33}
+\contentsline {subsection}{\numberline {3.2.2}Box Language}{35}
+\contentsline {subsubsection}{Box Model}{35}
+\contentsline {subsubsection}{Box Meta-model}{35}
+\contentsline {section}{\numberline {3.3}Existing Box Meta-models}{35}
+\contentsline {subsection}{\numberline {3.3.1}Stratego/XT}{36}
+\contentsline {subsubsection}{Box Meta-model Description}{36}
+\contentsline {subsection}{\numberline {3.3.2}PPML}{37}
+\contentsline {subsubsection}{Box Meta-model Description}{37}
+\contentsline {subsection}{\numberline {3.3.3}Brand-Visser}{39}
+\contentsline {subsubsection}{Box Meta-model Description}{39}
+\contentsline {subsubsection}{Positional Operators}{39}
+\contentsline {subsubsection}{Non-positional Operators}{41}
+\contentsline {subsection}{\numberline {3.3.4}DeJonge}{42}
+\contentsline {subsubsection}{Box Meta-model Description}{42}
+\contentsline {subsubsection}{Positional Operators}{42}
+\contentsline {subsubsection}{Non-positional Operators}{43}
+\contentsline {subsection}{\numberline {3.3.5}Format Module for OCaml}{44}
+\contentsline {subsubsection}{Box Meta-model Description}{44}
+\contentsline {subsection}{\numberline {3.3.6}Summary}{46}
+\contentsline {subsubsection}{Positional Operators}{46}
+\contentsline {subsubsection}{Highlight Operators}{47}
+\contentsline {subsubsection}{Transforming Operators}{48}
+\contentsline {chapter}{\numberline {4}Goals Revisited}{49}
+\contentsline {section}{\numberline {4.1}Summary}{50}
+\contentsline {chapter}{\numberline {5}Language for Defining Box Meta-models}{52}
+\contentsline {section}{\numberline {5.1}Design}{52}
+\contentsline {subsection}{\numberline {5.1.1}Files of Stored Code}{52}
+\contentsline {subsection}{\numberline {5.1.2}Constants and Enumerations}{53}
+\contentsline {subsection}{\numberline {5.1.3}Basic Operators}{54}
+\contentsline {subsection}{\numberline {5.1.4}Alias Operators}{55}
+\contentsline {section}{\numberline {5.2}Realization}{55}
+\contentsline {subsection}{\numberline {5.2.1}Inheritance of Basic Operators}{56}
+\contentsline {subsection}{\numberline {5.2.2}Scoping}{56}
+\contentsline {chapter}{\numberline {6}Language for Defining Box Models}{58}
+\contentsline {section}{\numberline {6.1}Design}{58}
+\contentsline {subsection}{\numberline {6.1.1}Continuity with the Language of Box Meta-models}{58}
+\contentsline {subsection}{\numberline {6.1.2}Continuity with the Language of the grammar of the Xtext framework}{59}
+\contentsline {subsubsection}{Formatting rules for Nonterminals}{59}
+\contentsline {subsubsection}{Formatting rules for Terminals}{61}
+\contentsline {section}{\numberline {6.2}Realization}{62}
+\contentsline {subsection}{\numberline {6.2.1}Linking}{63}
+\contentsline {subsection}{\numberline {6.2.2}Identifying Elements Defining a Formatting Rule}{64}
+\contentsline {subsection}{\numberline {6.2.3}Identifying Elements Defining a Parser Rule}{64}
+\contentsline {chapter}{\numberline {7}Language for Defining Heuristics of the Initial Box Model}{66}
+\contentsline {section}{\numberline {7.1}Design}{66}
+\contentsline {subsection}{\numberline {7.1.1}Heuristic Rules for Nonterminals}{67}
+\contentsline {subsection}{\numberline {7.1.2}Heuristic Rules for Terminals}{69}
+\contentsline {section}{\numberline {7.2}Realization}{70}
+\contentsline {subsection}{\numberline {7.2.1}Model Traversal}{70}
+\contentsline {subsection}{\numberline {7.2.2}Model Transformation into a Text Representation}{71}
+\contentsline {chapter}{\numberline {8}Integrating the Box Model into the Xtext framework}{73}
+\contentsline {section}{\numberline {8.1}Syntax Highlighting}{73}
+\contentsline {subsection}{\numberline {8.1.1}Behavioral Implementation of Operators}{73}
+\contentsline {subsection}{\numberline {8.1.2}Highlighting Configuration}{74}
+\contentsline {subsection}{\numberline {8.1.3}Lexical Highlighting}{75}
+\contentsline {subsection}{\numberline {8.1.4}Semantic Highlighting}{75}
+\contentsline {section}{\numberline {8.2}Code Formatting}{76}
+\contentsline {subsubsection}{Positional Operators}{77}
+\contentsline {subsection}{\numberline {8.2.1}Implementing Concept}{78}
+\contentsline {subsection}{\numberline {8.2.2}Behavioral Implementation of Operators}{79}
+\contentsline {subsubsection}{Transforming Operators}{80}
+\contentsline {section}{\numberline {8.3}Workflow}{80}
+\contentsline {subsection}{\numberline {8.3.1}Starting Generation of the Initial Box Model}{81}
+\contentsline {subsection}{\numberline {8.3.2}Mediation of a Box Model}{82}
+\contentsline {chapter}{\numberline {9}Evaluation}{83}
+\contentsline {section}{\numberline {9.1}Comparison of the Designed Generic Pretty Printer against the Original Pretty Printer}{83}
+\contentsline {subsection}{\numberline {9.1.1}Discussion}{85}
+\contentsline {subsection}{\numberline {9.1.2}Summary}{87}
+\contentsline {section}{\numberline {9.2}The Generic Pretty Printer Formatting Code from the Real World}{87}
+\contentsline {section}{\numberline {9.3}Unimplemented Operators}{88}
+\contentsline {subsubsection}{The ALT Operator}{88}
+\contentsline {subsubsection}{The WD Operator}{88}
+\contentsline {section}{\numberline {9.4}Suggestions Improving Prototype Development}{89}
+\contentsline {subsection}{\numberline {9.4.1}Debugger for the Xtend2 Language}{89}
+\contentsline {subsection}{\numberline {9.4.2}Actions Affecting a Meta-Model Generation from a Grammar}{89}
+\contentsline {subsection}{\numberline {9.4.3}Meta-Model Generation Bounded to Design Patterns}{90}
+\contentsline {subsection}{\numberline {9.4.4}Code Generation Based on a Grammar}{90}
+\contentsline {chapter}{\numberline {10}Related Work}{91}
+\contentsline {section}{\numberline {10.1}Graphical Domain-specific Languages}{91}
+\contentsline {section}{\numberline {10.2}EMFText}{92}
+\contentsline {section}{\numberline {10.3}Meta Programming System}{92}
+\contentsline {chapter}{\numberline {11}Conclusion and Future Work}{94}
+\contentsline {section}{\numberline {11.1}Summary}{94}
+\contentsline {section}{\numberline {11.2}Future Work}{95}
+\contentsline {subsection}{\numberline {11.2.1}Implementing The WD and ALT operator}{95}
+\contentsline {subsection}{\numberline {11.2.2}Implementing Concepts Improving an Integration of Generic Pretty-printer into Eclipse}{95}
+\contentsline {subsection}{\numberline {11.2.3}Pretty-printing Incorrect Code}{95}
+\contentsline {subsection}{\numberline {11.2.4}Pretty-printing Individual Segments of Code}{96}
+\contentsline {subsection}{\numberline {11.2.5}More Complex Heuristic Rules}{96}
+\contentsline {subsection}{\numberline {11.2.6}Macro Operators}{96}
+\contentsline {chapter}{Bibliography}{97}
+\contentsline {chapter}{Appendices}{101}
+\contentsline {chapter}{\numberline {A}Content of Attached CD-ROM}{101}

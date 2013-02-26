@@ -1,0 +1,428 @@
+xtext "platform:/resource/it.xtypes/src/it/xtypes/TypeSystem.xtext"
+
+import "platform:/resource/gpp/settings/operators.ppo"
+ 
+TBOX[Default]: <F>;
+TBOX[INT]: <F w=bold>;
+TBOX[ML_COMMENT]: <F i=italic,c="#00FF00">, <MC is=" *">;
+TBOX[SL_COMMENT]: <F i=italic,c="#00FF00">, <SC>;
+TBOX[Keyword, "^\\w.*$"]: <F c="#FF0000">;
+
+PBOX[TypeSystemDefinition]:
+	<V vs=2>[
+		<H>[('typesystem' name:ID)]
+		<H>['grammar' ePackage:[ecore::EPackage|STRING]]
+		<H>[('genmodel' genModel:STRING)]
+		<V>[('judgments' <I>[<V vs=2>[judgmentDescriptions:JudgmentDescription]] 'end')]
+		rules:Rule
+	]
+;
+
+
+PBOX[JudgmentDescription]:
+	<V>[
+		<H>[judgmentsymbol:STRING relation:STRING]
+		<I>[<H>['kind' EqualsOp kind:STRING]
+		(<H>['success' EqualsOp success:STRING] & <H>['fail' EqualsOp fail:STRING] & <H>['nomatch' EqualsOp nomatch:STRING] & <H>[binary:'binary'])]
+	]
+;
+
+
+PBOX[Rule]:
+	<V>[
+		Axiom | RuleWithPremises
+	]
+;
+
+
+PBOX[Axiom]:
+	<V>[
+		<H>['axiom' name:ID]
+		<I>[typejudgment:TypingJudgmentWithEnvironment]
+	]
+;
+
+
+PBOX[RuleWithPremises]:
+	<V>[
+		<H>['rule' name:ID]
+		<I>[
+			'derives'
+			<I>[typejudgment:TypingJudgmentWithEnvironment]
+			'from'
+			<I>[premises:TypingJudgment]
+		]
+	]
+;
+
+
+PBOX[TypingJudgment]:
+	<V>[
+		Quantification | VariableDeclarationWithType | OrTypingJudgment | StandardOperation | TypingJudgmentWithEnvironment
+	]
+;
+
+
+PBOX[OrTypingJudgment]:
+	<V>[
+		<H>['(' branches:OrBranch (OrSeparator branches:OrBranch) ')']
+		error:ErrorSpecification
+	]
+;
+
+
+PBOX[OrBranch]:
+	<V>[
+		judgments:TypingJudgment
+	]
+;
+
+
+PBOX[VariableDeclaration]:
+	<V>[
+		VariableSimpleDeclaration | VariableDeclarationWithType
+	]
+;
+
+
+PBOX[VariableDeclarationWithType]:
+	<H>['var' expressionType:ExpressionType name:ID (op:AssignOp right:Expression)]
+;
+
+
+PBOX[ExpressionType]:
+	<V>[
+		CollectionType | EClassifierType | BasicType
+	]
+;
+
+
+PBOX[CollectionType]:
+	<H hs=0>[collection:'List' '[' type:ExpressionType ']']
+;
+
+
+PBOX[EClassifierType]:
+	<V>[
+		eclassifier:[ecore::EClassifier|ID]
+	]
+;
+
+
+PBOX[BasicType]:
+	<V>[
+		basic:('String' | 'Integer' | 'Object')
+	]
+;
+
+
+PBOX[VariableSimpleDeclaration]:
+	<V>[
+		name:ID
+	]
+;
+
+
+PBOX[Quantification]:
+	<H>[(ForEach | ForAll | Exists) error:ErrorSpecification]
+;
+
+
+PBOX[ForEach]:
+	<V>[
+		<H>['foreach' expression:Expression 'as' variable:VariableSimpleDeclaration '{']
+		<I>[judgments:TypingJudgment]
+		'}'
+	]
+;
+
+
+PBOX[ForAll]:
+	<V>[
+		<H>['forall' variable:VariableSimpleDeclaration 'in' expression:Expression '{']
+		<I>[judgments:TypingJudgment]
+		'}'
+	]
+;
+
+
+PBOX[Exists]:
+	<V>[
+		<H>[<H hs=0>[not:'!' 'exists'] variable:VariableSimpleDeclaration 'in' expression:Expression '{']
+		<I>[judgments:TypingJudgment]
+		'}'
+	]
+;
+
+
+PBOX[StandardOperation]:
+	<V>[
+		EnvironmentOperation | ListOperation | Assignment | Equals | Fail | Success
+	]
+;
+
+
+PBOX[EnvironmentOperation]:
+	<H>[
+		left:EnvironmentId AssignOp right:Environment |
+		left:EnvironmentId <H hs=0>[PlusOp EqualsOp] right:EnvironmentStatement |
+		left:EnvironmentId <H hs=0>[MinusOp EqualsOp] right:TypingStatementExpression
+	]
+;
+
+
+PBOX[ListOperation]:
+	<H>[
+		left:Expression <H hs=0>[PlusOp EqualsOp] right:Expression |
+		left:Expression <H hs=0>[MinusOp EqualsOp] right:Expression
+	]
+;
+
+
+PBOX[Assignment]:
+	<H>[left:Expression AssignOp right:Expression]
+;
+
+
+PBOX[Equals]:
+	<H>[left:Expression op:(EqualsOp | NotEqualsOp) right:Expression error:ErrorSpecification]
+;
+
+
+PBOX[Fail]:
+	<H>['fail' error:ErrorSpecification]
+;
+
+
+PBOX[Success]:
+	<V>[
+		'success'
+	]
+;
+
+
+PBOX[TypingJudgmentWithEnvironment]:
+	<H>[environment:Environment typejudgmentsymbol:TypeJudgmentSymbol typingstatement:TypingStatement error:ErrorSpecification]
+;
+
+
+PBOX[ErrorSpecification]:
+	<H>['error' EqualsOp failureError:FailureError]
+;
+
+
+PBOX[FailureError]:
+	<H>[TerminalError (op:PlusOp right:FailureError)]
+;
+
+
+PBOX[TerminalError]:
+	<V>[
+		errString:STRING | expression:Expression
+	]
+;
+
+
+PBOX[TypingStatement]:
+	<H>[left:TypingStatementExpression relation:TypeRelation right:TypingStatementExpression]
+;
+
+
+PBOX[TypingStatementExpression]:
+	<V>[
+		Expression
+	]
+;
+
+
+PBOX[Environment]:
+	<H>[TerminalEnvironment (op:EnvironmentComposition subEnvironment:Environment)]
+;
+
+
+PBOX[TerminalEnvironment]:
+	<V>[
+		EnvironmentId | EnvironmentStatement | EmptyEnvironment
+	]
+;
+
+
+PBOX[EnvironmentId]:
+	<V>[
+		environmentId:ID
+	]
+;
+
+
+PBOX[EnvironmentStatement]:
+	<H>[left:TypingStatementExpression relation:MappingRelation right:TypingStatementExpression]
+;
+
+
+PBOX[EmptyEnvironment]:
+	<V>[
+		empty:'empty'
+	]
+;
+
+
+PBOX[Expression]:
+	<V>[
+		VariableDeclarationWithType | 
+		<H hs=0>['env' '(' envId:EnvironmentId <H>[',' argument:Expression] ')'] |
+		<H hs=0>['len' '(' argument:Expression ')'] |
+		<H hs=0>['getall' '(' expression:Expression <H>[',' mainfeature:[ecore::EStructuralFeature|ID]] <H>[',' extendfeature:[ecore::EStructuralFeature|ID]] ')'] |
+		<H hs=0>['container' '(' argument:Expression ')'] |
+		<H>[<H hs=0>['(' type:ExpressionType ')'] expression:Expression] |
+		'null' |
+		<H hs=0>['newname' '(' argument:STRING ')'] |
+		<H hs=0>['clone' '(' argument:Expression ')'] |
+		<H hs=0>[TerminalExpression (op:'.' subExpression:SubExpression)]
+	]
+;
+
+
+PBOX[TerminalExpression]:
+	<V>[
+		StringConstant | IntegerConstant | VariableAccess
+	]
+;
+
+
+PBOX[StringConstant]:
+	<V>[
+		value:STRING
+	]
+;
+
+
+PBOX[IntegerConstant]:
+	<V>[
+		value:INT
+	]
+;
+
+
+PBOX[VariableAccess]:
+	<V>[
+		VariableReference | IndexedVariable
+	]
+;
+
+
+PBOX[VariableReference]:
+	<H hs=0>['$' varRef:[VariableDeclaration|ID]]
+;
+
+
+PBOX[IndexedVariable]:
+	<H hs=0>['$' varRef:[VariableDeclaration|ID] '[' index:ArrayIndex ']']
+;
+
+
+PBOX[SubExpression]:
+	<V>[
+		<H hs=0>[feature:[ecore::ENamedElement|ID] '[' index:ArrayIndex ']'] | feature:[ecore::ENamedElement|ID]
+	]
+;
+
+
+PBOX[ArrayIndex]:
+	<V>[
+		IntegerConstant | Expression
+	]
+;
+
+
+PBOX[Alternative]:
+	<V>[
+		'|'
+	]
+;
+
+
+PBOX[OrSeparator]:
+	<V>[
+		Alternative | 'or'
+	]
+;
+
+
+PBOX[MappingRelation]:
+	<V>[
+		'->'
+	]
+;
+
+
+PBOX[TypeRelation]:
+	<H hs=0>[AssignOp | EqualsOp | '<' | '>' | '!' | '-' | Colon | '~']
+;
+
+
+PBOX[TypeJudgmentSymbol]:
+	<H hs=0>[Alternative TypeRelation]
+;
+
+
+PBOX[AssignOp]:
+	<V>[
+		':='
+	]
+;
+
+
+PBOX[EqualsOp]:
+	<V>[
+		'='
+	]
+;
+
+
+PBOX[PlusOp]:
+	<V>[
+		'+'
+	]
+;
+
+
+PBOX[MinusOp]:
+	<V>[
+		'-'
+	]
+;
+
+
+PBOX[NotEqualsOp]:
+	<V>[
+		'!='
+	]
+;
+
+
+PBOX[Comma]:
+	<V>[
+		','
+	]
+;
+
+
+PBOX[ListComposition]:
+	<H hs=0>[Colon Colon]
+;
+
+
+PBOX[Colon]:
+	<V>[
+		':'
+	]
+;
+
+
+PBOX[EnvironmentComposition]:
+	<V>[
+		Comma | ListComposition
+	]
+;
+
+

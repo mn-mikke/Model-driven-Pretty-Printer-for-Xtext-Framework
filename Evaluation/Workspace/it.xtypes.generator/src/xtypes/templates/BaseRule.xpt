@@ -1,0 +1,51 @@
+«IMPORT it::xtypes::typesystem»
+
+«EXTENSION xtypes::extensions::Extensions»
+«EXTENSION xtypes::extensions::Rule»
+«EXTENSION xtypes::extensions::TypeSystem»
+«EXTENSION xtypes::extensions::Methods»
+«EXTENSION org::eclipse::xtend::util::stdlib::counter»
+
+«DEFINE main FOR TypeSystemDefinition-»
+«FILE packageToDir(this.getGeneratedTypeSystemRulePackage()) + "/" 
+	+ this.baseRuleClassName() + ".java"-»
+package «this.getGeneratedTypeSystemRulePackage()»;
+
+import «this.getGeneratedTypesystemPackage()».«this.typeSystemClassName()»;
+
+import it.xtypes.runtime.RuntimeRule;
+import it.xtypes.runtime.RuleFailedException;
+import it.xtypes.runtime.TypingJudgmentEnvironment;
+
+import «getCurrentModelPackage()».«this.getFactoryName()»;
+import «getCurrentModelPackage()».«this.getPackageName()»;
+
+public abstract class «this.baseRuleClassName()» extends RuntimeRule {
+
+	protected «this.getFactoryName()» factory = «this.getFactoryName()».eINSTANCE;
+	
+	protected «this.getPackageName()» basicPackage = «this.getPackageName()».eINSTANCE;
+
+	public «this.baseRuleClassName()»(String ruleName, String typeJudgmentSymbol,
+			String typeStatementRelation) {
+		super(ruleName, typeJudgmentSymbol, typeStatementRelation);
+	}
+	
+	«IF this.judgmentDescriptions != null-»
+	«EXPAND typeSystemMethods(this) FOREACH this.judgmentDescriptions»
+	«ENDIF»
+}
+«ENDFILE-»
+«ENDDEFINE»
+
+«DEFINE typeSystemMethods(TypeSystemDefinition ts) FOR JudgmentDescription»
+«EXPAND createApplyRuleMethods(ts) FOR this»
+«ENDDEFINE»
+
+«DEFINE createApplyRuleMethods(TypeSystemDefinition ts) FOR JudgmentDescription»
+public void «this.typeSystemApplyRule()»(TypingJudgmentEnvironment environment,
+	Object left, Object right) throws RuleFailedException {
+	addAppliedRuleToTrace(((«ts.typeSystemClassName()»)runtimeTypeSystem).
+		«this.typeSystemApplyRule()»(environment, left, right));
+}
+«ENDDEFINE»

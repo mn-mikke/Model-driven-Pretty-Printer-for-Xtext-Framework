@@ -1,0 +1,127 @@
+import it::xtypes::typesystem;
+import org::eclipse::emf::ecore;
+
+extension org::eclipse::xtend::util::stdlib::globalvar;
+
+String getCurrentModelPackage() :
+	let currentModelPackage = (String) getGlobalVar("currentModelPackage") :
+		if(currentModelPackage == null) then ( 
+			storeGlobalVar("currentModelPackage", "")
+		) -> currentModelPackage
+;
+
+String setCurrentModelPackage(String s) :
+	storeGlobalVar("currentModelPackage", s)
+;
+
+TypeSystemDefinition getCurrentTypeSystemDefinition() :
+	(TypeSystemDefinition) getGlobalVar("currentTypeSystemDefinition")
+;
+
+Void setCurrentTypeSystemDefinition(TypeSystemDefinition ts) :
+	storeGlobalVar("currentTypeSystemDefinition", ts)
+;
+
+String uriToPackageDir(Rule this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.uriToPackageDir(it.xtypes.typesystem.Rule);
+	
+String uriToPackageName(Rule this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.uriToPackageName(it.xtypes.typesystem.Rule);
+
+String packageToDir(String this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.packageToDir(java.lang.String);
+
+String uriToPackageDir(TypeSystemDefinition this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.uriToPackageDir(it.xtypes.typesystem.TypeSystemDefinition);
+
+String ruleToClassName(Rule this) :
+	name.toFirstUpper() + "TypeRule";
+
+String namedElementToGetMethod(String this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.namedElementToGetMethod(java.lang.String);
+
+String namedElementToSetMethod(String this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.namedElementToSetMethod(java.lang.String);
+
+String namedElementToCreateMethod(String this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.namedElementToCreateMethod(java.lang.String);
+
+String uriToPackageName(TypeSystemDefinition this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.uriToPackageName(it.xtypes.typesystem.TypeSystemDefinition);
+
+List[VariableDeclaration] getAllVariableDeclarations(Rule this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getAllVariableDeclarations(it.xtypes.typesystem.Rule);
+
+String getEnvGeneratedName(String this) :
+	"env_" + this;
+
+String getEnvGeneratedName(EnvironmentId this) :
+	getEnvGeneratedName(this.environmentId);
+
+String getModelPackage(Rule this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getModelPackage(it.xtypes.typesystem.Rule);
+
+String getModelPackage(TypeSystemDefinition this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getModelPackage(it.xtypes.typesystem.TypeSystemDefinition);
+
+String getGeneratedTypeSystemBasePackage(TypeSystemDefinition this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getGeneratedTypeSystemBasePackage(it.xtypes.typesystem.TypeSystemDefinition);
+
+String getGeneratedTypesystemPackage(TypeSystemDefinition this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getGeneratedTypesystemPackage(it.xtypes.typesystem.TypeSystemDefinition);
+
+String getGeneratedTypeSystemRulePackage(TypeSystemDefinition this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getGeneratedTypeSystemRulePackage(it.xtypes.typesystem.TypeSystemDefinition);
+
+String getGeneratedTypeSystemValidatorPackage(TypeSystemDefinition this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getGeneratedTypeSystemValidatorPackage(it.xtypes.typesystem.TypeSystemDefinition);
+
+String getFactoryName(Rule this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getFactoryName(it.xtypes.typesystem.Rule);
+
+String getPackageName(Rule this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getPackageName(it.xtypes.typesystem.Rule);
+
+String getFactoryName(TypeSystemDefinition this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getFactoryName(it.xtypes.typesystem.TypeSystemDefinition);
+
+String getPackageName(TypeSystemDefinition this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getPackageName(it.xtypes.typesystem.TypeSystemDefinition);
+
+VariableDeclarationWithType getLeftVariable(Rule this):
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getLeftVariable(it.xtypes.typesystem.Rule);
+
+VariableDeclarationWithType getRightVariable(Rule this):
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getRightVariable(it.xtypes.typesystem.Rule);
+
+Set[EnvironmentId] getAllEnvironmentIds(Rule this):
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getAllEnvironmentIds(it.xtypes.typesystem.Rule);
+
+List[TypingStatementExpression] getStatementsToExecuteBefore(EObject this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getStatementsToExecuteBefore(org.eclipse.emf.ecore.EObject);
+
+JudgmentDescription getJudgmentDescription(TypeSystemDefinition typeSystemDefinition,
+			String typingJudgmentSymbol, String typingStatementRelation) :
+	JAVA it.xtypes.util.AuxiliaryFunctions.getJudgmentDescription(it.xtypes.typesystem.TypeSystemDefinition,java.lang.String,java.lang.String);
+
+JudgmentDescription getJudgmentDescription(
+			String typingJudgmentSymbol, String typingStatementRelation) :
+	getJudgmentDescription(getCurrentTypeSystemDefinition(), typingJudgmentSymbol, typingStatementRelation);
+
+String getJudgmentFailMessage(TypeSystemDefinition typeSystemDefinition,
+			String typingJudgmentSymbol, String typingStatementRelation) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getJudgmentFailMessage(
+		it.xtypes.typesystem.TypeSystemDefinition,java.lang.String,java.lang.String);
+
+List[Rule] getRules(TypeSystemDefinition typeSystemDefinition,
+			String typingJudgmentSymbol, String typingStatementRelation) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getRules(it.xtypes.typesystem.TypeSystemDefinition,java.lang.String,java.lang.String);
+
+List[Rule] collectCheckRules(TypeSystemDefinition typeSystemDefinition) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.collectCheckRules(it.xtypes.typesystem.TypeSystemDefinition);
+
+Void nowGenerating(String this):
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.nowGenerating(java.lang.String);
+
+Void startingGenerationFor(TypeSystemDefinition typeSystemDefinition):
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.startingGenerationFor(it.xtypes.typesystem.TypeSystemDefinition);

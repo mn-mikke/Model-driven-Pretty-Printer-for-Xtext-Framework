@@ -1,0 +1,8 @@
+model lib
+
+ 
+function float addiere( float xx, int yy ) {
+	return xx + yy; 
+} 
+   
+ 

@@ -1,0 +1,157 @@
+grammar gpp.testing.boxmodel.operators.BoxModelOperators with org.eclipse.xtext.common.Terminals
+
+generate boxModelOperators "http://www.testing.gpp/boxmodel/operators/BoxModelOperators"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+BoxModelOperators:
+	(imports+=Import)*
+	(operatorDefinitions+=OperatorDefinition | enumerations += GlobalEnum | intConstants += IntConstant | stringConstants += StringConstant)*
+;
+
+StringConstant:
+	('string' | 'str')
+	name = ID
+	'='
+	value = STRING
+;
+
+
+IntConstant:
+	('integer' | 'int')
+	name = ID
+	'='
+	value = INT
+;
+
+Import:
+	'import' importURI=STRING
+;
+
+OperatorImplementationString returns ecore::EString:
+	ID (':' ID)*
+;
+
+OperatorDefinition:
+	BasicOperatorDefinition | AliasOperatorDefinition 
+;
+
+BasicOperatorDefinition:
+	(HighlightOperatorDefinition | PositionalOperatorDefinition)
+	name=ID
+	'['
+	implementation=OperatorImplementationString
+	']'
+	(':'(parameters+=ParameterDefinition)+)?
+	';'
+;
+
+PositionalOperatorDefinition:
+	{PositionalOperatorDefinition}
+	('pop' | 'poperator'| 'positional' 'operator') 
+;
+
+HighlightOperatorDefinition:
+	{HighlightOperatorDefinition}
+	('hlop' | 'hloperator' | 'highlight' 'operator')
+	bla=StringParameterDefinition
+;
+
+
+AliasOperatorDefinition:
+	'alias'
+	name=ID
+	'[' 
+	referencedOperator=[OperatorDefinition]
+	']'
+	(':'(parameters+=ParameterApplication)+)?
+	';'
+;
+
+ParameterApplication:
+	referencedParameter = [ParameterDefinition]
+	'='
+	value = ParameterApplicationValue
+;
+
+
+ParameterDefinition:
+	StringParameterDefinition | IntParameterDefinition | EnumParameterDefinition
+;
+
+
+StringParameterDefinition:
+	('string' | 'str')
+	name = ID
+	'='
+	value = StringParameterValue
+;
+
+
+IntParameterDefinition:
+	('integer' | 'int')
+	name = ID
+	'='
+	value = IntParameterValue
+;
+
+EnumParameterDefinition:
+	'{'
+	((alternatives+=EnumAlternative (',' alternatives+=EnumAlternative)*) | ('[' enumeration=[GlobalEnum] ']'))
+	'}'
+	name = ID
+	'='
+	(value = [EnumAlternative])
+;
+
+
+GlobalEnum:
+	'enum'
+	name = ID
+	'='
+	'{'
+	alternatives+=EnumAlternative (',' alternatives+=EnumAlternative)*
+	'}'
+	';'
+;
+
+EnumAlternative:
+	name = ID
+;
+
+StringParameterValue:
+	StringValue | StringConstantApplication
+;
+
+ParameterApplicationValue:
+	StringValue | IntValue | ConstantReferenceValue
+;
+
+ConstantReferenceValue:
+	value = [Constant]
+;
+
+Constant:
+	EnumAlternative | IntConstant | StringConstant
+;
+
+
+StringValue:
+	value = STRING
+;
+
+StringConstantApplication:
+	value = [StringConstant]
+;
+
+IntParameterValue:
+	IntValue | IntConstantApplication
+;
+
+IntValue:
+	value = INT
+;
+
+IntConstantApplication:
+	value = [IntConstant]
+;

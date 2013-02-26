@@ -1,0 +1,267 @@
+/*
+ * This is an example type system
+ */
+
+typesystem FJ
+
+grammar "platform:/resource/it.xtypes.generator/src/typesystem/FJ.ecore"
+
+judgments
+	'|-' ':' 
+		kind='type'
+		success='has type'
+		nomatch='has not type'
+		fail='cannot type'
+	
+	'|-' '<:' 
+		kind='subtype'
+		binary
+		success='is subtype of'
+		nomatch='is not subtype of'
+		
+	'|-' '~' 
+		kind='override'
+		binary
+		success='overrides'
+		nomatch='does not override'
+end
+
+rule IntConstant
+derives
+	G |- var IntConstant i : var Type t
+from
+	$t.basic := 'int'
+
+rule StringConstant
+derives
+	G |- var StringConstant s : var Type t
+from
+	$t.basic := 'String'
+
+rule BoolConstant
+derives
+	G |- var BoolConstant b : var Type t
+from
+	$t.basic := 'boolean'
+
+rule SubClass
+derives
+	G |- var Class C1 <: var Class C2
+	error=$C1 + ' is not a subclass of ' + $C2
+from
+	(
+		$C2.name = 'Object'
+		|
+		$C1 = $C2
+		|
+		$C1.extends = $C2
+		|
+		G |- $C1.extends <: $C2
+	)
+	
+rule SubType
+derives
+	G |- var Type t1 <: var Type t2
+	error=$t1 + ' is not a subtype of ' + $t2
+from
+	(
+		$t1.basic != null
+		$t1.basic = $t2.basic
+		|
+		$t1.classref != null
+		G |- $t1.classref <: $t2.classref
+	)
+
+rule SubType2
+derives
+	G |- var Type T <: var Class C
+	error=$T + ' is not a subtype of ' + $C
+from
+	G |- $T.classref <: $C
+
+rule SubType3
+derives
+	G |- var Class C <: var Type T
+	error=$C + ' is not a subtype of ' + $T
+from
+	G |- $C <: $T.classref
+
+rule SubType4
+derives
+	G |- var Argument a <: var Type T
+from
+	var Type argType
+	G |- $a : $argType
+	G |- $argType <: $T
+
+rule SubTypeSequences
+derives
+	G |- var List[Argument] C1 <: var List[Parameter] C2
+from
+	len($C1) = len($C2)
+	forall i in len($C1) {
+		G |- $C1[$i] <: $C2[$i].type
+	}
+
+axiom TThis
+	G |- var This t : (Type) env(G, 'this')
+
+axiom TParam
+	G |- var Parameter p : (Type) env(G, $p.name)
+
+rule TVariable
+derives
+	G |- var Variable v : var Type t
+from
+	G |- $v.variable : $t
+
+axiom TField
+	G |- var Field f : $f.type
+
+// never used
+axiom TArgument
+	G |- var Argument a : var Type t
+
+// never used
+axiom TExpression
+	G |- var Expression e : var Class C
+
+rule TNew
+derives
+	G |- var New e : var Type t
+from
+	// we must retrieve all the fields
+	// also the inherited ones
+	var List[Field] fields
+	$fields := getall($e.type, fields, extends)
+	len($e.args) = len($fields)
+		error='argument number ' +
+			len($e.args) + ' is not equal to field number ' +
+			len($fields)
+	forall i in len($e.args) {
+		var Type argType
+		var Type fieldType
+		G |- $e.args[$i] : $argType 
+		G |- $fields[$i] : $fieldType
+		G |- $argType <: $fieldType
+		error='argument type (' + $argType +
+			') is not a subtype of field type (' +
+			$fieldType + ')'
+	}
+	error='failure in checking arguments ' + $e.args
+	$t.classref := $e.type
+
+rule TClassToType
+derives
+	G |- var Class e : var Type t
+from
+	$t.classref := $e
+
+rule TSelection
+derives
+	G |- var Selection e : var Type ReturnType
+from
+	var Type ReceiverType
+	G |- $e.receiver : $ReceiverType
+	// there's no need to check whether the message is in ReceiverType
+	// that is already checked by validator and scoping
+	(
+		var MethodCall MethodType
+		// check whether Selection.message is a MethodCall
+		$MethodType := (MethodCall) $e.message
+		len($MethodType.args) = len($MethodType.name.params)
+		G |- $MethodType.args  <: $MethodType.name.params
+		$ReturnType := $MethodType.name.returntype
+	|
+		var FieldSelection FieldSelType
+		// check whether Selection.message is a FieldSelection
+		$FieldSelType := (FieldSelection) $e.message
+		$ReturnType := $FieldSelType.name.type
+	) 
+
+rule TCast
+derives
+	G |- var Cast cast : var Type t
+	error='invalid cast'
+from
+	var Type objectType
+	G |- $cast.object : $objectType
+	(
+		G |- $cast.type <: $objectType
+		|
+		G |- $objectType <: $cast.type
+	)
+	error=
+		$objectType +
+		' and ' + 
+		$cast.type +
+		' are incompatible types'
+	$t.classref := $cast.type
+
+rule TTypeEquals
+derives
+	G |- var Type t1 == var Type t2
+from
+	G |- $t1 <: $t2
+	G |- $t2 <: $t1
+
+rule TParamsEquals
+derives
+	G |- var List[Parameter] params1 == var List[Parameter] params2
+from
+	len($params1) = len($params2)
+	forall i in len($params1) {
+		G |- $params1[$i].type == $params2[$i].type
+	}
+
+rule TMethodOverride
+derives
+	G |- var Method m1 ~ var Method m2
+from
+	G |- $m1.params == $m2.params
+	G |- $m1.returntype == $m2.returntype
+
+rule TMethodOk
+derives
+	G |- var Method m : 'OK'
+from
+	var Type C
+	var Type BodyType
+	$C.classref := (Class) container($m)
+	// check the 'override' predicate
+	foreach getall($C.classref.extends, methods, extends) as inhMethod {
+		(
+			// either the method is different
+			$inhMethod.name != $m.name
+		|
+			// otherwise they must have the same signature
+			G |- $m ~ $inhMethod
+		)
+	}
+	Gprime := empty
+	foreach $m.params as param {
+		Gprime += $param.name -> $param.type
+	}
+	Gprime, 'this' -> $C |- $m.body.expression : $BodyType
+	G |- $BodyType <: $m.returntype
+
+rule TFieldOk
+derives
+	G |- var Field f : 'OK'
+from
+	// checks that there are no duplicate field in superclasses
+	var Type C
+	$C.classref := (Class) container($f) 
+	!exists inheritedField in getall($C.classref.extends, fields, extends) {
+		$inheritedField.name = $f.name
+	}
+		error='duplicate field in base class'
+
+rule TClassOk
+derives
+	G |- var Class C : 'OK'
+	error='class hierarchy is not acyclic for ' + $C
+from
+	!exists programClass in getall($C, extends, extends) {
+		$programClass.name = $C.name
+	}

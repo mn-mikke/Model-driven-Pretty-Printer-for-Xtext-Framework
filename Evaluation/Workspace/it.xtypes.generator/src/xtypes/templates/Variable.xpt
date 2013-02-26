@@ -1,0 +1,65 @@
+«IMPORT it::xtypes::typesystem»
+
+«EXTENSION xtypes::extensions::Extensions»
+«EXTENSION xtypes::extensions::Types»
+
+«DEFINE createType FOR ExpressionType-»«ENDDEFINE»
+
+«DEFINE createType FOR CollectionType-»
+createCollectionType(«EXPAND createType FOR this.type»)
+«ENDDEFINE»
+
+«DEFINE createType FOR EClassifierType-»
+createEClassifierType(basicPackage.«this.eclassifier.name.namedElementToGetMethod()»)
+«ENDDEFINE»
+
+«DEFINE createType FOR BasicType-»
+createBasicType("«this.getBasic()»")
+«ENDDEFINE»
+
+«DEFINE createVariable FOR ExpressionType-»
+new Variable<«this.getQualifiedTypeName()»>(«EXPAND createType FOR this»)
+«ENDDEFINE»
+
+«DEFINE createVariable FOR TypingStatementExpression-»
+new Variable<«this.getExpressionType().getQualifiedTypeName()»>
+	(«EXPAND createType FOR this.getExpressionType()»,
+	«EXPAND createVariableValue FOR this»)
+«ENDDEFINE»
+
+«DEFINE createVariableWithDefaultValue FOR VariableDeclaration-»
+«EXPAND createVariableWithDefaultValue FOR this.getVariableType()»«ENDDEFINE»
+
+«DEFINE createVariableWithDefaultValue FOR ExpressionType-»
+new Variable<«this.getQualifiedTypeName()»>
+	(«EXPAND createType FOR this»,
+	 «EXPAND createDefaultVariableValue FOR this»)«ENDDEFINE»
+
+«DEFINE createVariableWithValue FOR VariableDeclarationWithType-»
+new Variable<«this.getVariableType().getQualifiedTypeName()»>
+	(«EXPAND createType FOR this.getVariableType()»,
+	 «EXPAND Expression::mainExprImpl FOR this.right»)«ENDDEFINE»
+
+«DEFINE createVariableValue FOR TypingStatementExpression-»
+null
+«ENDDEFINE»
+
+«DEFINE createVariableValue FOR StringConstant-»
+«EXPAND Expression::langExprImpl FOR this»
+«ENDDEFINE»
+
+«DEFINE createDefaultVariableValue FOR ExpressionType-»«ENDDEFINE»
+
+«DEFINE createDefaultVariableValue FOR EClassifierType-»
+factory.«this.getVariableTypeName().namedElementToCreateMethod()»()
+«ENDDEFINE»
+
+«DEFINE createDefaultVariableValue FOR CollectionType-»
+new java.util.LinkedList<«this.type.getQualifiedTypeName()»>()
+«ENDDEFINE»
+
+«DEFINE createDefaultVariableValue FOR BasicType-»
+«IF this.basic == "String"»""
+«ELSEIF this.basic == "Integer"»-1
+«ELSE»null«ENDIF»
+«ENDDEFINE»

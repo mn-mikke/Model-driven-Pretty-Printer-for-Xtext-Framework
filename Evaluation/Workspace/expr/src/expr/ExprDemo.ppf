@@ -1,0 +1,187 @@
+xtext "platform:/resource/expr/src/expr/ExprDemo.xtext"
+
+import "platform:/resource/gpp/settings/operators.ppo"
+
+alias V2 [V]:
+	vs=2
+;
+
+alias H0 [H]:
+	hs=0
+; 
+
+TBOX[Default]: <F>;
+TBOX[INT]: <F w=bold>;
+TBOX[ML_COMMENT]: <F i=italic,c="#00FF00">, <MC>;
+TBOX[SL_COMMENT]: <F i=italic,c="#00FF00">, <SC>;
+TBOX[Keyword, "^\\w.*$"]: <F c="#FF0000">;
+
+
+PBOX[Model]:
+	<V2>[
+		<H>[isTested:'tested' 'model' name:ID]
+		<V>[usings:Using]
+		<V>[(elements:Element | functions:FunctionDeclaration)]
+	]
+;
+
+
+PBOX[Using]:
+	<H>['using' importedNamespace:ImportID]
+;
+
+
+PBOX[ImportID]:
+	<H0>[ID ('.' '*')]
+;
+
+
+PBOX[Element]:
+	<V>[
+		VarDecl | Formula | EnumDecl | Assert | Return
+	]
+;
+
+
+PBOX[FunctionDeclaration]:
+	<V>[<VI ts=0>[
+		<H>['function' type:Type name:ID <H0>['(' (params:Parameter <H>[(',' params:Parameter)]) ')''{']]
+		<I>[elements:Element]
+		'}'
+	]]
+;
+
+
+PBOX[Return]:
+	<H0>[<H>['return' expr:Expr] ';']
+;
+
+
+PBOX[Parameter]:
+	<H>[type:Type name:ID]
+;
+
+
+PBOX[Assert]:
+	<H>['assert' actual:Expr 'is' expected:Expr (':' msg:Expr)]
+;
+
+
+PBOX[EnumDecl]:
+	<V>[<VI ts=0>[
+		<H>['enum' name:ID]
+		'{'
+		<I>[<HOV>[literals:EnumLiteral]]
+		'}'
+	]]
+;
+
+
+PBOX[EnumLiteral]:
+	<V>[
+		name:ID
+	]
+;
+
+
+PBOX[VarDecl]:
+	<H0>[<H>[readonly:'readonly' 'var' type:Type name:ID ('=' init:Expr)] ';']
+;
+
+
+PBOX[Type]:
+	<V>[
+		PrimitiveType | ArrayType
+	]
+;
+
+
+PBOX[PrimitiveType]:
+	<V>[
+		IntType | BoolType | FloatType | EnumType | StringType
+	]
+;
+
+
+PBOX[ArrayType]:
+	<H>['array' <H0>['[' baseType:Type ']']]
+;
+
+
+PBOX[EnumType]:
+	<V>[
+		enumRef:[EnumDecl|ID]
+	]
+;
+
+
+PBOX[IntType]:
+	<V>[
+		'int'
+	]
+;
+
+
+PBOX[BoolType]:
+	<V>[
+		'bool'
+	]
+;
+
+
+PBOX[FloatType]:
+	<V>[
+		'float'
+	]
+;
+
+
+PBOX[StringType]:
+	<V>[
+		'string'
+	]
+;
+
+
+PBOX[Formula]:
+	<H0>[<H>['calc' type:Type name:ID '=' expr:Expr] ';']
+;
+
+
+PBOX[Expr]:
+	<V>[
+		Comparison
+	]
+;
+
+
+PBOX[Comparison]:
+	<H>[Addition ('==' right:Addition)]
+;
+
+
+PBOX[Addition]:
+	<H>[Multiplication ('+' right:Multiplication)]
+;
+
+
+PBOX[Multiplication]:
+	<H>[PostfixOperators ('*' right:PostfixOperators)]
+;
+
+
+PBOX[PostfixOperators]:
+	<H0>[Atomic('[' index:Expr ']')]
+;
+
+
+PBOX[Atomic]:
+	<H>[<H0>[symbol:[Symbol|QID] ('(' actuals:Expr <H>[(',' actuals:Expr)] ')')] | value:NUMBER | value:STRING]
+;
+
+
+PBOX[QID]:
+	<H0>[ ID ('.' ID)]
+;
+
+

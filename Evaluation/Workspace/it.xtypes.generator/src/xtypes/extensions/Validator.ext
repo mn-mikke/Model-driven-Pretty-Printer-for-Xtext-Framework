@@ -1,0 +1,12 @@
+import it::xtypes::typesystem;
+import org::eclipse::emf::ecore;
+
+extension xtypes::extensions::Types;
+
+String validatorStringConstant(String kind, ExpressionType type) :
+	"CHECK_" + kind.toUpperCase() + "_FAILED_" + type.getTypeNameDesc().toUpperCase()
+;
+
+String validatorStringConstantValue(String kind, ExpressionType type) :
+	"Check" + kind.toFirstUpper() + "Failed" + type.getTypeNameDesc().toFirstUpper()
+; 

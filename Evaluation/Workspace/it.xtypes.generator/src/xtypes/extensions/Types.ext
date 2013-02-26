@@ -1,0 +1,78 @@
+import it::xtypes::typesystem;
+import org::eclipse::emf::ecore;
+
+extension xtypes::extensions::Extensions;
+
+ExpressionType getVariableType(VariableDeclaration this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getVariableType(it.xtypes.typesystem.VariableDeclaration);
+
+ExpressionType getExpressionType(TypingStatementExpression this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getExpressionType(it.xtypes.typesystem.TypingStatementExpression);
+
+ExpressionType getExpressionTypeWithoutMulti(TypingStatementExpression this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getExpressionTypeWithoutMulti(it.xtypes.typesystem.TypingStatementExpression);
+
+String getVariableTypeName(VariableDeclaration this) :
+	this.getVariableType().getVariableTypeName();
+
+String getVariableTypeName(ExpressionType this) :
+	"";
+
+String getVariableTypeName(EClassifierType this) :
+	this.eclassifier.name
+; 
+
+String getVariableTypeName(CollectionType this) :
+	"java.util.List<" + this.type.getVariableTypeName() + ">";
+
+String getQualifiedTypeName(ExpressionType this) :
+	"";
+
+String getQualifiedTypeName(EClassifierType this) :
+	getCurrentModelPackage() + "." + this.eclassifier.name
+;
+
+String getQualifiedTypeName(BasicType this) :
+	this.basic
+;
+
+String getQualifiedTypeName(CollectionType this) :
+	"java.util.List<" + this.type.getQualifiedTypeName() + ">"
+;
+
+String getTypeNameDesc(ExpressionType this) :
+	"";
+
+String getTypeNameDesc(EClassifierType this) :
+	this.eclassifier.name
+;
+
+String getTypeNameDesc(BasicType this) :
+	this.basic
+;
+
+String getTypeNameDesc(CollectionType this) :
+	"ListOf" + this.type.getTypeNameDesc()
+;
+
+
+String getVariableGeneratedName(VariableDeclaration this) :
+	"var_" + this.name;
+
+boolean isMulti(CollectionType this) :
+	true;
+
+boolean isMulti(ExpressionType this) :
+	false;
+
+boolean isBasicType(ExpressionType this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.isBasicType(it.xtypes.typesystem.ExpressionType);
+
+String getBasic(ExpressionType this) :
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getBasic(it.xtypes.typesystem.ExpressionType);
+
+ExpressionType getLeftType(Rule this):
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getLeftType(it.xtypes.typesystem.Rule);
+
+ExpressionType getRightType(Rule this):
+	JAVA it.xtypes.generator.util.TypeSystemGeneratorJavaExtensions.getRightType(it.xtypes.typesystem.Rule);

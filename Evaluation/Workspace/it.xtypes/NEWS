@@ -1,0 +1,28 @@
+1.2.3
+
+* ported to Xtext 2.1
+
+1.2.2
+
+* generated classes use Google injection
+* fixed feature accesses in the validator
+* types from different emf packages are not comparable
+* generation of features named 'class' is correctly handled
+* basic element refactoring
+* compare view
+* eclipse documentation is now available
+
+1.2.0
+
+* migrated to Xtext 2
+
+1.1.0
+
+* default subpackage for generated files in case the type system
+does not have a name
+* the generate popup action first checks if there are errors in the
+current file and in case show a message dialog (and does not generate
+code)
+* integer expressions can be given not only for array indexes
+* check for duplicate judgment descriptions
+* FJ was added as an example

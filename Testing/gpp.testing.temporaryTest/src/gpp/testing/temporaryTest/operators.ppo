@@ -1,0 +1,40 @@
+enum blanks  = {TAB,WS};
+
+poperator H ["class"]:
+	int hs=1
+	{[blanks]} hc = WS
+;
+
+poperator V ["class"]:
+	int vs=1
+;
+
+poperator A ["class"]:
+	int hs=1
+	{[blanks]} hc = WS
+	int vs=1
+;
+
+poperator R ["class"];
+
+poperator HV ["class"]:
+	int hs=1
+	{[blanks]} hc = WS
+	int vs=1
+;
+
+poperator I ["class"]:
+	int ic=5
+	{[blanks]} is = WS
+;
+
+hloperator F  ["class"]:
+	{normal, bold} w = normal
+	{normal, italic} i = normal
+	string f = "Arial"
+	string c = "#000000"
+	string b = "#fffff"
+;
+
+
+

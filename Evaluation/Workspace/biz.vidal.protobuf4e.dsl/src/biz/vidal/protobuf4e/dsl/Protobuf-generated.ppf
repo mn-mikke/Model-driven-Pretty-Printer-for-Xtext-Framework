@@ -1,0 +1,173 @@
+xtext "platform:/resource/biz.vidal.protobuf4e.dsl/src/biz/vidal/protobuf4e/dsl/Protobuf.xtext"
+
+import "platform:/resource/gpp/settings/operators.ppo"
+
+TBOX[Default]: <F>;
+TBOX[INT]: <F w=bold>;
+TBOX[ML_COMMENT]: <F i=italic,c="#00FF00">, <MC>;
+TBOX[SL_COMMENT]: <F i=italic,c="#00FF00">, <SC>;
+TBOX[Keyword, "^\\w.*$"]: <F c="#FF0000">;
+
+PBOX[Proto]:
+	<V>[
+		options:Option
+		imports:Import
+		'package'
+		name:FQN
+		';'
+		options:Option
+		elements:ProtoElement
+	]
+;
+
+
+PBOX[FQN]:
+	<V>[
+		ID
+		('.' ID)
+	]
+;
+
+
+PBOX[ProtoElement]:
+	<V>[
+		Type | ExtendMessage
+	]
+;
+
+
+PBOX[Type]:
+	<V>[
+		Message | Enum
+	]
+;
+
+
+PBOX[Option]:
+	<V>[
+		'option'
+		<I>[<H>[name:ID '=' value:(ID | STRING)]]
+		';'
+	]
+;
+
+
+PBOX[Message]:
+	<V>[
+		'message'
+		name:ID
+		'{'
+		elements:MessageElement
+		('extensions' extensionsFrom:INT 'to' (extensionsTo:INT | 'max') ';')
+		'}'
+	]
+;
+
+
+PBOX[ExtendMessage]:
+	<V>[
+		'extend'
+		message:[Message|ID]
+		'{'
+		elements:MessageElement
+		'}'
+	]
+;
+
+
+PBOX[MessageElement]:
+	<V>[
+		Type | Property
+	]
+;
+
+
+PBOX[Enum]:
+	<V>[
+		'enum'
+		name:ID
+		'{'
+		literals:Literal
+		'}'
+		';'
+	]
+;
+
+
+PBOX[Literal]:
+	<V>[
+		<I>[<H>[name:ID '=' index:INT]]
+		';'
+	]
+;
+
+
+PBOX[Property]:
+	<V>[
+		modifier:Modifier
+		type:AbstractTypeReference
+		<I>[<H>[name:(ID | 'package') '=' index:INT]]
+		<H>[('[' <I>[<H>['default' '=' defaultValue:ValueRef]] ']')]
+		';'
+	]
+;
+
+
+PBOX[ValueRef]:
+	<V>[
+		LiteralRef | BooleanRef | IntRef
+	]
+;
+
+
+PBOX[LiteralRef]:
+	<V>[
+		literal:[Literal|ID]
+	]
+;
+
+
+PBOX[BooleanRef]:
+	<V>[
+		value:BOOL
+	]
+;
+
+
+PBOX[IntRef]:
+	<V>[
+		value:INT
+	]
+;
+
+
+PBOX[AbstractTypeReference]:
+	<V>[
+		ScalarTypeReference | TypeReference
+	]
+;
+
+
+PBOX[ScalarTypeReference]:
+	<V>[
+		scalar:ScalarType
+	]
+;
+
+
+PBOX[TypeReference]:
+	<V>[
+		type:[Type|ID]
+	]
+;
+
+
+PBOX[Import]:
+	<V>[
+		'import'
+		importURI:STRING
+		';'
+	]
+;
+
+

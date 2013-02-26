@@ -1,0 +1,1635 @@
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.7.9)  6 DEC 2012 12:55
+entering extended mode
+**D:/Documents/School/MasterThesis/Code/Document/MasterThesis.tex
+(D:/Documents/School/MasterThesis/Code/Document/MasterThesis.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2008/07/06 v3.8l The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\english.ldf"
+Language: english 2005/03/30 v3.3o English support from the babel system
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2008/07/06 v3.8l Babel common definitions
+\babel@savecnt=\count88
+\U@D=\dimen103
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\czech.ldf"
+Language: czech 2008/07/06 v3.1a Czech support from the babel system
+Package babel Info: Making " an active character on input line 172.
+\cs@wordlen=\count89
+Package babel Info: Making - an active character on input line 226.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/04/25 v0.06b Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count90
+))
+\Gin@req@height=\dimen104
+\Gin@req@width=\dimen105
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+))
+(D:\Documents\School\MasterThesis\Code\Document\lib/DocumentPropertiesInserting
+.sty) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\datetime\datetime.sty"
+Package: datetime 2010/09/21 v2.58 Date Time Package
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fmtcount\fmtcount.sty"
+Package: fmtcount 2009/10/02 v1.31
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks17
+\ex@=\dimen106
+)
+\c@padzeroesN=\count91
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fmtcount\fc-english.def"
+File: fc-english 2007/05/26
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fmtcount\fc-UKenglish.def"
+File: fc-UKenglish 2007/06/14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fmtcount\fc-british.def"
+File: fc-british 2007/06/14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fmtcount\fc-USenglish.def"
+File: fc-USenglish 2007/06/14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fmtcount\fc-spanish.def"
+File: fc-spanish.def 2007/05/26
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fmtcount\fc-portuges.def"
+File: fc-portuges.def 2007/05/26
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fmtcount\fc-french.def"
+File: fc-french.def 2007/05/26
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fmtcount\fc-german.def"
+File: fc-german.def 2007/06/14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fmtcount\fc-italian.def"
+File: fc-italian.def 2009/10/02 Italian support for fmtcount (Edoardo Pasca)
+)
+No configuration file fmtcount.cfg found.
+\@DT@modctr=\count92
+\@ordinalctr=\count93
+\@orgargctr=\count94
+\@strctr=\count95
+\@tmpstrctr=\count96
+\@DT@loopN=\count97
+\@DT@X=\count98
+)
+\@day=\count99
+\@month=\count100
+\@year=\count101
+\c@HOUR=\count102
+\c@HOURXII=\count103
+\c@MINUTE=\count104
+\c@TOHOUR=\count105
+\c@TOMINUTE=\count106
+\c@SECOND=\count107
+\currenthour=\count108
+\currentminute=\count109
+\currentsecond=\count110
+Package datetime Info: No datetime.cfg file found, using default settings on in
+put line 292.
+\@dtctr=\count111
+\dayofyear=\count112
+\dayofweek=\count113
+LaTeX Info: Redefining \today on input line 724.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\datetime\dt-czech.def"
+File: dt-czech.def 2004/10/31
+LaTeX Info: Redefining \dateczech on input line 84.
+)
+\dt@a=\toks18
+\dt@b=\toks19
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count114
+\Gm@cntv=\count115
+\c@Gm@tempcnt=\count116
+\Gm@bindingoffset=\dimen107
+\Gm@wd@mp=\dimen108
+\Gm@odd@mp=\dimen109
+\Gm@even@mp=\dimen110
+\Gm@layoutwidth=\dimen111
+\Gm@layoutheight=\dimen112
+\Gm@layouthoffset=\dimen113
+\Gm@layoutvoffset=\dimen114
+\Gm@dimlist=\toks20
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\rotating\rotating.sty"
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+\c@r@tfl@t=\count117
+\rotFPtop=\skip43
+\rotFPbot=\skip44
+\rot@float@box=\box26
+\rot@mess@toks=\toks21
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\pifont.sty"
+Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
+LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\upzd.fd"
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Try loading font information for U+psy on input line 64.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\upsy.fd"
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen115
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count118
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count119
+\leftroot@=\count120
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count121
+\DOTSCASE@=\count122
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen116
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count123
+\c@MaxMatrixCols=\count124
+\dotsspace@=\muskip11
+\c@parentequation=\count125
+\dspbrk@lvl=\count126
+\tag@help=\toks22
+\row@=\count127
+\column@=\count128
+\maxfields@=\count129
+\andhelp@=\toks23
+\eqnshift@=\dimen117
+\alignsep@=\dimen118
+\tagshift@=\dimen119
+\tagwidth@=\dimen120
+\totwidth@=\dimen121
+\lineht@=\dimen122
+\@envbody=\toks24
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\classes\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks26
+\thm@bodyfont=\toks27
+\thm@headfont=\toks28
+\thm@notefont=\toks29
+\thm@headpunct=\toks30
+\thm@preskip=\skip48
+\thm@postskip=\skip49
+\thm@headsep=\skip50
+\dth@everypar=\toks31
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2012/02/19 v3.2f Customizing captions (AR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2012/01/12 v1.4b caption3 kernel (AR)
+\captionmargin=\dimen123
+\captionmargin@=\dimen124
+\captionwidth=\dimen125
+\caption@indent=\dimen126
+\caption@parindent=\dimen127
+\caption@hangindent=\dimen128
+)
+\c@ContinuedFloat=\count130
+Package caption Info: rotating package is loaded.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyvrb\fancyvrb.sty"
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count131
+\FV@InFile=\read1
+\FV@TabBox=\box29
+\c@FancyVerbLine=\count132
+\FV@StepNumber=\count133
+\FV@OutFile=\write3
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\alltt.sty"
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2009/06/22 v3.00
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\enumitem\enumitem.sty"
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip51
+\enit@outerparindent=\dimen129
+\enit@toks=\toks32
+\enit@inbox=\box30
+\enitdp@description=\count134
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\appendix\appendix.sty"
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count135
+\c@@ppsavesec=\count136
+\c@@ppsaveapp=\count137
+)
+(D:\Documents\School\MasterThesis\Code\Document\MasterThesis.aux
+
+LaTeX Warning: Label `HeuristicNonterms' multiply defined.
+
+
+LaTeX Warning: Label `HeuristicNonterms' multiply defined.
+
+
+LaTeX Warning: Label `HeuristicNonterms' multiply defined.
+
+
+LaTeX Warning: Label `ParserRuleIdentifiers' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count138
+\scratchdimen=\dimen130
+\scratchbox=\box31
+\nofMPsegments=\count139
+\nofMParguments=\count140
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count141
+\MPscratchDim=\dimen131
+\MPnumerator=\count142
+\makeMPintoPDFobject=\count143
+\everyMPtoPDFconversion=\toks34
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(113.81102pt, 394.06976pt, 89.62709pt)
+* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=394.06976pt
+* \textheight=591.5302pt
+* \oddsidemargin=41.54103pt
+* \evensidemargin=41.54103pt
+* \topmargin=-7.86334pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+Package epstopdf Info: Source file: <pictures/Logo_MFF.eps>
+(epstopdf)                    date: 2010-06-29 11:35:10
+(epstopdf)                    size: 618282 bytes
+(epstopdf)             Output file: <pictures/Logo_MFF-eps-converted-to.pdf>
+(epstopdf)                    date: 2010-06-29 12:03:09
+(epstopdf)                    size: 149225 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/Logo_MFF-eps-conve
+rted-to.pdf pictures/Logo_MFF.eps>
+(epstopdf)             \includegraphics on input line 86.
+Package epstopdf Info: Output file is already uptodate.
+<pictures/Logo_MFF-eps-converted-to.pdf, id=1, 371.3875pt x 366.36874pt>
+File: pictures/Logo_MFF-eps-converted-to.pdf Graphic file (type pdf)
+
+<use pictures/Logo_MFF-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/Logo_MFF-eps-converted-to.pdf used on input l
+ine 86.
+(pdftex.def)             Requested size: 111.4171pt x 109.91147pt.
+ [1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <D:/Documents/School/Maste
+rThesis/Code/Document/pictures/Logo_MFF-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
+
+ []
+
+[2] (D:\Documents\School\MasterThesis\Code\Document\MasterThesis.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+) [3
+
+] [4])
+\tf@toc=\write4
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 138--144
+
+ []
+
+
+Underfull \hbox (badness 1199) in paragraph at lines 150--151
+\OT1/cmr/m/n/12 Klcova slova: eclipse, xtext, formatovac kodu, mod-elem 
+rzeny vyvoj,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--160
+
+ []
+
+[6] [7]
+Chapter 1.
+[8
+
+] [9]
+Chapter 2.
+Package epstopdf Info: Source file: <pictures/ModelsAndCode.eps>
+(epstopdf)                    date: 2012-10-10 16:22:53
+(epstopdf)                    size: 22355 bytes
+(epstopdf)             Output file: <pictures/ModelsAndCode-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2012-10-10 16:22:56
+(epstopdf)                    size: 4684 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/ModelsAndCode-eps-
+converted-to.pdf pictures/ModelsAndCode.eps>
+(epstopdf)             \includegraphics on input line 218.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/ModelsAndCode-eps-converted-to.pdf, id=38, 1313.90875pt x 1060.96375p
+t>
+File: pictures/ModelsAndCode-eps-converted-to.pdf Graphic file (type pdf)
+ <use pictures/ModelsAndCode-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/ModelsAndCode-eps-converted-to.pdf used on in
+put line 218.
+(pdftex.def)             Requested size: 394.17567pt x 318.29158pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10
+
+] [11 <D:/Documents/School/MasterThesis/Code/Document/pictures/ModelsAndCode-ep
+s-converted-to.pdf>] [12]
+LaTeX Font Info:    Try loading font information for OT1+txtt on input line 259
+.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\txfonts\ot1txtt.fd"
+File: ot1txtt.fd 2000/12/15 v3.1
+) [13]
+[14]
+\c@expl=\count144
+ [15] [16] [17] [18] [19] [20]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 432.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 432.
+ [21] [22]
+[23] [24]
+LaTeX Font Info:    Font shape `OT1/txtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/txtt/b/n' tried instead on input line 555.
+LaTeX Font Info:    Try loading font information for OMS+txtt on input line 561
+.
+LaTeX Font Info:    No file OMStxtt.fd. on input line 561.
+
+
+LaTeX Font Warning: Font shape `OMS/txtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 561.
+
+LaTeX Font Info:    Font shape `OT1/txtt/m/it' in size <10> not available
+(Font)              Font shape `OT1/txtt/m/sl' tried instead on input line 564.
+
+[25] [26] [27] [28] [29] [30]
+Chapter 3.
+Package epstopdf Info: Source file: <pictures/PrettyPrinterPrinciple.eps>
+(epstopdf)                    date: 2012-08-30 23:10:14
+(epstopdf)                    size: 14478 bytes
+(epstopdf)             Output file: <pictures/PrettyPrinterPrinciple-eps-conver
+ted-to.pdf>
+(epstopdf)                    date: 2012-09-04 19:13:40
+(epstopdf)                    size: 3631 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/PrettyPrinterPrinc
+iple-eps-converted-to.pdf pictures/PrettyPrinterPrinciple.eps>
+(epstopdf)             \includegraphics on input line 763.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/PrettyPrinterPrinciple-eps-converted-to.pdf, id=118, 770.88pt x 327.2
+225pt>
+File: pictures/PrettyPrinterPrinciple-eps-converted-to.pdf Graphic file (type p
+df)
+ <use pictures/PrettyPrinterPrinciple-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/PrettyPrinterPrinciple-eps-converted-to.pdf u
+sed on input line 763.
+(pdftex.def)             Requested size: 393.1436pt x 166.88126pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[31
+
+] [32 <D:/Documents/School/MasterThesis/Code/Document/pictures/PrettyPrinterPri
+nciple-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <pictures/GenericPrettyPrinter.eps>
+(epstopdf)                    date: 2012-09-04 19:46:12
+(epstopdf)                    size: 17211 bytes
+(epstopdf)             Output file: <pictures/GenericPrettyPrinter-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2012-09-04 19:46:36
+(epstopdf)                    size: 3969 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/GenericPrettyPrint
+er-eps-converted-to.pdf pictures/GenericPrettyPrinter.eps>
+(epstopdf)             \includegraphics on input line 797.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/GenericPrettyPrinter-eps-converted-to.pdf, id=129, 688.5725pt x 700.6
+175pt>
+File: pictures/GenericPrettyPrinter-eps-converted-to.pdf Graphic file (type pdf
+)
+ <use pictures/GenericPrettyPrinter-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/GenericPrettyPrinter-eps-converted-to.pdf use
+d on input line 797.
+(pdftex.def)             Requested size: 351.16731pt x 357.3102pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Package epstopdf Info: Source file: <pictures/BoxRepresentation.eps>
+(epstopdf)                    date: 2012-09-10 15:17:08
+(epstopdf)                    size: 29796 bytes
+(epstopdf)             Output file: <pictures/BoxRepresentation-eps-converted-t
+o.pdf>
+(epstopdf)                    date: 2012-09-10 15:17:13
+(epstopdf)                    size: 4333 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/BoxRepresentation-
+eps-converted-to.pdf pictures/BoxRepresentation.eps>
+(epstopdf)             \includegraphics on input line 812.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/BoxRepresentation-eps-converted-to.pdf, id=130, 128.48pt x 130.4875pt
+>
+File: pictures/BoxRepresentation-eps-converted-to.pdf Graphic file (type pdf)
+ <use pictures/BoxRepresentation-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/BoxRepresentation-eps-converted-to.pdf used o
+n input line 812.
+(pdftex.def)             Requested size: 83.511pt x 84.81586pt.
+ [33] [34 <D:/Documents/School/MasterThesis/Code/Document/pictures/GenericPrett
+yPrinter-eps-converted-to.pdf> <D:/Documents/School/MasterThesis/Code/Document/
+pictures/BoxRepresentation-eps-converted-to.pdf>] [35]
+Package epstopdf Info: Source file: <pictures/StrategoXT-H.eps>
+(epstopdf)                    date: 2012-09-23 22:25:09
+(epstopdf)                    size: 19174 bytes
+(epstopdf)             Output file: <pictures/StrategoXT-H-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2012-09-23 22:25:14
+(epstopdf)                    size: 3592 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/StrategoXT-H-eps-c
+onverted-to.pdf pictures/StrategoXT-H.eps>
+(epstopdf)             \includegraphics on input line 845.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/StrategoXT-H-eps-converted-to.pdf, id=146, 727.71875pt x 74.2775pt>
+File: pictures/StrategoXT-H-eps-converted-to.pdf Graphic file (type pdf)
+
+<use pictures/StrategoXT-H-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/StrategoXT-H-eps-converted-to.pdf used on inp
+ut line 845.
+(pdftex.def)             Requested size: 291.08234pt x 29.71046pt.
+Package epstopdf Info: Source file: <pictures/StrategoXT-V.eps>
+(epstopdf)                    date: 2012-09-25 21:01:48
+(epstopdf)                    size: 19908 bytes
+(epstopdf)             Output file: <pictures/StrategoXT-V-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2012-09-25 21:03:10
+(epstopdf)                    size: 3800 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/StrategoXT-V-eps-c
+onverted-to.pdf pictures/StrategoXT-V.eps>
+(epstopdf)             \includegraphics on input line 847.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/StrategoXT-V-eps-converted-to.pdf, id=147, 631.35875pt x 265.99374pt>
+File: pictures/StrategoXT-V-eps-converted-to.pdf Graphic file (type pdf)
+<use pictures/StrategoXT-V-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/StrategoXT-V-eps-converted-to.pdf used on inp
+ut line 847.
+(pdftex.def)             Requested size: 252.53902pt x 106.3956pt.
+Package epstopdf Info: Source file: <pictures/StrategoXT-A.eps>
+(epstopdf)                    date: 2012-09-24 16:48:33
+(epstopdf)                    size: 28582 bytes
+(epstopdf)             Output file: <pictures/StrategoXT-A-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2012-09-24 16:48:40
+(epstopdf)                    size: 4553 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/StrategoXT-A-eps-c
+onverted-to.pdf pictures/StrategoXT-A.eps>
+(epstopdf)             \includegraphics on input line 849.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/StrategoXT-A-eps-converted-to.pdf, id=148, 897.3525pt x 172.645pt>
+File: pictures/StrategoXT-A-eps-converted-to.pdf Graphic file (type pdf)
+
+<use pictures/StrategoXT-A-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/StrategoXT-A-eps-converted-to.pdf used on inp
+ut line 849.
+(pdftex.def)             Requested size: 358.93463pt x 69.05676pt.
+ [36 <D:/Documents/School/MasterThesis/Code/Document/pictures/StrategoXT-H-eps-
+converted-to.pdf> <D:/Documents/School/MasterThesis/Code/Document/pictures/Stra
+tegoXT-V-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <pictures/PPML-H.eps>
+(epstopdf)                    date: 2012-09-25 20:06:57
+(epstopdf)                    size: 19167 bytes
+(epstopdf)             Output file: <pictures/PPML-H-eps-converted-to.pdf>
+(epstopdf)                    date: 2012-09-25 20:07:06
+(epstopdf)                    size: 3590 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/PPML-H-eps-convert
+ed-to.pdf pictures/PPML-H.eps>
+(epstopdf)             \includegraphics on input line 863.
+Package epstopdf Info: Output file is already uptodate.
+<pictures/PPML-H-eps-converted-to.pdf, id=158, 713.66624pt x 73.27374pt>
+File: pictures/PPML-H-eps-converted-to.pdf Graphic file (type pdf)
+
+<use pictures/PPML-H-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/PPML-H-eps-converted-to.pdf used on input lin
+e 863.
+(pdftex.def)             Requested size: 285.46143pt x 29.30896pt.
+
+Underfull \hbox (badness 1394) in paragraph at lines 862--864
+[]\OT1/cmr/bx/n/12 H \OT1/cmr/m/n/12 - The op-er-a-tor aligns boxes hor-i-zon-t
+ally and in-serts spac-ing
+ []
+
+
+Underfull \hbox (badness 1953) in paragraph at lines 862--864
+\OT1/cmr/m/n/12 de-fined by the \OT1/cmr/bx/n/12 dx \OT1/cmr/m/n/12 pa-ram-e-te
+r be-tween boxes. The \OT1/cmr/bx/n/12 dx \OT1/cmr/m/n/12 pa-ram-e-
+ []
+
+Package epstopdf Info: Source file: <pictures/PPML-V.eps>
+(epstopdf)                    date: 2012-09-25 23:34:44
+(epstopdf)                    size: 19896 bytes
+(epstopdf)             Output file: <pictures/PPML-V-eps-converted-to.pdf>
+(epstopdf)                    date: 2012-09-25 23:39:23
+(epstopdf)                    size: 3812 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/PPML-V-eps-convert
+ed-to.pdf pictures/PPML-V.eps>
+(epstopdf)             \includegraphics on input line 865.
+Package epstopdf Info: Output file is already uptodate.
+<pictures/PPML-V-eps-converted-to.pdf, id=159, 561.09625pt x 266.9975pt>
+File: pictures/PPML-V-eps-converted-to.pdf Graphic file (type pdf)
+
+<use pictures/PPML-V-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/PPML-V-eps-converted-to.pdf used on input lin
+e 865.
+(pdftex.def)             Requested size: 224.43452pt x 106.79709pt.
+ [37 <D:/Documents/School/MasterThesis/Code/Document/pictures/StrategoXT-A-eps-
+converted-to.pdf> <D:/Documents/School/MasterThesis/Code/Document/pictures/PPML
+-H-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <pictures/PPML-HV.eps>
+(epstopdf)                    date: 2012-09-25 23:36:52
+(epstopdf)                    size: 29299 bytes
+(epstopdf)             Output file: <pictures/PPML-HV-eps-converted-to.pdf>
+(epstopdf)                    date: 2012-09-25 23:39:24
+(epstopdf)                    size: 4767 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/PPML-HV-eps-conver
+ted-to.pdf pictures/PPML-HV.eps>
+(epstopdf)             \includegraphics on input line 867.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/PPML-HV-eps-converted-to.pdf, id=170, 847.165pt x 353.32pt>
+File: pictures/PPML-HV-eps-converted-to.pdf Graphic file (type pdf)
+
+<use pictures/PPML-HV-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/PPML-HV-eps-converted-to.pdf used on input li
+ne 867.
+(pdftex.def)             Requested size: 338.85999pt x 141.32549pt.
+Package epstopdf Info: Source file: <pictures/PPML-HOV.eps>
+(epstopdf)                    date: 2012-09-25 23:37:50
+(epstopdf)                    size: 24446 bytes
+(epstopdf)             Output file: <pictures/PPML-HOV-eps-converted-to.pdf>
+(epstopdf)                    date: 2012-09-25 23:39:25
+(epstopdf)                    size: 4243 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/PPML-HOV-eps-conve
+rted-to.pdf pictures/PPML-HOV.eps>
+(epstopdf)             \includegraphics on input line 869.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/PPML-HOV-eps-converted-to.pdf, id=171, 871.255pt x 352.31625pt>
+File: pictures/PPML-HOV-eps-converted-to.pdf Graphic file (type pdf)
+
+<use pictures/PPML-HOV-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/PPML-HOV-eps-converted-to.pdf used on input l
+ine 869.
+(pdftex.def)             Requested size: 348.49583pt x 140.924pt.
+
+Underfull \hbox (badness 2384) in paragraph at lines 868--870
+[]\OT1/cmr/bx/n/12 HOV \OT1/cmr/m/n/12 - The op-er-a-tor be-haves like the op-e
+r-a-tor \OT1/cmr/bx/n/12 H \OT1/cmr/m/n/12 when the
+ []
+
+
+Underfull \hbox (badness 1584) in paragraph at lines 868--870
+\OT1/cmr/m/n/12 to-tal length of boxes in-clud-ing hor-i-zon-tal spac-ing does 
+not ex-
+ []
+
+
+Underfull \hbox (badness 7685) in paragraph at lines 868--870
+\OT1/cmr/m/n/12 ceed the max-i-mal line length. Oth-er-wise, the op-er-a-tor be
+-
+ []
+
+
+Underfull \hbox (badness 7888) in paragraph at lines 868--870
+\OT1/cmr/m/n/12 haves like the op-er-a-tor \OT1/cmr/bx/n/12 V\OT1/cmr/m/n/12 . 
+The pa-ram-e-ters of the op-er-a-
+ []
+
+
+Underfull \hbox (badness 1946) in paragraph at lines 868--870
+\OT1/cmr/m/n/12 tor have the same sig-nif-i-cance as with the pre-vi-ous op-er-
+a-tors.
+ []
+
+[38 <D:/Documents/School/MasterThesis/Code/Document/pictures/PPML-V-eps-convert
+ed-to.pdf> <D:/Documents/School/MasterThesis/Code/Document/pictures/PPML-HV-eps
+-converted-to.pdf>] [39 <D:/Documents/School/MasterThesis/Code/Document/picture
+s/PPML-HOV-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <pictures/Brand-Visser-HV.eps>
+(epstopdf)                    date: 2012-10-04 15:22:36
+(epstopdf)                    size: 28181 bytes
+(epstopdf)             Output file: <pictures/Brand-Visser-HV-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2012-10-04 15:22:49
+(epstopdf)                    size: 4519 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/Brand-Visser-HV-ep
+s-converted-to.pdf pictures/Brand-Visser-HV.eps>
+(epstopdf)             \includegraphics on input line 885.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/Brand-Visser-HV-eps-converted-to.pdf, id=187, 816.04875pt x 356.33125
+pt>
+File: pictures/Brand-Visser-HV-eps-converted-to.pdf Graphic file (type pdf)
+ <use pictures/Brand-Visser-HV-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/Brand-Visser-HV-eps-converted-to.pdf used on 
+input line 885.
+(pdftex.def)             Requested size: 326.41371pt x 142.52997pt.
+Package epstopdf Info: Source file: <pictures/Brand-Visser-I.eps>
+(epstopdf)                    date: 2012-10-04 16:13:41
+(epstopdf)                    size: 27128 bytes
+(epstopdf)             Output file: <pictures/Brand-Visser-I-eps-converted-to.p
+df>
+(epstopdf)                    date: 2012-10-04 16:13:51
+(epstopdf)                    size: 4153 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/Brand-Visser-I-eps
+-converted-to.pdf pictures/Brand-Visser-I.eps>
+(epstopdf)             \includegraphics on input line 888.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/Brand-Visser-I-eps-converted-to.pdf, id=188, 654.445pt x 270.00874pt>
+File: pictures/Brand-Visser-I-eps-converted-to.pdf Graphic file (type pdf)
+<use pictures/Brand-Visser-I-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/Brand-Visser-I-eps-converted-to.pdf used on i
+nput line 888.
+(pdftex.def)             Requested size: 261.77336pt x 108.00157pt.
+
+Underfull \hbox (badness 1448) in paragraph at lines 887--889
+[]\OT1/cmr/bx/n/12 I \OT1/cmr/m/n/12 - The pa-ram-e-ter in-creases the in-den-t
+a-tion of in-ner boxes by
+ []
+
+
+Underfull \hbox (badness 1939) in paragraph at lines 887--889
+\OT1/cmr/m/n/12 the value de-fined in the \OT1/cmr/bx/n/12 is \OT1/cmr/m/n/12 p
+a-ram-e-ter. The in-den-ta-tion is ap-
+ []
+
+
+Underfull \hbox (badness 3009) in paragraph at lines 887--889
+\OT1/cmr/m/n/12 in an-other op-er-a-tor with ver-ti-cal align-ment as an in-ner
+ box.
+ []
+
+Package epstopdf Info: Source file: <pictures/Brand-Visser-WD.eps>
+(epstopdf)                    date: 2012-10-04 17:15:37
+(epstopdf)                    size: 17989 bytes
+(epstopdf)             Output file: <pictures/Brand-Visser-WD-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2012-10-04 17:15:49
+(epstopdf)                    size: 3506 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/Brand-Visser-WD-ep
+s-converted-to.pdf pictures/Brand-Visser-WD.eps>
+(epstopdf)             \includegraphics on input line 890.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/Brand-Visser-WD-eps-converted-to.pdf, id=189, 669.50125pt x 129.48375
+pt>
+File: pictures/Brand-Visser-WD-eps-converted-to.pdf Graphic file (type pdf)
+ <use pictures/Brand-Visser-WD-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/Brand-Visser-WD-eps-converted-to.pdf used on 
+input line 890.
+(pdftex.def)             Requested size: 267.79576pt x 51.79257pt.
+
+Underfull \hbox (badness 5985) in paragraph at lines 889--891
+[]\OT1/cmr/bx/n/12 WD \OT1/cmr/m/n/12 - The op-er-a-tor trans-lates in-ner boxe
+s into an empty
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 889--891
+\OT1/cmr/m/n/12 boxes with di-men-sions equal to those of in-ner boxes.
+ []
+
+[40 <D:/Documents/School/MasterThesis/Code/Document/pictures/Brand-Visser-HV-ep
+s-converted-to.pdf> <D:/Documents/School/MasterThesis/Code/Document/pictures/Br
+and-Visser-I-eps-converted-to.pdf>] [41 <D:/Documents/School/MasterThesis/Code/
+Document/pictures/Brand-Visser-WD-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <pictures/DeJonge-HV.eps>
+(epstopdf)                    date: 2012-10-03 16:18:54
+(epstopdf)                    size: 29272 bytes
+(epstopdf)             Output file: <pictures/DeJonge-HV-eps-converted-to.pdf>
+(epstopdf)                    date: 2012-10-03 16:19:04
+(epstopdf)                    size: 4791 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/DeJonge-HV-eps-con
+verted-to.pdf pictures/DeJonge-HV.eps>
+(epstopdf)             \includegraphics on input line 920.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/DeJonge-HV-eps-converted-to.pdf, id=205, 894.34125pt x 356.33125pt>
+File: pictures/DeJonge-HV-eps-converted-to.pdf Graphic file (type pdf)
+
+<use pictures/DeJonge-HV-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/DeJonge-HV-eps-converted-to.pdf used on input
+ line 920.
+(pdftex.def)             Requested size: 357.73016pt x 142.52997pt.
+
+Underfull \hbox (badness 2809) in paragraph at lines 919--921
+[]\OT1/cmr/bx/n/12 HV \OT1/cmr/m/n/12 - The op-er-a-tor aligns boxes as the sam
+e op-er-a-tor from
+ []
+
+
+Underfull \hbox (badness 2237) in paragraph at lines 919--921
+\OT1/cmr/m/n/12 er-a-tor has one ex-tra pa-ram-e-ter \OT1/cmr/bx/n/12 is \OT1/c
+mr/m/n/12 for in-den-ta-tion of the sec-
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 919--921
+\OT1/cmr/m/n/12 ond and next lines against the first as with the \OT1/cmr/bx/n/
+12 V \OT1/cmr/m/n/12 op-er-a-tor.
+ []
+
+[42]
+Package epstopdf Info: Source file: <pictures/DeJonge-ALT.eps>
+(epstopdf)                    date: 2012-10-03 16:34:29
+(epstopdf)                    size: 16140 bytes
+(epstopdf)             Output file: <pictures/DeJonge-ALT-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2012-10-03 16:34:34
+(epstopdf)                    size: 3289 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/DeJonge-ALT-eps-co
+nverted-to.pdf pictures/DeJonge-ALT.eps>
+(epstopdf)             \includegraphics on input line 924.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/DeJonge-ALT-eps-converted-to.pdf, id=209, 588.1975pt x 74.2775pt>
+File: pictures/DeJonge-ALT-eps-converted-to.pdf Graphic file (type pdf)
+
+<use pictures/DeJonge-ALT-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/DeJonge-ALT-eps-converted-to.pdf used on inpu
+t line 924.
+(pdftex.def)             Requested size: 235.27483pt x 29.71046pt.
+ [43 <D:/Documents/School/MasterThesis/Code/Document/pictures/DeJonge-HV-eps-co
+nverted-to.pdf> <D:/Documents/School/MasterThesis/Code/Document/pictures/DeJong
+e-ALT-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <pictures/OCaml-H.eps>
+(epstopdf)                    date: 2012-10-06 23:21:58
+(epstopdf)                    size: 18742 bytes
+(epstopdf)             Output file: <pictures/OCaml-H-eps-converted-to.pdf>
+(epstopdf)                    date: 2012-10-06 23:23:12
+(epstopdf)                    size: 3463 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/OCaml-H-eps-conver
+ted-to.pdf pictures/OCaml-H.eps>
+(epstopdf)             \includegraphics on input line 947.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/OCaml-H-eps-converted-to.pdf, id=220, 541.02126pt x 69.25874pt>
+File: pictures/OCaml-H-eps-converted-to.pdf Graphic file (type pdf)
+
+<use pictures/OCaml-H-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/OCaml-H-eps-converted-to.pdf used on input li
+ne 947.
+(pdftex.def)             Requested size: 216.40466pt x 27.70299pt.
+
+Underfull \hbox (badness 1642) in paragraph at lines 946--948
+[]\OT1/cmr/bx/n/12 H \OT1/cmr/m/n/12 - The op-er-a-tor aligns in-ner boxes hor-
+i-zon-tally sim-i-larly like
+ []
+
+[44]
+Package epstopdf Info: Source file: <pictures/OCaml-V.eps>
+(epstopdf)                    date: 2012-10-06 23:30:06
+(epstopdf)                    size: 18758 bytes
+(epstopdf)             Output file: <pictures/OCaml-V-eps-converted-to.pdf>
+(epstopdf)                    date: 2012-10-06 23:30:24
+(epstopdf)                    size: 3483 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/OCaml-V-eps-conver
+ted-to.pdf pictures/OCaml-V.eps>
+(epstopdf)             \includegraphics on input line 949.
+Package epstopdf Info: Output file is already uptodate.
+ <pictures/OCaml-V-eps-converted-to.pdf, id=224, 409.53pt x 193.72375pt>
+File: pictures/OCaml-V-eps-converted-to.pdf Graphic file (type pdf)
+
+<use pictures/OCaml-V-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/OCaml-V-eps-converted-to.pdf used on input li
+ne 949.
+(pdftex.def)             Requested size: 163.80908pt x 77.48811pt.
+Package epstopdf Info: Source file: <pictures/OCaml-HOV.eps>
+(epstopdf)                    date: 2012-10-06 23:33:31
+(epstopdf)                    size: 26730 bytes
+(epstopdf)             Output file: <pictures/OCaml-HOV-eps-converted-to.pdf>
+(epstopdf)                    date: 2012-10-06 23:33:50
+(epstopdf)                    size: 4061 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/OCaml-HOV-eps-conv
+erted-to.pdf pictures/OCaml-HOV.eps>
+(epstopdf)             \includegraphics on input line 951.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/OCaml-HOV-eps-converted-to.pdf, id=225, 918.43124pt x 194.7275pt>
+File: pictures/OCaml-HOV-eps-converted-to.pdf Graphic file (type pdf)
+
+<use pictures/OCaml-HOV-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/OCaml-HOV-eps-converted-to.pdf used on input 
+line 951.
+(pdftex.def)             Requested size: 367.36598pt x 77.8896pt.
+
+Underfull \hbox (badness 2409) in paragraph at lines 950--952
+\OT1/cmr/m/n/12 from the pre-vi-ous box meta-models. The func-tion-al-i-ties of
+ the
+ []
+
+
+Underfull \hbox (badness 1194) in paragraph at lines 950--952
+\OT1/cmr/m/n/12 op-er-a-tors \OT1/cmr/bx/n/12 HV \OT1/cmr/m/n/12 and \OT1/cmr/b
+x/n/12 HOV \OT1/cmr/m/n/12 are swapped in this box meta-model.
+ []
+
+
+Underfull \hbox (badness 1496) in paragraph at lines 950--952
+\OT1/cmr/m/n/12 the char-ac-ter se-quence un-til an ad-di-tional box to-gether 
+with a
+ []
+
+
+Overfull \hbox (2.67091pt too wide) in paragraph at lines 950--952
+[] 
+ []
+
+[45 <D:/Documents/School/MasterThesis/Code/Document/pictures/OCaml-H-eps-conver
+ted-to.pdf> <D:/Documents/School/MasterThesis/Code/Document/pictures/OCaml-V-ep
+s-converted-to.pdf> <D:/Documents/School/MasterThesis/Code/Document/pictures/OC
+aml-HOV-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <pictures/OCaml-HV.eps>
+(epstopdf)                    date: 2012-10-06 23:27:43
+(epstopdf)                    size: 22744 bytes
+(epstopdf)             Output file: <pictures/OCaml-HV-eps-converted-to.pdf>
+(epstopdf)                    date: 2012-10-06 23:27:55
+(epstopdf)                    size: 3783 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/OCaml-HV-eps-conve
+rted-to.pdf pictures/OCaml-HV.eps>
+(epstopdf)             \includegraphics on input line 953.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/OCaml-HV-eps-converted-to.pdf, id=238, 696.6025pt x 192.72pt>
+File: pictures/OCaml-HV-eps-converted-to.pdf Graphic file (type pdf)
+
+<use pictures/OCaml-HV-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/OCaml-HV-eps-converted-to.pdf used on input l
+ine 953.
+(pdftex.def)             Requested size: 278.63606pt x 77.08662pt.
+ [46 <D:/Documents/School/MasterThesis/Code/Document/pictures/OCaml-HV-eps-conv
+erted-to.pdf>] [47] [48]
+Chapter 4.
+[49
+
+] [50] [51]
+Chapter 5.
+[52
+
+] [53] [54] [55] [56]
+Underfull \hbox (badness 10000) in paragraph at lines 1133--1134
+[]\OT1/cmr/m/n/12 Scopes can be de-fined by cre-ation a class ex-tend-ing the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1133--1134
+\OT1/txtt/m/n/12 AbstractDeclarativeScopeProvider \OT1/cmr/m/n/12 class and sub
+-se-quent reg-is-tra-
+ []
+
+[57]
+Chapter 6.
+[58
+
+] [59]
+Package epstopdf Info: Source file: <pictures/FormattingRuleStructure.eps>
+(epstopdf)                    date: 2012-10-22 01:03:51
+(epstopdf)                    size: 31313 bytes
+(epstopdf)             Output file: <pictures/FormattingRuleStructure-eps-conve
+rted-to.pdf>
+(epstopdf)                    date: 2012-10-22 01:58:21
+(epstopdf)                    size: 4865 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/FormattingRuleStru
+cture-eps-converted-to.pdf pictures/FormattingRuleStructure.eps>
+(epstopdf)             \includegraphics on input line 1187.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/FormattingRuleStructure-eps-converted-to.pdf, id=286, 573.14125pt x 2
+59.97125pt>
+File: pictures/FormattingRuleStructure-eps-converted-to.pdf Graphic file (type 
+pdf)
+ <use pictures/FormattingRuleStructure-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/FormattingRuleStructure-eps-converted-to.pdf 
+used on input line 1187.
+(pdftex.def)             Requested size: 292.29817pt x 132.58357pt.
+
+[60 <D:/Documents/School/MasterThesis/Code/Document/pictures/FormattingRuleStru
+cture-eps-converted-to.pdf>] [61] [62] [63]
+Underfull \hbox (badness 10000) in paragraph at lines 1267--1268
+[]\OT1/cmr/m/n/12 Identifiers are rep-re-sented in the \OT1/cmr/m/sc/12 Xtext \
+OT1/cmr/m/n/12 frame-work by the
+ []
+
+
+Underfull \hbox (badness 1939) in paragraph at lines 1267--1268
+\OT1/txtt/m/n/12 QualifiedName \OT1/cmr/m/n/12 class, which is es-sen-tially a 
+name formed from sev-
+ []
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 1273--1274
+\OT1/cmr/m/n/12 out a man-ager of re-source de-scrip-tions for a par-tic-u-lar 
+lan-guage on
+ []
+
+[64] [65]
+Chapter 7.
+[66
+
+] [67] [68] [69] [70] [71] [72]
+Chapter 8.
+[73
+
+] [74] [75] [76] [77]
+Package epstopdf Info: Source file: <pictures/NodeModelFormatting.eps>
+(epstopdf)                    date: 2012-11-03 23:58:24
+(epstopdf)                    size: 80169 bytes
+(epstopdf)             Output file: <pictures/NodeModelFormatting-eps-converted
+-to.pdf>
+(epstopdf)                    date: 2012-11-03 23:59:30
+(epstopdf)                    size: 8505 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/NodeModelFormattin
+g-eps-converted-to.pdf pictures/NodeModelFormatting.eps>
+(epstopdf)             \includegraphics on input line 1517.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/NodeModelFormatting-eps-converted-to.pdf, id=351, 769.87625pt x 703.6
+2875pt>
+File: pictures/NodeModelFormatting-eps-converted-to.pdf Graphic file (type pdf)
+
+ <use pictures/NodeModelFormatting-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/NodeModelFormatting-eps-converted-to.pdf used
+ on input line 1517.
+(pdftex.def)             Requested size: 392.6317pt x 358.84592pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Package epstopdf Info: Source file: <pictures/ActionDistinction.eps>
+(epstopdf)                    date: 2012-11-04 16:05:43
+(epstopdf)                    size: 25038 bytes
+(epstopdf)             Output file: <pictures/ActionDistinction-eps-converted-t
+o.pdf>
+(epstopdf)                    date: 2012-11-04 16:07:22
+(epstopdf)                    size: 4191 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/ActionDistinction-
+eps-converted-to.pdf pictures/ActionDistinction.eps>
+(epstopdf)             \includegraphics on input line 1527.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/ActionDistinction-eps-converted-to.pdf, id=352, 596.2275pt x 213.7987
+5pt>
+File: pictures/ActionDistinction-eps-converted-to.pdf Graphic file (type pdf)
+ <use pictures/ActionDistinction-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/ActionDistinction-eps-converted-to.pdf used o
+n input line 1527.
+(pdftex.def)             Requested size: 304.072pt x 109.0359pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[78] [79 <D:/Documents/School/MasterThesis/Code/Document/pictures/NodeModelForm
+atting-eps-converted-to.pdf>] [80 <D:/Documents/School/MasterThesis/Code/Docume
+nt/pictures/ActionDistinction-eps-converted-to.pdf>] [81] [82]
+Chapter 9.
+
+Underfull \hbox (badness 2213) in paragraph at lines 1566--1566
+[]\OT1/cmr/bx/n/17.28 Comparison of the De-signed Generic
+ []
+
+[83
+
+] [84] [85] [86] [87] [88] [89] [90]
+Chapter 10.
+[91
+
+] [92] [93]
+Chapter 11.
+[94
+
+] [95]
+Package epstopdf Info: Source file: <pictures/MacroOperator.eps>
+(epstopdf)                    date: 2012-11-27 20:45:32
+(epstopdf)                    size: 18762 bytes
+(epstopdf)             Output file: <pictures/MacroOperator-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2012-11-27 20:45:38
+(epstopdf)                    size: 3482 bytes
+(epstopdf)             Command: <epstopdf --outfile=pictures/MacroOperator-eps-
+converted-to.pdf pictures/MacroOperator.eps>
+(epstopdf)             \includegraphics on input line 1786.
+Package epstopdf Info: Output file is already uptodate.
+
+<pictures/MacroOperator-eps-converted-to.pdf, id=420, 850.17625pt x 74.2775pt>
+File: pictures/MacroOperator-eps-converted-to.pdf Graphic file (type pdf)
+
+<use pictures/MacroOperator-eps-converted-to.pdf>
+Package pdftex.def Info: pictures/MacroOperator-eps-converted-to.pdf used on in
+put line 1786.
+(pdftex.def)             Requested size: 340.06447pt x 29.71046pt.
+ [96 <D:/Documents/School/MasterThesis/Code/Document/pictures/MacroOperator-eps
+-converted-to.pdf>]
+Underfull \hbox (badness 1383) in paragraph at lines 1808--1809
+[]\OT1/cmr/m/n/12 Wikipedia: \OT1/cmr/m/it/12 Eclipse Pub-lic Li-cense\OT1/cmr/
+m/n/12 , [on-line], 2012 [cit. 2012-07-15].
+ []
+
+
+Underfull \hbox (badness 1127) in paragraph at lines 1810--1811
+[]\OT1/cmr/m/n/12 The Eclipse Foun-da-tion: \OT1/cmr/m/it/12 The Eclipse Mod-el
+-ing Frame-work Project
+ []
+
+
+Underfull \hbox (badness 1014) in paragraph at lines 1812--1813
+[]\OT1/cmr/m/n/12 Wikipedia: \OT1/cmr/m/it/12 Plain Old Java Ob-ject\OT1/cmr/m/
+n/12 , [on-line], 2012 [cit. 2012-07-15].
+ []
+
+
+Underfull \hbox (badness 2073) in paragraph at lines 1816--1817
+[]\OT1/cmr/m/n/12 Wikipedia: \OT1/cmr/m/it/12 Uni-form Re-source Iden-ti-fier\O
+T1/cmr/m/n/12 , [on-line], 2012 [cit. 2012-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1816--1817
+\OT1/cmr/m/n/12 07-15]. $\OML/cmm/m/it/12 <$$\OT1/txtt/m/n/12 http : / / en . w
+ikipedia . org / wiki / Uniform _ resource _$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1820--1821
+\OT1/cmr/m/n/12 09-03]. $\OML/cmm/m/it/12 <$$\OT1/txtt/m/n/12 http : / / releas
+es . strategoxt . org / strategoxt-[]manual /$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1820--1821
+$\OT1/txtt/m/n/12 unstable / manual / chunk-[]chapter / generic-[]pretty-[]prin
+ting .$
+ []
+
+[97
+
+]
+Underfull \hbox (badness 1953) in paragraph at lines 1826--1827
+\OT1/cmr/m/it/12 Context-free Lan-guages\OT1/cmr/m/n/12 , [PDF file, on-line], 
+1999 [cit. 2012-09-03].
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1826--1827
+$\OML/cmm/m/it/12 <$$\OT1/txtt/m/n/12 http : / / citeseerx . ist . psu . edu / 
+viewdoc / summary ? doi = 10 . 1 . 1 .$
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 1832--1833
+[]\OT1/cmr/m/n/12 J. Heer-ing, P. R. H. Hen-driks, P. Klint, J. Rek-ers: \OT1/c
+mr/m/it/12 The Syn-tax
+ []
+
+
+Underfull \hbox (badness 5908) in paragraph at lines 1842--1843
+[]\OT1/cmr/m/n/12 The Eclipse Foun-da-tion: \OT1/cmr/m/it/12 XPand2\OT1/cmr/m/n
+/12 , [on-line], 2012 [cit. 2012-09-
+ []
+
+
+Underfull \hbox (badness 1365) in paragraph at lines 1842--1843
+\OT1/cmr/m/n/12 03]. $\OML/cmm/m/it/12 <$$\OT1/txtt/m/n/12 http : / / help . ec
+lipse . org / galileo / index . jsp ? topic = /org .$
+ []
+
+
+Underfull \hbox (badness 6477) in paragraph at lines 1846--1847
+[]\OT1/cmr/m/n/12 openarchitectureware.org: \OT1/cmr/m/it/12 Xtend\OT1/cmr/m/n/
+12 , [on-line], 2012 [cit. 2012-09-03].
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1846--1847
+$\OML/cmm/m/it/12 <$$\OT1/txtt/m/n/12 http : / / www . openarchitectureware . o
+rg / pub / documentation / 4 .$
+ []
+
+[98]
+Underfull \hbox (badness 10000) in paragraph at lines 1854--1855
+[]\OT1/cmr/m/n/12 Markus Voel-ter: \OT1/cmr/m/it/12 Xtext-typesystem\OT1/cmr/m/
+n/12 , [on-line], 2012 [cit. 2012-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1854--1855
+\OT1/cmr/m/n/12 09-03]. $\OML/cmm/m/it/12 <$$\OT1/txtt/m/n/12 http : / / code .
+ google . com / a / eclipselabs . org / p /$
+ []
+
+
+Underfull \hbox (badness 3312) in paragraph at lines 1858--1859
+\OT1/cmr/m/it/12 fer-ence\OT1/cmr/m/n/12 , [on-line], 2012 [cit. 2012-09-03]. $
+\OML/cmm/m/it/12 <$$\OT1/txtt/m/n/12 http : / / wiki . eclipse .$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1858--1859
+$\OT1/txtt/m/n/12 org / Xtext / FAQ # How _ can _ I _ control _ the _ Xtext _ m
+eta _ model _$
+ []
+
+
+Underfull \hbox (badness 4279) in paragraph at lines 1862--1863
+\OT1/cmr/m/n/12 [cit. 2012-09-03]. $\OML/cmm/m/it/12 <$$\OT1/txtt/m/n/12 http :
+ / / www . languageworkbenches . net / index .$
+ []
+
+[99] [100]
+Appendix A.
+[101
+
+] [102] [103] [104]
+(D:\Documents\School\MasterThesis\Code\Document\MasterThesis.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 6761 strings out of 494053
+ 104656 string characters out of 3146186
+ 202436 words of memory out of 3000000
+ 9838 multiletter control sequences out of 15000+200000
+ 17395 words of font info for 65 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 42i,9n,38p,2180b,424s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/txfonts/txbtt.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/txfonts/txtt.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/txfonts/txtt.pfb>
+Output written on MasterThesis.pdf (104 pages, 632384 bytes).
+PDF statistics:
+ 509 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+

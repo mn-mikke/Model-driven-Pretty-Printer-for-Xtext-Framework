@@ -1,0 +1,12 @@
+operators "operators.ppo"
+
+Terminals: 
+	INT:<F w=bold>
+	Keyword["^\\w.*$"]: <F w=bold>
+	default: <F> 
+
+Rules:
+	root: <V>
+	[1,'='|':',1]: <H>,<I>
+	[1-*,':']: <H>
+

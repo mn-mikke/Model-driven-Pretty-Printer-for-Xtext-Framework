@@ -1,0 +1,13 @@
+import ecore;
+
+process(xtext::GeneratedMetamodel this) :
+    process(ePackage)
+;
+
+Void process(ecore::EPackage this) : 
+	JAVA it.xtypes.processing.EcorePostProcessor.processPackage(org.eclipse.emf.ecore.EPackage)
+;
+
+process(ecore::EPackage p, List l) :
+	null
+;

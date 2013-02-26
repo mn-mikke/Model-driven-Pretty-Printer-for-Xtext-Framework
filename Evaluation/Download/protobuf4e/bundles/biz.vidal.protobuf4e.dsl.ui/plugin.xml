@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+    <extension
+            point="org.eclipse.ui.editors">
+        <editor
+            class="biz.vidal.protobuf4e.ProtobufExecutableExtensionFactory:org.eclipse.xtext.ui.core.editor.XtextEditor"
+            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+            default="true"
+            extensions="proto"
+            id="biz.vidal.protobuf4e.Protobuf"
+            name="Protobuf Editor">
+        </editor>
+    </extension>
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            class="biz.vidal.protobuf4e.ProtobufExecutableExtensionFactory:org.eclipse.xtext.ui.common.editor.hyperlinking.OpenDeclarationHandler"
+            commandId="org.eclipse.xtext.ui.common.editor.hyperlinking.OpenDeclaration">
+            <activeWhen>
+                <reference
+                    definitionId="biz.vidal.protobuf4e.Protobuf.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+        <handler
+            class="biz.vidal.protobuf4e.ProtobufExecutableExtensionFactory:org.eclipse.xtext.ui.core.editor.handler.ValidateActionHandler"
+            commandId="biz.vidal.protobuf4e.Protobuf.validate">
+         <activeWhen>
+            <reference
+                    definitionId="biz.vidal.protobuf4e.Protobuf.Editor.opened">
+            </reference>
+         </activeWhen>
+      </handler>
+    </extension>
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="biz.vidal.protobuf4e.Protobuf.Editor.opened">
+            <and>
+                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.core.editor.XtextEditor.languageName" 
+                        value="biz.vidal.protobuf4e.Protobuf" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+    </extension>
+    <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            class="biz.vidal.protobuf4e.ProtobufExecutableExtensionFactory:org.eclipse.xtext.ui.core.editor.preferences.LanguageRootPreferencePage"
+            id="biz.vidal.protobuf4e.Protobuf"
+            name="Protobuf"
+            category="org.eclipse.xtext.languages">
+            <keywordReference id="biz.vidal.protobuf4e.ui.keyword_Protobuf"/>
+        </page>
+        <page
+            category="biz.vidal.protobuf4e.Protobuf"
+            class="biz.vidal.protobuf4e.ProtobufExecutableExtensionFactory:org.eclipse.xtext.ui.common.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="biz.vidal.protobuf4e.Protobuf.coloring"
+            name="Syntax Coloring">
+            <keywordReference id="biz.vidal.protobuf4e.ui.keyword_Protobuf"/>
+        </page>
+        <page
+            category="biz.vidal.protobuf4e.Protobuf"
+            class="biz.vidal.protobuf4e.ProtobufExecutableExtensionFactory:org.eclipse.xtext.ui.common.editor.templates.XtextTemplatePreferencePage"
+            id="biz.vidal.protobuf4e.Protobuf.templates"
+            name="Templates">
+            <keywordReference id="biz.vidal.protobuf4e.ui.keyword_Protobuf"/>
+        </page>
+    </extension>
+    <extension
+        point="org.eclipse.ui.keywords">
+        <keyword
+            id="biz.vidal.protobuf4e.ui.keyword_Protobuf"
+            label="Protobuf"/>
+    </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Trigger expensive validation"
+            id="biz.vidal.protobuf4e.Protobuf.validate"
+            name="Validate">
+      </command>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.open">
+             <command
+                 commandId="biz.vidal.protobuf4e.Protobuf.validate"
+                 style="push"
+                 tooltip="Trigger expensive validation">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="biz.vidal.protobuf4e.Protobuf.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+    </extension>
+
+<!-- adding resource factories -->
+
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="biz.vidal.protobuf4e.ProtobufExecutableExtensionFactory:org.eclipse.xtext.resource.XtextResourceFactory"
+			type="proto">
+		</parser>
+	</extension>
+
+
+
+
+</plugin>

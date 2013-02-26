@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/expr/src-gen"
+    editDirectory="/expr.edit/src" editorDirectory="/expr.editor/src" modelPluginID="expr"
+    forceOverwrite="true" modelName="ExprDemo" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="expr.edit" editorPluginID="expr.editor">
+  <genPackages prefix="ExprDemo" basePackage="expr" disposableProviderFactory="true"
+      ecorePackage="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#/">
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Model">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Model/isTested"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Model/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Model/usings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Model/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Model/functions"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Using">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Using/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Element"/>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Symbol">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Symbol/name"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Return">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Return/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Assert">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Assert/actual"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Assert/expected"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Assert/msg"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//EnumDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//EnumDecl/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//EnumDecl/literals"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Type"/>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//PrimitiveType"/>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//ArrayType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//ArrayType/baseType"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//EnumType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//EnumType/enumRef"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//IntType"/>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//BoolType"/>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//FloatType"/>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//StringType"/>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expr"/>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expression"/>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//FunctionDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//FunctionDeclaration/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//FunctionDeclaration/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//FunctionDeclaration/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Parameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Parameter/type"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//EnumLiteral"/>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//VarDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//VarDecl/readonly"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//VarDecl/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//VarDecl/init"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Formula">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Formula/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Formula/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Equals">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Equals/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Equals/right"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Plus">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Plus/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Plus/right"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Multi">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Multi/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Multi/right"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//ArrayAccess">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//ArrayAccess/expr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//ArrayAccess/index"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//SymbolRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//SymbolRef/symbol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//SymbolRef/actuals"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//NumberLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//NumberLiteral/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//StringLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//StringLiteral/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

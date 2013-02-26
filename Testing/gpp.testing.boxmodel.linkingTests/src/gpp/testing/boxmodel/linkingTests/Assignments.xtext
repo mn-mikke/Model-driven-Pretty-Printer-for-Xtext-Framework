@@ -1,0 +1,19 @@
+grammar gpp.testing.boxmodel.Tests with org.eclipse.xtext.common.Terminals
+
+generate tests "http://www.testing.gpp/boxmodel/Tests"
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+TestModel:
+	ass4?=([ecore::EClass]|([Rule4]|'text'|[Rule3]|[ecore::EClass]|Rule2|[Rule1  ]))
+	ass1=(Rule1|Rule2|Rule3|Rule4|Rule5|Rule6|Rule7)
+	ass2=((Rule1|(Rule2|Rule3)|Rule4)|Rule5|Rule6|Rule7)
+	ass3=(Rule1|Rule2|((Rule3|Rule4)|Rule5))
+	
+;
+Rule1: name1=ID;
+Rule2: name2?=STRING;
+Rule3: name3=INT;
+Rule4: name4=Rule3;
+Rule5: name5='?';
+Rule6: name6=[Rule4];
+Rule7: name7?=[ecore::EClass]; 

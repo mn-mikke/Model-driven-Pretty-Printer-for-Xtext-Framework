@@ -1,0 +1,102 @@
+grammar gpp.boxmodel.defaultboxmodel.DefaultBoxModelDefinition with gpp.boxmodel.operators.BoxModelOperators
+
+generate defaultBoxModelDefinition "http://www.boxmodel.gpp/defaultboxmodel/DefaultBoxModelDefinition"
+
+import "http://www.boxmodel.gpp/operators/BoxModelOperators" as operators
+
+DefaultBoxModelDefinition:
+	operatorsImportSection=OperatorsImportSection
+	(terminalRulesHeuristicSection=TerminalRuleHeuristicSection? & parserRulesHeuristicSection=ParserRuleHeuristicSection?)
+;
+
+OperatorsImportSection:
+	(imports+=OperatorsImport)+
+;
+
+ParserRuleHeuristicSection:
+	{ParserRuleHeuristicSection}
+	('Non-terminals'|'non-terminals'|'NON-TERMINALS') ':'
+	rules+=ParserRuleHeuristic*
+	rootRule=RootParserRuleHeuristic
+	rules+=ParserRuleHeuristic*
+;
+
+TerminalRuleHeuristicSection:
+	{TerminalRuleHeuristicSection}
+	('Terminals'|'terminals'|'TERMINALS') ':'
+	rules+=TerminalRuleHeuristic*
+	default=DefaultTerminalRuleHeuristic
+	rules+=TerminalRuleHeuristic*
+;
+
+ParserRuleHeuristic:
+	pattern=Pattern ':' operators+=OperatorApplication (',' operators+=OperatorApplication)*
+;
+
+RootParserRuleHeuristic:
+	('root'|'Root'|'ROOT') optional?='?'? ':' operators+=OperatorApplication (',' operators+=OperatorApplication)*
+;
+
+TerminalRuleHeuristic:
+	name=ID ('[' pattern=STRING ']')? ':' operators+=OperatorApplication (',' operators+=OperatorApplication)?
+;
+
+DefaultTerminalRuleHeuristic:
+	('default' | 'Default' | 'DEFAULT') ':' operators+=OperatorApplication (',' operators+=OperatorApplication)?
+;
+
+Pattern:
+	'['
+		segments+=Segment (',' segments+=Segment)*
+	']'
+;
+
+AlternativesSegment:
+	alternatives+=Terminal ('|' alternatives+=Terminal)*
+;
+
+Segment:
+	AlternativesSegment | ElementCount
+;
+
+ElementCount:
+	Interval | InfiniteInterval |  FiniteNumber
+;
+
+Number:
+	FiniteNumber | InfiniteNumber
+;
+
+FiniteNumber:
+	value=INT
+;
+
+InfiniteNumber:
+	{InfiniteNumber}
+	'*'
+;
+
+Interval:
+	 minimum=INT '-' maximum=Number 
+;
+
+InfiniteInterval returns Interval:
+	maximum=InfiniteNumber
+;
+
+Terminal:
+	value=STRING
+;
+
+
+OperatorApplication:
+	'<'
+	operator = [operators::OperatorDefinition|ID]
+	( parameters += ParameterApplication (',' parameters += ParameterApplication)*)?
+	'>'
+;
+
+OperatorsImport:
+	'operators' importURI=STRING
+;
+	

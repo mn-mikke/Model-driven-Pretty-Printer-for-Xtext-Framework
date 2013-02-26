@@ -1,0 +1,88 @@
+enum blanks  = {TAB,WS}
+
+int MAX_ROW_SIZE = 20
+
+// horizontal operator
+poperator H [gpp.formatting.HorizontalOperatorImplementation]:
+	int hs=1 // horizontal spacing
+	{[blanks]} hc = WS // horizontal character
+;
+
+// vertical operator
+poperator V [gpp.formatting.VerticalOperatorImplementation]:
+	int vs=1 // vertical spacing
+;
+
+// table operator
+poperator A [gpp.formatting.TableOperatorImplementation]:
+	int hs=1           // horizontal spacing
+	{[blanks]} hc = WS // horizontal character
+	int vs=1           // vertical spacing
+	{[blanks]} sc = WS // supplementary character
+	
+	// alignment ("lcr" -
+	// The First column is aligned to the left.
+	// The Second column is centred.
+	// A rest of colums is aligned to the right.
+	string al = "l"    
+;
+
+// row operator
+poperator R [gpp.formatting.RowOperatorImplementation];
+
+// horizontal-vertical operator
+poperator HV [gpp.formatting.HorizontalIfPossibleOperatorImplementation]:
+	int hs=1 // horizontal spacing
+	{[blanks]} hc = WS // horizontal character 
+	int vs=1 // vertical spacing
+	int rs = MAX_ROW_SIZE // maximum row size
+;
+
+// horizontal or vertical operator
+poperator HOV [gpp.formatting.HorizontalOrVerticalOperatorImplementation]:
+	int hs=1 // horizontal spacing
+	{[blanks]} hc = WS // horizontal character 
+	int vs=1 // vertical spacing
+	int rs = MAX_ROW_SIZE // maximum row size
+;
+
+// indenting operator
+poperator I [gpp.formatting.IndentOperatorImplementation]:
+	int is=1 // indent spacing
+	{[blanks]} ic = TAB // indent character 
+;
+
+// vertical indenting operar
+poperator VI [gpp.formatting.VerticalIndentOperatorImplementation]:
+	int ts=1 // top spacing
+	int bs=1 // bottom spacing
+;
+
+// font operator
+hloperator F [gpp.highlighting.DefaultHighlightOperatorImplementation]:
+	{normal, bold} w = normal // weight
+	{normal, italic} i = normal // italics
+	string c = "#000000" // fore color
+	string b = "#ffffff" // background color
+	string f = "Consolas" // font family 
+	int h = 10 // font height
+;
+
+// single line comment operator
+toperator SC [gpp.formatting.SingleLineCommentFormattingOperatorImplementation]:
+	int rs = MAX_ROW_SIZE // maximum row size
+	string bs = "//" // begin sequence
+	string ws = " " // gap sequence
+;
+
+// multi line comment operator
+toperator MC [gpp.formatting.MultiLineCommentFormattingOperatorImplementation]:
+	int rs = MAX_ROW_SIZE // maximum row size
+	string bs = "/*" // begin sequence
+	string is = "  " // indenting sequence
+	string es = "*/" // end sequence
+	string ws = " "  // gap sequence
+;
+
+// universal comment operator
+toperator C [gpp.formatting.UniversalCommentFormattingOperatorImplementation];

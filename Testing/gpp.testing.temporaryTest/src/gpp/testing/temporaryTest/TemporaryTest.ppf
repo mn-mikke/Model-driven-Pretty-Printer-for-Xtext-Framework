@@ -1,0 +1,9 @@
+xtext  "TemporaryTest.xtext"
+
+import "operators.ppo"
+
+TBOX[default] : <F>;
+
+PBOX[Model]:
+	<H>[ ID  '.' ID]   
+;

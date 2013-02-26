@@ -1,0 +1,95 @@
+xtext "platform:/resource/cz.gpp/src/cz/gpp/Example.xtext"
+
+import "platform:/resource/gpp/settings/operators.ppo"
+
+TBOX[Default]: <F>;
+TBOX[INT]: <F c="#7F7F7F">;
+TBOX[ML_COMMENT]: <F i=italic,c="#00FF00">, <MC>;
+TBOX[SL_COMMENT]: <F i=italic,c="#00FF00">, <SC>;
+TBOX[Keyword, "^\\w.*$"]: <F w=bold,c="#7F0055">;
+
+PBOX[Model]:
+	<V vs=2>[
+		package:Package
+		(<V>[imports:Import] & class:Class)
+	]
+;
+
+
+PBOX[QualifiedName]:
+	<H hs=0>[
+		ID
+		('.' ID)
+	]
+;
+
+
+PBOX[Package]:
+	<H>[
+		'package'
+		name:QualifiedName
+	]
+;
+
+
+PBOX[Import]:
+	<H>[
+		'import'
+		className:QualifiedName
+	]
+;
+
+
+PBOX[Class]:
+	<V>[
+		<H>[<H>[<H>[abstract:'abstract' 'class'] name:ID] ('extends' superClass:[Class|ID])]
+		<V>['{' <I>[<V vs=2>[(methods:Method | internalClasses:Class)]] '}']
+	]
+;
+
+
+PBOX[Method]:
+	<V>[
+		<H>[visibility:Modifier <H>[returnValue:[Class|ID] <H hs=0>[<F i=italic,c="#55007F">[name:ID] <H hs=0>['(' <H hs=0>[(parameters:Parameter <H>[(',' parameters:Parameter)]) ')' '{']]]]]
+		<I>[<H>[body:INT]]
+		'}'
+	]
+;
+
+
+PBOX[Parameter]:
+	<H>[
+		SpecificParameter
+		name:ID
+	]
+;
+
+
+PBOX[SpecificParameter]:
+	<V>[
+		IntParameter | StringParameter | ObjectParameter
+	]
+;
+
+
+PBOX[ObjectParameter]:
+	<V>[
+		type:[Class|ID]
+	]
+;
+
+
+PBOX[IntParameter]:
+	<V>[
+		'int'
+	]
+;
+
+
+PBOX[StringParameter]:
+	<V>[
+		'string'
+	]
+;
+
+

@@ -1,0 +1,23 @@
+package CZ.GPP.TESTS.EXAMPLES
+
+class CLASS1 extends SUPER_CLASS
+{
+	abstract class INTERNAL_CLASS
+	{
+		private SUPER_CLASS FOO(string PAR1, int PAR2 , string PAR3 , int PAR4, int PAR5){
+			1 2 3 4 5 6 7 8 9 1
+			2 3 4 5 6546 7 3
+		}
+		
+		protected SUPER_CLASS BAR(CLASS1 PAR){
+			4 5
+		}
+	}
+	
+	public CLASS1 CREATE_OBJECT(string NAME){
+		6 7
+	}
+}
+
+import NAMESPACE1
+import NAMESPACE2

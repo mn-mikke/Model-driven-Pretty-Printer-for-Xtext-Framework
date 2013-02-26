@@ -1,0 +1,13 @@
+grammar "platform:/resource/it.xtypes.examples/models/FJ.ecore"
+
+axiom WithOk
+	G |- var Class C : 'ok'
+
+axiom WithFoo
+	G |- var Class C : 'foo'
+
+rule Foo
+	derives
+		G |- var Class C : var Class C2
+	from
+		G |- $C : 'ok'
