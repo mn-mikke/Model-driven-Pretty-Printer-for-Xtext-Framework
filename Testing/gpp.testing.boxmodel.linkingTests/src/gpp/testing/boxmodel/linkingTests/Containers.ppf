@@ -1,0 +1,182 @@
+xtext "platform:/resource/gpp.testing.boxmodel.linkingTests/src/gpp/testing/boxmodel/linkingTests/Containers.xtext"
+
+import "operators.ppo"
+
+PBOX [RootRule]:  
+	<V>[ 
+		<H>[group:Group1] | group:Group2 | group:Group3 | <H>[group:Group4 & <H>[<V>[unorderedGroup:UnorderedGroup 
+		<H>[(alternatives1:Alternatives1a|alternatives1:Alternatives1b)
+		<H>[alternatives2:Alternatives1c|<V>[(alternatives2:Alternatives2a|alternatives2:Alternatives2b)]]
+		]
+		mix:Mix1 ]]]
+		| mix:Mix2
+	] 
+;
+
+PBOX [Mix1]:
+	<V>[
+		<V>[groups:Group1 <H>[groups:Group2 groups:Group1]] | <V>[unorderedGroup:UnorderedGroup] & <V>[unorderedGroup:UnorderedGroup] & unorderedGroup:UnorderedGroup |
+		<H>[groups:Group1 <V>[groups:Group2 groups:Group1]] | unorderedGroup:UnorderedGroup & unorderedGroup:UnorderedGroup & unorderedGroup:UnorderedGroup | 
+		groups:Group1 groups:Group2 groups:Group1 | <V>[unorderedGroup:UnorderedGroup & <H>[<V>[unorderedGroup:UnorderedGroup]] & unorderedGroup:UnorderedGroup]
+	]
+; 
+
+PBOX [Mix2]:
+	<V>[
+		<H>[groups:Group1 <V>[groups:Group2]] (<H>[<V>[groups:Group1] | unorderedGroup:UnorderedGroup] & <V>[unorderedGroup:UnorderedGroup & (<H>[unorderedGroup:UnorderedGroup |
+		groups:Group1 <H>[(groups:Group2 groups:Group1 | unorderedGroup:UnorderedGroup)] & unorderedGroup:UnorderedGroup]) & unorderedGroup:UnorderedGroup | 
+		groups:Group1 groups:Group2 groups:Group1 | unorderedGroup:UnorderedGroup] & unorderedGroup:UnorderedGroup) & unorderedGroup:UnorderedGroup
+	]
+;
+
+PBOX [Group1]:
+	<V>[
+		<H>[<FE>[<I>[Rule1]]
+		<FE>['fas']]
+		<H>['fad']
+		<FC>[<H>['fasd'
+		a:Rule2]]
+	]
+;
+
+PBOX [Group2]:
+	<V>[
+		<FE>[
+			<H>[
+			'fa'
+			Rule1
+			<HV>[
+			'fas'
+			'fad'
+			'fasd'
+			]
+			a:Rule2
+			]
+		]
+	]
+;
+
+PBOX [Group3]:
+	<V>[
+	((('fa'
+	Rule1
+	'fas')
+	'fad')
+	'fasd')
+	<H>[
+		<HV>[(ab:Rule2
+		'fas'
+		<H>[(<H>[<V>[<HV>['fad']]]
+		'fasd')]
+		ab:Rule2)]
+		]
+	]
+;
+ 
+PBOX [Group4]:
+	<V>[
+		(<H>[(<H>[(<H>['fa'
+		Rule1
+		'fas'])
+		'fad'])]
+		'fasd') 
+		(ab:Rule2
+		'fas'
+		<H>[(<H>[<V>['fad'
+		'fasd']])]
+		ab:Rule2)
+	]
+;
+
+PBOX [Alternatives1a]:
+	<V>[
+		(<FE>[ 
+		 <V>[<H>[Rule1]|Rule2|<H>[<V>[<FE>[Rule3]]]|Rule4|Rule5|Rule6]
+		]
+		)
+	]
+;
+
+PBOX [Alternatives1b]:
+	<V>[
+		<FE>[
+			Rule1|Rule2|<H>[<HV>[<FE>[Rule3]]]|<V>[<H>[Rule4]]|Rule5|<H>[Rule6]
+		]
+	]
+;
+
+PBOX [Alternatives1c]: 
+	<V>[
+		(<HV>[(<V>[Rule1|Rule2|Rule3|Rule4|Rule5|Rule6])])
+	]
+;
+
+PBOX [Alternatives2a]:
+	<V>[
+		<HV>[
+			<H>[
+				(<HV>[<V>[<V>[Rule1]|<H>[<FE>[(<H>[Rule2|Rule3])]]]]|Rule4|(Rule5|Rule6))
+			]
+		]
+	]
+;
+
+PBOX [Alternatives2b]:
+	<V>[
+		<H>[Rule1|<H>[Rule2|Rule3]|<H>[<V>[Rule4|(<V>[Rule5|Rule6])]]]
+	]
+;
+
+PBOX [UnorderedGroup]:
+	<V>[
+		<H>[
+		rule1:Rule1  &
+		<H>[<HV>['fas']] &
+		<V>['fad'] &
+		'fasd' & 
+		rule2:Rule2
+		] 
+	]
+;
+
+PBOX[Alternatives]:
+	<V>[
+		rule:Rule2
+	]	
+;
+
+PBOX[Rule1]:
+	<V>[<H>[
+		name1:ID
+		]
+	]
+;
+PBOX[Rule2]:
+	<V>[
+ 		name2:STRING
+ 	];
+
+PBOX[Rule3]:
+	<V>[
+		name3:INT
+	]
+;
+
+PBOX[Rule4]:
+	<V>[
+		name4:Rule3
+	]
+;
+
+PBOX[Rule5]: 
+	<V>[
+		name5:'?'
+	]
+;
+
+PBOX[Rule6]: 
+	<V>[
+		name6:[Rule4]
+	]
+;
+

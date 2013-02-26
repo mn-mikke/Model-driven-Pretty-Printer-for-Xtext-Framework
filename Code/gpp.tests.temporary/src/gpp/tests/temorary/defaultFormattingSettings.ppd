@@ -1,0 +1,17 @@
+operators "classpath:/gpp/tests/temorary/operators.ppo"
+
+Terminals: 
+	INT:<F w=bold>
+	default: <F w=bold,i=normal>
+
+Rules:
+	root? : <V>
+	['(',*,')']: <H>
+	['[',*,']']: <H>
+	[1,'=',1]: <I>,<H>
+	[1-*,':']: <H>
+
+
+
+
+

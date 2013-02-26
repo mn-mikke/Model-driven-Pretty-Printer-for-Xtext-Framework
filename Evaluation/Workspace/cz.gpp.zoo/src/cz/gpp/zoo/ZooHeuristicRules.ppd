@@ -1,0 +1,18 @@
+operators "platform:/resource/cz.gpp.zoo/src/cz/gpp/zoo/ZooOperators.ppo"
+
+Terminals: 
+	Keyword["^\\w.*$"]: <F c="#FF0000">
+	default: <F>
+
+Non-terminals:
+	root? : <V>
+	['zoo', 1]: <H>
+	['(',*,')']: <H>
+	['[',*,']']: <H>
+	[1,'=',1]: <I>,<H>
+	[1-*,':']: <H>
+
+
+
+
+

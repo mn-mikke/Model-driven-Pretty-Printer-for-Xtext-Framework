@@ -1,0 +1,10 @@
+model coercion
+
+var int v1 = 0;
+var string v2 = "Hello"; 
+var string v3 = "100";
+ 
+var int v4 = "Hallo";  		// error: string, but int expected 
+var int v5 = "100";  		// works, because of custom coercion rule!  
+
+calc int cc = 10 + "100";   // works, coercion

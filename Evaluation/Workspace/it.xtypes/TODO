@@ -1,0 +1,110 @@
+for Class.fields 
+in content assist only [] should be available
+
+check variable initialization:
+if $C appears on the left or right of a judgment it's
+considered initialized from then on
+
+type constructors
+Set[Class]
+
+We need to let other grammars to be used (e.g., ecore) so that
+we can use also EString.
+
+in the grammar add a generate like in XText for the package
+
+add > < != as standard integer expressions (e.g., for length)
+
+implement container in the runtime
+
+list of lists? List<List<>>
+
+forall i in len(...)
+forall i in 1..len(..)
+
+VALIDATOR: in final judgment, left expression cannot refer to right expression
+
+for now only for right expression for env
+
+SYNTAX:
+use the name provider of the underlying language?
+get it through google guice?
+
+using $G as for env variables
+
+tests for exists, not exists, forall, etc.
+
+test for ExpressionTypeMatcher
+
+((MethodCall) sel).
+
+ComparableTypeMatcher (for basic and EString, EObject, etc...)
+
+implement runtime rule selection using polymorphic dispatch?
+
+System.out.println("URI: " + uri.toString());
+System.out.println("path: " + uri.toPlatformString(true));
+System.out.println("resolved: " + CommonPlugin.resolve(uri));
+
+from resolved, subtract the path and we have the absolute path
+to include in the StandaloneSetup to fake the platform resource:
+
+URI: platform:/resource/it.xtypes.generator.tests/src/model/FJ.ecore
+path: /it.xtypes.generator.tests/src/model/FJ.ecore
+resolved: file:/home/bettini/work/xtext/typesystem/tests/it.xtypes.generator.tests/src/model/FJ.ecore
+
+OK type to drive Validator generation.
+
+use the organize import component
+
+register that we're performing a loop
+
+     forall 0
+     end forall 0
+    
+should print len( x )
+where x is the value
+thus we should get the argument?
+
+use getCurrentRule in the templates?
+
+handlecustomerror might be avoided, since we can handle it at the top level?
+
+use nomatch and success JudgmentDescription
+
+use 
+env G for declaring environments
+
+check subexpression scope in the context of Expression
+
+check that the package is in platform uri form
+
+!-> and != are not accepted as typing relations
+
+we should add the rule to the trace before applying it
+
+generate feature setting in the typesystem?
+or set the left and right object in the error specification?
+
+accessors for boolean fields are not get... but is...
+
+check init also for left expression?
+or avoid checkInit at all by ensuring that variables have
+always a value?
+or check every variable at the beginning of apply method?
+
+implementation of a var declaration should also initialize to a
+default value
+
+split tests of FJ methods
+
+should we also pass the received exception when throwing a new one?
+
+error with passing left and right object in the syntax
+
+the validator should call the generated methods of the typesystem if
+created otherwise it uses trytoapply
+
+put in AuxiliaryFunctions the creation of list
+(and use ArrayList? more efficient?)
+

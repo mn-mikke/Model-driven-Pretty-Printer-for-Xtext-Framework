@@ -1,0 +1,99 @@
+/*******************************************************************************
+ * Copyright (c) 2010 Cedric Vidal
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Cedric Vidal - original idea, initial contribution and API
+ *******************************************************************************/
+
+grammar biz.vidal.protobuf4e.Protobuf with org.eclipse.xtext.common.Terminals
+
+generate protobuf "http://www.vidal.biz/protobuf4e/Protobuf"
+
+Proto:
+	'package' name=FQN ';'
+	(options+=Option)*
+	(elements+=ProtoElement)*
+	;
+
+FQN:
+	ID ('.' ID)*;
+
+ProtoElement: Type | ExtendMessage;
+
+Type:
+	Message | Enum;
+
+Option :
+	'option' name=ID '=' value=(ID|STRING) ';';
+
+Message :
+	'message' name=ID '{'
+		elements+=MessageElement*
+		('extensions' extensionsFrom=INT 'to' (extensionsTo=INT | 'max') ';')?
+	'}';
+
+ExtendMessage :
+	'extend' message=[Message] '{'
+		elements+=MessageElement*
+	'}';
+
+MessageElement: Type | Property;
+
+Enum :
+	'enum' name=ID '{'
+		literals+=Literal*
+	'}' ';'?;
+
+Literal:
+	name=ID '=' index=INT ';';
+
+Property:
+	modifier=Modifier type=AbstractTypeReference name=(ID|'package') '=' index=INT ('[' 'default' '=' default=ValueRef ']')? ';';
+
+ValueRef : LiteralRef
+	| BooleanRef
+	| IntRef
+	;
+
+LiteralRef:
+	literal = [Literal];
+
+BooleanRef:
+	boolean = BOOL;
+
+IntRef:
+	int = INT;
+
+AbstractTypeReference : ScalarTypeReference | TypeReference;
+ScalarTypeReference : scalar = ScalarType;
+TypeReference : type = [Type];
+
+enum Modifier : required
+	| optional
+	| repeated
+	;
+
+enum ScalarType : double
+	| float
+	| int32
+	| int64
+	| uint32
+	| uint64
+	| sint32
+	| sint64
+	| fixed32
+	| fixed64
+	| sfixed32
+	| sfixed64
+	| bool
+	| string
+	| bytes
+	;
+
+enum BOOL: true
+	| false
+	;

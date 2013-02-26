@@ -1,0 +1,38 @@
+«IMPORT it::xtypes::ui::wizard»
+
+«DEFINE main FOR TypeSystemProjectInfo»
+«EXPAND model FOR this»
+«EXPAND workflow FOR this»
+«ENDDEFINE»
+
+«DEFINE model FOR TypeSystemProjectInfo»
+«FILE "src/typesystem/MyDsl.typesystem"-»
+/*
+ * This is an example typesystem
+ */
+
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE workflow FOR TypeSystemProjectInfo»
+«FILE "src/Generator.mwe2"-»
+module Generator
+
+import org.eclipse.emf.mwe.utils.*
+
+var targetDir = "src-gen"
+var modelPath = "src/typesystem"
+
+var projectName = "«this.projectName»"
+var runtimeProject = "../${projectName}"
+
+Workflow {
+
+	bean = StandaloneSetup {
+		platformUri = "${runtimeProject}/.."
+	}
+
+	component = @workflow.TypeSystemGenerator auto-inject {}
+}
+«ENDFILE»
+«ENDDEFINE»

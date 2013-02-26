@@ -1,0 +1,12 @@
+grammar gpp.tests.temorary.TemporaryTest with org.eclipse.xtext.common.Terminals
+
+generate temporaryTest "http://www.tests.gpp/temorary/TemporaryTest"
+
+Model:
+	name=Name  '=' '!'
+;
+
+Name:
+	name=ID
+	ref=[Name]
+;

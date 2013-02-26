@@ -1,0 +1,292 @@
+«IMPORT it::xtypes::typesystem»
+
+«EXTENSION xtypes::extensions::Extensions»
+«EXTENSION xtypes::extensions::Types»
+«EXTENSION xtypes::extensions::Methods»
+
+«EXTENSION org::eclipse::xtend::util::stdlib::counter»
+
+«DEFINE judgImpl FOR TypingJudgment-»
+«EXPAND preprocExp FOREACH this.getStatementsToExecuteBefore()»
+«EXPAND mainJudgImpl FOR this»
+«ENDDEFINE»
+
+«DEFINE preprocExp FOR TypingStatementExpression-»«ENDDEFINE»
+
+«DEFINE mainJudgImpl FOR TypingJudgment-»«ENDDEFINE»
+
+«DEFINE mainJudgImpl FOR VariableDeclarationWithType-»
+«IF this.right == null-»
+«this.getVariableGeneratedName()» =
+	«EXPAND Variable::createVariableWithDefaultValue FOR this»;
+«ELSE-»
+«this.getVariableGeneratedName()» =
+	«EXPAND Variable::createVariableWithValue FOR this»;
+«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE mainJudgImpl FOR Equals-»
+«EXPAND handleCustomError(this.error) FOR this»
+«ENDDEFINE»
+
+«DEFINE mainJudgImpl FOR Fail-»
+«IF this.error != null-»
+fail(«EXPAND Expression::errorImpl FOR this.error.failureError»);
+«ELSE-»
+fail("explicit failure");
+«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE mainJudgImpl FOR Success-»
+// success
+«ENDDEFINE»
+
+«DEFINE mainJudgImpl FOR ListIncrement-»
+«EXPAND checkInit FOR this.left»
+«EXPAND Expression::mainExprImpl FOR this.left».add(«EXPAND Expression::mainExprImpl FOR this.right»);
+«ENDDEFINE»
+
+«DEFINE mainJudgImpl FOR ListDecrement-»
+«EXPAND checkInit FOR this.left»
+«EXPAND Expression::mainExprImpl FOR this.left».remove(«EXPAND Expression::mainExprImpl FOR this.right»);
+«ENDDEFINE»
+
+«DEFINE judgImpl FOR TypingJudgmentWithEnvironment-»
+«EXPAND handleCustomError(this.error) FOR this-»«ENDDEFINE»
+
+«DEFINE handleCustomError(ErrorSpecification error) FOR TypingJudgment-»
+«IF error != null-»
+try { «EXPAND typingJudgWithCustomErrorImpl FOR this-» }
+catch (RuleFailedException e) {
+	e.setMessage(«EXPAND Expression::errorImpl FOR error.failureError»);
+	throw e;
+}
+«ELSE-»
+«EXPAND typingJudgWithCustomErrorImpl FOR this»
+«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE handleCustomError(ErrorSpecification error) FOR Quantification-»
+«IF error != null-»
+try { «EXPAND typingJudgWithCustomErrorImpl FOR this-» }
+catch (Throwable e) {
+	registerFailure(e);
+	throw new RuleFailedException(«EXPAND Expression::errorImpl FOR error.failureError»);
+}
+«ELSE-»
+try { «EXPAND typingJudgWithCustomErrorImpl FOR this-» }
+catch (Throwable e) {
+	registerAndThrowFailure(e);
+}
+«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE typingJudgWithCustomErrorImpl FOR TypingJudgment-»«ENDDEFINE»
+
+«DEFINE typingJudgWithCustomErrorImpl FOR Equals-»
+«IF this.op == "="-»
+equals(«EXPAND Expression::langExprImpl FOR this.left»,
+	«EXPAND Expression::langExprImpl FOR this.right»);
+«ELSE-»
+notEquals(«EXPAND Expression::langExprImpl FOR this.left»,
+	«EXPAND Expression::langExprImpl FOR this.right»);
+«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE typingJudgWithCustomErrorImpl FOR TypingJudgmentWithEnvironment-»
+«LET getJudgmentDescription(this.typejudgmentsymbol, this.typingstatement.relation) AS judgmentDescription-»
+«IF judgmentDescription == null-»
+applyRule
+	(«EXPAND envImpl FOR this.environment», "«this.typejudgmentsymbol»",
+	"«this.typingstatement.relation»", 
+	«EXPAND Expression::langExprImpl FOR this.typingstatement.left»,
+	«EXPAND Expression::langExprImpl FOR this.typingstatement.right»);
+«ELSE-»
+«judgmentDescription.typeSystemApplyRule()»
+	(«EXPAND envImpl FOR this.environment»,
+	«EXPAND Expression::langExprImpl FOR this.typingstatement.left»,
+	«EXPAND Expression::langExprImpl FOR this.typingstatement.right»);
+«ENDIF»«ENDLET»«ENDDEFINE»
+
+«DEFINE mainJudgImpl FOR Assignment-»
+«EXPAND Expression::assignImpl(this.right) FOR this.left»;
+«ENDDEFINE»
+
+«DEFINE judgImpl FOR Quantification-»
+register(«EXPAND quantificationDescription FOR this»);
+«EXPAND handleCustomError(this.error) FOR this-»
+register("end " + «EXPAND quantificationDescription FOR this»);«ENDDEFINE»
+
+«DEFINE quantificationDescription FOR Quantification»«ENDDEFINE»
+
+«DEFINE quantificationDescription FOR ForEach-»
+"foreach " + stringRep(«EXPAND Expression::mainExprImpl FOR this.expression»)«ENDDEFINE»
+
+«DEFINE quantificationDescription FOR ForAll-»
+"forall " + stringRep(«EXPAND Expression::mainExprImpl FOR this.expression»)«ENDDEFINE»
+
+«DEFINE quantificationDescription FOR Exists-»
+"«IF this.not»!«ENDIF»exists " + stringRep(«EXPAND Expression::mainExprImpl FOR this.expression»)«ENDDEFINE»
+
+«DEFINE typingJudgWithCustomErrorImpl FOR Exists-»
+«IF this.not-»
+«LET counterInc("idx") AS counter-»
+boolean not_exist_temp_«counter» = true;
+try {
+	«EXPAND judgImplExist(false) FOR this-»
+	// if we're here exists succeeded, thus !exist failed
+} catch (RuleFailedException e) {
+	// OK
+	not_exist_temp_«counter» = true;
+}
+if (!not_exist_temp_«counter»)
+	throw new RuleFailedException("not exists failed");
+«ENDLET-»
+«ELSE-»
+«EXPAND judgImplExist(true) FOR this»
+«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE judgImplExist(Boolean exist) FOR Exists-»
+for (java.util.Iterator<«this.variable.getVariableType().getQualifiedTypeName()»> iterator = 
+		«EXPAND Expression::langExprImpl FOR this.expression».iterator(); 
+	 iterator.hasNext();) {
+	«this.variable.getVariableGeneratedName()».setValue(iterator.next());
+	try {
+		«EXPAND judgImpl FOREACH this.judgments-»
+		«IF !exist»not_exist_temp_«counterGet("idx")» = false;«ENDIF»
+		break;
+	} catch (Throwable e) {
+		registerFailure(e);
+		if (!iterator.hasNext())
+			throw new RuleFailedException("exists failed", e);
+	}
+}«ENDDEFINE»
+
+«DEFINE typingJudgWithCustomErrorImpl FOR ForEach-»
+for («this.variable.getVariableType().getQualifiedTypeName()» «this.variable.getVariableGeneratedName()»_temp : 
+		«EXPAND foreachExpression(this.variable.getVariableType().getQualifiedTypeName()) FOR this.expression») {
+	«this.variable.getVariableGeneratedName()».setValue(«this.variable.getVariableGeneratedName()»_temp);
+	«EXPAND judgImpl FOREACH this.judgments-»
+}«ENDDEFINE»
+
+«DEFINE foreachExpression(String type) FOR Expression-»
+«EXPAND Expression::mainExprImpl FOR this»
+«ENDDEFINE»
+
+«DEFINE foreachExpression(String type) FOR GetAll-»
+(java.util.List<«type»>) «EXPAND Expression::mainExprImpl FOR this»
+«ENDDEFINE»
+
+«DEFINE typingJudgWithCustomErrorImpl FOR ForAll-»
+for («this.variable.getVariableGeneratedName()».setValue(0);
+	 «this.variable.getVariableGeneratedName()».getValue() < «EXPAND Expression::mainExprImpl FOR this.expression»;
+	 «this.variable.getVariableGeneratedName()».setValue(«this.variable.getVariableGeneratedName()».getValue()+1)) {
+	«EXPAND judgImpl FOREACH this.judgments-»
+}«ENDDEFINE»
+
+«DEFINE envImpl FOR Environment-»
+«ENDDEFINE»
+
+«DEFINE envImpl FOR EmptyEnvironment-»
+null
+«ENDDEFINE»
+
+«DEFINE envImpl FOR EnvironmentId-»
+«this.getEnvGeneratedName()»«ENDDEFINE»
+
+«DEFINE envImpl FOR EnvironmentComposition-»
+«IF this.op == ","-»
+union(«EXPAND envImpl FOR this.currentEnvironment», «EXPAND envImpl FOR this.subEnvironment»)«ELSE-»
+envListCons(«EXPAND envImpl FOR this.currentEnvironment», «EXPAND envImpl FOR this.subEnvironment»)«ENDIF-»«ENDDEFINE»
+
+«DEFINE envImpl FOR EnvironmentStatement-»
+«EXPAND Expression::typeStmntImpl FOR this-»
+«ENDDEFINE»
+
+«DEFINE judgImpl FOR OrTypingJudgment-»
+«LET counterInc("idx") AS counter-»
+boolean or_temp_«counter» = false;
+«FOREACH this.branches AS branch ITERATOR iter-»
+«IF iter.firstIteration-»
+// first or branch
+try {
+	«EXPAND judgImpl FOR branch-»
+	or_temp_«counter» = true;
+} catch (Throwable e) {
+	registerFailure(e);
+	// go on with other branches
+}
+«ELSEIF iter.lastIteration-»
+// last or branch
+if (!or_temp_«counter») {
+«IF this.error != null-»
+	«EXPAND handleCustomError(this.error) FOR branch-»
+«ELSE-»
+	try { «EXPAND judgImpl FOR branch-» }
+	catch (Throwable e) {
+		registerAndThrowFailure(e);
+	}
+«ENDIF-»
+}
+«ELSE-»
+try {
+	if (!or_temp_«counter») {
+		«EXPAND judgImpl FOR branch-»
+		or_temp_«counter» = true;
+	}
+} catch (Throwable e) {
+	registerFailure(e);
+	// go on with other branches
+}
+«ENDIF»
+«ENDFOREACH»
+«ENDLET»
+«ENDDEFINE»
+
+«DEFINE handleCustomError(ErrorSpecification error) FOR OrBranch-»
+«IF error != null-»
+try { «EXPAND judgImpl FOR this-» }
+catch (Throwable e) {
+	registerFailure(e);
+	throw new RuleFailedException(«EXPAND Expression::errorImpl FOR error.failureError»);
+}
+«ELSE-»
+«EXPAND judgImpl FOR this-»
+«ENDIF-»
+«ENDDEFINE»
+
+«DEFINE judgImpl FOR OrBranch-»
+«EXPAND judgImpl FOREACH this.judgments-»
+«ENDDEFINE»
+
+«DEFINE judgImpl FOR EnvironmentAssignment-»
+«this.left.getEnvGeneratedName()» = 
+	new TypingJudgmentEnvironment(«EXPAND envImpl FOR this.right»);
+«ENDDEFINE»
+
+«DEFINE judgImpl FOR EnvironmentIncrement-»
+«this.left.getEnvGeneratedName()».increment(«EXPAND Expression::typeStmntImpl FOR this.right»);
+«ENDDEFINE»
+
+«DEFINE judgImpl FOR EnvironmentDecrement-»
+«this.left.getEnvGeneratedName()».decrement(«EXPAND Expression::mainExprImpl FOR this.right»);
+«ENDDEFINE»
+
+«DEFINE checkInit FOR CompoundExpression-»
+«EXPAND checkInit FOR this.mainExpression»
+«ENDDEFINE»
+
+«DEFINE checkInit FOR Expression»«ENDDEFINE»
+
+«DEFINE checkInit FOR VariableReference-»
+«EXPAND checkInit FOR this.varRef»
+«ENDDEFINE»
+
+«DEFINE checkInit FOR VariableDeclaration»
+/* check «this.getVariableGeneratedName()» */
+if («this.getVariableGeneratedName()».getValue() == null) {
+	«this.getVariableGeneratedName()».setValue(
+			«EXPAND Variable::createDefaultVariableValue FOR this.getVariableType()»);
+}
+«ENDDEFINE»

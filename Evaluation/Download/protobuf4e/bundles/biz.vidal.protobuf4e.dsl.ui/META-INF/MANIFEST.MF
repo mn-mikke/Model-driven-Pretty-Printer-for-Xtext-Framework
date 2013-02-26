@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Protobuf4e UI
+Bundle-Vendor: Cédric Vidal
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: biz.vidal.protobuf4e.dsl.ui; singleton:=true
+Eclipse-RegisterBuddy: org.eclipse.xtext.log4j
+Bundle-ActivationPolicy: lazy
+Require-Bundle: biz.vidal.protobuf4e.dsl;visibility:=reexport,
+ org.eclipse.xtext.ui.core,
+ org.eclipse.xtext.ui.common,
+ org.eclipse.xtext.log4j;bundle-version="1.2.15",
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui,
+ org.antlr.runtime
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: biz.vidal.protobuf4e.contentassist,
+ biz.vidal.protobuf4e.contentassist.antlr
+Bundle-Activator: biz.vidal.protobuf4e.internal.ProtobufActivator

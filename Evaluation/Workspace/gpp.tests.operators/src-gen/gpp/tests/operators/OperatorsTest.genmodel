@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/gpp.tests.operators/src-gen"
+    editDirectory="/gpp.tests.operators.edit/src" editorDirectory="/gpp.tests.operators.editor/src"
+    modelPluginID="gpp.tests.operators" forceOverwrite="true" modelName="OperatorsTest"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="gpp.tests.operators.edit"
+    editorPluginID="gpp.tests.operators.editor">
+  <genPackages prefix="OperatorsTest" basePackage="gpp.tests.operators" disposableProviderFactory="true"
+      ecorePackage="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#/">
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//BoxModelOperators">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//BoxModelOperators/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//BoxModelOperators/operatorDefinitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//BoxModelOperators/enumerations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//BoxModelOperators/intConstants"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//BoxModelOperators/stringConstants"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//StringConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//StringConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//IntConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//IntConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//Import/importURI"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//OperatorDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//OperatorDefinition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//BasicOperatorDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//BasicOperatorDefinition/implementation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//BasicOperatorDefinition/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//PositionalOperatorDefinition"/>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//HighlightOperatorDefinition"/>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//TransformingOperatorDefinition"/>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//AliasOperatorDefinition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//AliasOperatorDefinition/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//AliasOperatorDefinition/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterApplication">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterApplication/referencedParameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterApplication/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterDefinition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//StringParameterDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//StringParameterDefinition/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//IntParameterDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//IntParameterDefinition/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//EnumParameterDefinition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//EnumParameterDefinition/alternatives"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//EnumParameterDefinition/enumeration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//EnumParameterDefinition/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//GlobalEnum">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//GlobalEnum/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//GlobalEnum/alternatives"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//EnumAlternative"/>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//StringParameterValue"/>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ParameterApplicationValue"/>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ConstantReferenceValue">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//ConstantReferenceValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//Constant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//Constant/name"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//StringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//StringValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//StringConstantApplication">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//StringConstantApplication/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//IntParameterValue"/>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//IntValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//IntValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//IntConstantApplication">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/gpp.tests.operators/src-gen/gpp/tests/operators/OperatorsTest.ecore#//IntConstantApplication/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

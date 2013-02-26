@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Xtext Typesystem Examples
+Bundle-SymbolicName: it.xtypes.examples
+Bundle-Version: 1.2.2
+Bundle-Vendor: Lorenzo Bettini
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -1,0 +1,16 @@
+grammar cz.gpp.zoo.Zoo with org.eclipse.xtext.common.Terminals
+
+generate zoo "http://www.gpp.cz/zoo/Zoo"
+
+Zoo:
+	'zoo' name=STRING
+	animals+=Animal*
+;
+	
+Animal:
+	'animal' name=STRING ':'
+	(('legs' '=' legs=INT) & 
+	('kind' '=' kind=STRING) & 
+	('age' '=' age=INT))
+	';'
+;

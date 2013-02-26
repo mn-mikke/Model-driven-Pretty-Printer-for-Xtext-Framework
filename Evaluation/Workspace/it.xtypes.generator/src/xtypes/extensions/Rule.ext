@@ -1,0 +1,16 @@
+import it::xtypes::typesystem;
+import org::eclipse::emf::ecore;
+
+extension xtypes::extensions::TypeSystem;
+
+String typeSystemClassName(Rule this) :
+	this.containingTypeSystem.typeSystemClassName()
+;
+
+String baseRuleClassName(TypeSystemDefinition this) :
+	this.name.toFirstUpper() + "TypeSystemRule"	
+;
+
+String baseRuleClassName(Rule this) :
+	this.containingTypeSystem.baseRuleClassName()	
+;

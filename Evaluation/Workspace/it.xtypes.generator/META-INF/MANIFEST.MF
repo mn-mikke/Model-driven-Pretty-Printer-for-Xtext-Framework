@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: XTypeS Generator
+Bundle-Vendor: Lorenzo Bettini
+Bundle-Version: 1.2.2
+Bundle-SymbolicName: it.xtypes.generator;singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: it.xtypes;visibility:=reexport,
+ org.eclipse.xpand;visibility:=reexport,
+ org.eclipse.xtend;visibility:=reexport,
+ org.eclipse.emf.mwe2.launch;visibility:=reexport,
+ org.eclipse.emf.mwe.utils;visibility:=reexport,
+ org.eclipse.xtend.typesystem.emf;visibility:=reexport,
+ org.eclipse.emf.codegen.ecore;bundle-version="2.6.0";visibility:=reexport,
+ org.eclipse.jdt.core;visibility:=reexport,
+ org.eclipse.core.resources;bundle-version="3.6.0",
+ org.eclipse.core.runtime;bundle-version="3.6.0";visibility:=reexport,
+ org.eclipse.text;bundle-version="3.5.0";visibility:=reexport,
+ org.eclipse.xtend.util.stdlib;bundle-version="1.0.1";visibility:=reexport,
+ org.apache.commons.logging
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Export-Package: it.xtypes.generator,
+ it.xtypes.generator.util,
+ xtypes.templates

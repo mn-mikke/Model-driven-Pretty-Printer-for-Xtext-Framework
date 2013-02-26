@@ -1,0 +1,21 @@
+xtext "classpath:/gpp/tests/temorary/TemporaryTest.xtext"
+
+import "classpath:/gpp/tests/temorary/operators.ppo"
+
+TBOX[Default]: <F w=bold,i=normal>;
+
+PBOX[Model]:
+	<V>[
+		<I>[<H>[name:Name '=' '!']]
+	]
+;
+
+
+PBOX[Name]:
+	<V>[
+		name:ID
+		ref:[Name|ID]
+	]
+;
+
+

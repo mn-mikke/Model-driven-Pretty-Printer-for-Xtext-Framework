@@ -1,0 +1,221 @@
+xtext "platform:/resource/gpp.tests.operators/src/gpp/tests/operators/OperatorsTest.xtext"
+
+import "operators.ppo"
+
+TBOX[Default]: <F>;
+TBOX[INT]: <F w=bold>;
+TBOX[ML_COMMENT]: <F i=italic,c="#00FF00">, <MC>;
+TBOX[SL_COMMENT]: <F i=italic,c="#00FF00">, <SC>;
+TBOX[Keyword, "^\\w.*$"]: <F c="#FF0000">;
+
+PBOX[BoxModelOperators]:
+	<V>[
+		imports:Import
+		(operatorDefinitions:OperatorDefinition | enumerations:GlobalEnum | intConstants:IntConstant | stringConstants:StringConstant)
+	]
+;
+
+
+PBOX[StringConstant]:
+	<V>[
+		('string' | 'str')
+		<I>[<H>[name:ID '=' value:STRING]]
+	]
+;
+
+
+PBOX[IntConstant]:
+	<V>[
+		('integer' | 'int')
+		<I>[<H>[name:ID '=' value:INT]]
+	]
+;
+
+
+PBOX[Import]:
+	<V>[
+		'import'
+		importURI:STRING
+	]
+;
+
+
+PBOX[OperatorImplementationString]:
+	<V>[
+		ID
+		('.' ID)
+	]
+;
+
+
+PBOX[OperatorDefinition]:
+	<V>[
+		BasicOperatorDefinition | AliasOperatorDefinition
+	]
+;
+
+
+PBOX[BasicOperatorDefinition]:
+	<V>[
+		(HighlightOperatorDefinition | PositionalOperatorDefinition | TransformingOperatorDefinition)
+		name:ID
+		<H>['[' implementation:OperatorImplementationString ']']
+		(':' parameters:ParameterDefinition)
+		';'
+	]
+;
+
+
+PBOX[PositionalOperatorDefinition]:
+	<V>[
+		('pop' | 'poperator')
+	]
+;
+
+
+PBOX[HighlightOperatorDefinition]:
+	<V>[
+		('hlop' | 'hloperator')
+	]
+;
+
+
+PBOX[TransformingOperatorDefinition]:
+	<V>[
+		('top' | 'toperator')
+	]
+;
+
+
+PBOX[AliasOperatorDefinition]:
+	<V>[
+		'alias'
+		name:ID
+		<H>['[' operator:[OperatorDefinition|ID] ']']
+		(':' parameters:ParameterApplication)
+		';'
+	]
+;
+
+
+PBOX[ParameterApplication]:
+	<V>[
+		<I>[<H>[referencedParameter:[ParameterDefinition|ID] '=' value:ParameterApplicationValue]]
+	]
+;
+
+
+PBOX[ParameterDefinition]:
+	<V>[
+		StringParameterDefinition | IntParameterDefinition | EnumParameterDefinition
+	]
+;
+
+
+PBOX[StringParameterDefinition]:
+	<V>[
+		('string' | 'str')
+		<I>[<H>[name:ID '=' value:StringParameterValue]]
+	]
+;
+
+
+PBOX[IntParameterDefinition]:
+	<V>[
+		('integer' | 'int')
+		<I>[<H>[name:ID '=' value:IntParameterValue]]
+	]
+;
+
+
+PBOX[EnumParameterDefinition]:
+	<V>[
+		'{'
+		(alternatives:EnumAlternative (',' alternatives:EnumAlternative) | <H>['[' enumeration:[GlobalEnum|ID] ']'])
+		'}'
+		<I>[<H>[name:ID '=' value:[EnumAlternative|ID]]]
+	]
+;
+
+
+PBOX[GlobalEnum]:
+	<V>[
+		'enum'
+		<I>[<H>[name:ID '=' '{']]
+		alternatives:EnumAlternative
+		(',' alternatives:EnumAlternative)
+		'}'
+	]
+;
+
+
+PBOX[EnumAlternative]:
+	<V>[
+		name:ID
+	]
+;
+
+
+PBOX[StringParameterValue]:
+	<V>[
+		StringValue | StringConstantApplication
+	]
+;
+
+
+PBOX[ParameterApplicationValue]:
+	<V>[
+		StringValue | IntValue | ConstantReferenceValue
+	]
+;
+
+
+PBOX[ConstantReferenceValue]:
+	<V>[
+		value:[Constant|ID]
+	]
+;
+
+
+PBOX[Constant]:
+	<V>[
+		EnumAlternative | IntConstant | StringConstant
+	]
+;
+
+
+PBOX[StringValue]:
+	<V>[
+		value:STRING
+	]
+;
+
+
+PBOX[StringConstantApplication]:
+	<V>[
+		value:[StringConstant|ID]
+	]
+;
+
+
+PBOX[IntParameterValue]:
+	<V>[
+		IntValue | IntConstantApplication
+	]
+;
+
+
+PBOX[IntValue]:
+	<V>[
+		value:INT
+	]
+;
+
+
+PBOX[IntConstantApplication]:
+	<V>[
+		value:[IntConstant|ID]
+	]
+;
+
+

@@ -1,0 +1,4 @@
+* Version 1.2.2 (code re-generation required)
+
+- TypingRuleSelector.select requires the list of rules (not a field anymore)
+- Introduced RuntimeRules class (instead of List<RuntimeRule>)

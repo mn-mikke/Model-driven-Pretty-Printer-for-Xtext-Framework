@@ -1,0 +1,147 @@
+/* This is an example type system */
+typesystem FJTests
+
+grammar "platform:/resource/it.xtypes.examples/models/FJ.ecore"
+
+judgments
+	'|-' '::'
+		kind = 'type'
+		success = 'has type'
+		nomatch = 'has not type'
+		fail = 'cannot type'
+	
+	'||-' ':'
+		kind = 'type2'
+	
+	'|-' '::--::'
+		kind = 'typefailure'
+end
+
+// other rules just for testing generator
+rule TString
+	derives
+		G |- var String S1 : var String S2
+	from
+		$S1 = $S2
+
+rule TCastTo
+	derives
+		G |- var Selection e : var Class ReturnType
+	from
+		var Class C
+		var MethodCall MethodType
+		$MethodType := (MethodCall) $e.message
+
+rule TExists
+	derives
+		G |- var Class e : 'OK1'
+	from
+		exists field in $e.fields {
+			$field.name = "foo"
+			$field.name != "bar"
+		}
+		!exists method in $e.methods {
+			$method.name = "foo"
+		}
+		exists method2 in $e.methods {
+			var Class C
+		}
+		!exists method3 in $e.methods {
+			var Class C2
+		}
+
+rule TForEach
+	derives
+		G |- var Class e :: 'OK'
+	from
+		foreach $e.methods as method {
+			foreach $method.params as param {
+				!exists m in $e.methods {
+					$m.name = $param.name
+				}
+			}
+		}
+		foreach $e.methods as method2 {
+			var Class C
+		}
+
+rule TForAll
+	derives
+		G |- var Class e ::: 'OK'
+	from
+		forall i in len($e.methods) {
+			var Method m
+			$m := $e.methods[$i]
+			$m.name = 'foo'
+			$m := (Method) $m
+		}
+
+rule TEnvAssign
+	derives
+		G |- var Class e :::: 'OK'
+	from
+		G2 := G
+		G2 := G , 'this' -> 'ok'
+		G2 += 'this' -> 'ok'
+		GNull := empty
+		G2 -= 'this'
+		G2 , 'this' -> 'ok' , 'FOO' -> 'ok' , G |- 'this' : 'ok'
+		G2 , 'this' -> 'ok' :: 'FOO' -> 'ok' , G |- 'this' : 'ok'
+
+rule TAssign
+	derives
+		G |- var Class e :-: 'OK'
+	from
+		var List[Field] fields
+		var Parameter P
+		$fields := getall($e, fields, extends)
+		$e.name := 'foo'
+		$e.extends := $e.extends
+		$e.fields[0] := $e.fields[1]
+		$P.name := "foo"
+		$P.name := "bar"
+		$fields[0] := $fields[1]
+		var Type t
+		$t.classref := $e
+
+rule TOr
+	derives
+		G |- var Class e : var Parameter p
+	from
+		( var Class C | $e.name = $p.name )
+		( var Class C2 | $e.name = $p.name )
+
+rule TNewName
+	derives
+		G |- var Class e :--: newname('X')
+	from
+		$e.name := newname('Y')
+
+rule TTestReturnTypedElement
+	derives
+		G ||- var Field e : var TypedElement te
+	from
+		// this rule 'returns' as an actual right result
+		// a Field
+		$te := $e
+
+rule TTestExpectParameter
+	derives
+		G |- var Field p :: var Parameter p2
+	from
+		// the following judgment should not succeed, since
+		// TTestReturnTypedElement actually returns a
+		// Field, while we need a Parameter
+		G ||- $p : $p2
+
+rule WithExplicitFailure
+	derives
+		G |- var Class C ::--:: var String s
+	from
+		fail
+
+rule WithExplicitFailure2
+	derives
+		G |- var Parameter C ::--:: var String s
+	from
+		fail error = 'should not get here'

@@ -1,0 +1,25 @@
+xtext "file:/D:/Documents/Documents/School/MasterThesis/Code/Code/gpp.tests.temporary/src/gpp/tests/temorary/TemporaryTest.xtext"
+
+import "file:/D:/Documents/Documents/School/MasterThesis/Code/Code/gpp.tests.temporary/src/gpp/tests/temorary/operators.ppo"
+
+TBOX[default] : <F>;
+
+TBOX[ID] : <F c="#FF0000">;
+
+PBOX[Model]:
+	<V>[
+		<I>[<F c="#00FF00">[name:Name '=' '!']]
+	]
+;
+
+PBOX[Name]:
+	<H>[
+		<F c="#0000FF">[
+			name:ID
+			<F c="#00FFFF">[
+			ref:[Name]
+			]
+		]
+	]
+;
+

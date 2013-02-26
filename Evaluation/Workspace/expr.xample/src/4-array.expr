@@ -1,0 +1,12 @@
+model arrays
+
+
+var int i; 
+var array[int] anIntArray;          
+var array[float] aFloatArray;  
+calc array[int] anotherOne = anIntArray;   // works: assign two int arrays
+calc array[int] anotherOne2 = aFloatArray; // error: cannot assign float array to int array 
+calc array[float] arr3 = anIntArray;       // works: int array is a "subtype" of float array
+calc int atest = anIntArray[i+1];	       // works: array access makes it an int 
+calc float atest2 = anIntArray[i+1] + 3.7; // works :-)
+  

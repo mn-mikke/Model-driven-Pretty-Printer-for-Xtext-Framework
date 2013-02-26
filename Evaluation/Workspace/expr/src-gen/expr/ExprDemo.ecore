@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="exprDemo"
+    nsURI="http://www.ExprDemo.expr" nsPrefix="exprDemo">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTested" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="usings" upperBound="-1"
+        eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Using"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Element"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functions" upperBound="-1"
+        eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Symbol"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Using">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Symbol" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Return" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Assert" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actual" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expected" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expr"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="msg" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumDecl" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="literals" upperBound="-1"
+        eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Symbol"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayType" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="baseType" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Type"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumType" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//PrimitiveType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enumRef" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//EnumDecl"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntType" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//PrimitiveType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BoolType" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//PrimitiveType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FloatType" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//PrimitiveType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringType" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//PrimitiveType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Expr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expr"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionDeclaration" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Symbol">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Type"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
+        eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Symbol"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Element"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Symbol">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Type"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnumLiteral" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Symbol"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VarDecl" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Symbol">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="readonly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Type"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="init" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Formula" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Symbol">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Type"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Equals" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Plus" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Multi" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArrayAccess" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="index" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SymbolRef" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="symbol" eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Symbol"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actuals" upperBound="-1"
+        eType="ecore:EClass platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberLiteral" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringLiteral" eSuperTypes="platform:/resource/expr/src-gen/expr/ExprDemo.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

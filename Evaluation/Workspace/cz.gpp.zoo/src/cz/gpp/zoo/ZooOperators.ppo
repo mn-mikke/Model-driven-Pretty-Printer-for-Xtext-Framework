@@ -1,0 +1,45 @@
+enum blanks  = {TAB,WS}
+
+int MAX_ROW_SIZE = 80
+
+// horizontal operator
+poperator H [gpp.formatting.HorizontalOperatorImplementation]:
+	int hs=1 // horizontal spacing
+	{[blanks]} hc = WS // horizontal character
+;
+
+// vertical operator
+poperator V [gpp.formatting.VerticalOperatorImplementation]:
+	int vs=1 // vertical spacing
+;
+
+
+// indenting operator
+poperator I [gpp.formatting.IndentOperatorImplementation]:
+	int is=1 // indent spacing
+	{[blanks]} ic = TAB // indent character 
+;
+
+
+// font operator
+hloperator F [gpp.highlighting.DefaultHighlightOperatorImplementation]:
+	{normal, bold} w = normal // weight
+	{normal, italic} i = normal // italics
+	string c = "#000000" // fore color
+	string b = "#ffffff" // background color
+	string f = "Consolas" // font family 
+	int h = 10 // font height
+;
+
+// single line comment operator
+toperator SC [gpp.formatting.SingleLineCommentFormattingOperatorImplementation]:
+	int rs = MAX_ROW_SIZE // maximum row size
+	string bs = "//" // begin sequence
+	string ws = " " // gap sequence
+;
+
+
+alias V2 [V]:
+	vs = 2
+;
+ 

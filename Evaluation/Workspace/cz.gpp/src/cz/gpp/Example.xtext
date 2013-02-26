@@ -1,0 +1,60 @@
+// 1 - Declaration of a grammar 
+grammar cz.gpp.Example with org.eclipse.xtext.common.Terminals
+     hidden(WS, ML_COMMENT, SL_COMMENT) // Hidden terminals.
+
+// 2 - Declaration of a output meta-model
+generate example "http://www.gpp.cz/Example"
+
+// 3 - Definition of input meta-models 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+// 6 - Root parser rule 
+Model:
+    package = Package // 10 - Ordered group 
+    ((imports += Import)* & class = Class) // 11 - Unordered group 
+;
+
+// 4 - Terminal rule
+terminal ID: '^'?('A'..'Z'|'_') ('A'..'Z'|'_'|'0'..'9')*;
+
+// 5 - Enum
+enum Modifier : public | protected | private;
+
+// Other parser rules
+
+// 7 - Usage of input meta-model elements
+QualifiedName returns ecore::EString:
+     ID ('.' ID)* // 14 - Frequency of occurrence
+;
+
+Package: 'package' name=QualifiedName; // 13 - Assignment
+
+Import: 'import' className=QualifiedName; 
+
+Class:
+    (abstract?='abstract')? 'class' name=ID
+    ('extends' superClass=[Class|ID])?
+    '{'
+        // 12 - Alternatives 
+        (methods += Method | internalClasses += Class)*
+    '}'
+;
+
+Method:
+    visibility=Modifier returnValue=[Class|ID] name=ID
+    '(' (parameters+=Parameter (',' parameters+=Parameter)*)? ')'
+    '{' (body+=INT)*/* body */ '}'
+;
+
+Parameter: SpecificParameter name=ID;
+
+SpecificParameter returns Parameter:
+     IntParameter | StringParameter | ObjectParameter;
+
+// 8 - Cross reference
+ObjectParameter: {ObjectParameter} type=[Class|ID];
+
+// 9 - Action
+IntParameter: {IntParameter} 'int';
+
+StringParameter: {StringParameter} 'string';

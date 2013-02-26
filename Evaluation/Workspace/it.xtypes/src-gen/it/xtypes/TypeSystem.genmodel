@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/it.xtypes/src-gen"
+    editDirectory="/it.xtypes.edit/src" editorDirectory="/it.xtypes.editor/src" modelPluginID="it.xtypes"
+    forceOverwrite="true" modelName="TypeSystem" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="it.xtypes.edit" editorPluginID="it.xtypes.editor">
+  <genPackages prefix="Typesystem" basePackage="it.xtypes" disposableProviderFactory="true"
+      ecorePackage="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#/">
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypeSystemDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypeSystemDefinition/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypeSystemDefinition/ePackage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypeSystemDefinition/genModel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypeSystemDefinition/judgmentDescriptions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypeSystemDefinition/rules"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypeSystemDefinition/ePackageURI"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//JudgmentDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//JudgmentDescription/judgmentsymbol"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//JudgmentDescription/relation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//JudgmentDescription/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//JudgmentDescription/success"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//JudgmentDescription/fail"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//JudgmentDescription/nomatch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//JudgmentDescription/binary"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Rule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Rule/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Rule/typejudgment"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Rule/containingTypeSystem"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Axiom"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//RuleWithPremises">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//RuleWithPremises/premises"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypingJudgment"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//OrTypingJudgment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//OrTypingJudgment/branches"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//OrTypingJudgment/error"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//OrBranch">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//OrBranch/judgments"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//VariableDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//VariableDeclaration/name"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//VariableDeclarationWithType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//VariableDeclarationWithType/expressionType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//VariableDeclarationWithType/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//VariableDeclarationWithType/right"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ExpressionType"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//CollectionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//CollectionType/collection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//CollectionType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EClassifierType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EClassifierType/eclassifier"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//BasicType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//BasicType/basic"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//VariableSimpleDeclaration"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Quantification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Quantification/error"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Quantification/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Quantification/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Quantification/judgments"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ForEach"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ForAll"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Exists">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Exists/not"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//StandardOperation"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentOperation/left"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ListOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ListOperation/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ListOperation/right"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Assignment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Assignment/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Assignment/right"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Equals">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Equals/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Equals/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Equals/right"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Equals/error"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Fail">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Fail/error"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Success"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypingJudgmentWithEnvironment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypingJudgmentWithEnvironment/environment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypingJudgmentWithEnvironment/typejudgmentsymbol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypingJudgmentWithEnvironment/typingstatement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypingJudgmentWithEnvironment/error"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ErrorSpecification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ErrorSpecification/failureError"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//FailureError"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypingStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypingStatement/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypingStatement/relation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypingStatement/right"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//TypingStatementExpression"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Environment"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentId/environmentId"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentStatement/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentStatement/relation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentStatement/right"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EmptyEnvironment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EmptyEnvironment/empty"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Expression"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//StringConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//StringConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//IntegerConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//IntegerConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//VariableAccess">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//VariableAccess/varRef"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//VariableReference"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//IndexedVariable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//IndexedVariable/index"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//SubExpression">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//SubExpression/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ArrayIndex"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentAssignment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentAssignment/right"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentIncrement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentIncrement/right"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentDecrement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentDecrement/right"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ListIncrement"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ListDecrement"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ComposedError">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ComposedError/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ComposedError/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ComposedError/right"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ErrorString">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ErrorString/errString"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ErrorExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//ErrorExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentComposition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentComposition/currentEnvironment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentComposition/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentComposition/subEnvironment"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentAccess">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentAccess/envId"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//EnvironmentAccess/argument"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Length">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Length/argument"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//GetAll">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//GetAll/expression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//GetAll/mainfeature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//GetAll/extendfeature"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Container">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Container/argument"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//CastTo">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//CastTo/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//CastTo/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Null"/>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//NewName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//NewName/argument"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Clone">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Clone/argument"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//CompoundExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//CompoundExpression/mainExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//CompoundExpression/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//CompoundExpression/subExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Indexed">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Indexed/index"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/resource/it.xtypes/src-gen/it/xtypes/TypeSystem.ecore#//Feature"/>
+  </genPackages>
+</genmodel:GenModel>

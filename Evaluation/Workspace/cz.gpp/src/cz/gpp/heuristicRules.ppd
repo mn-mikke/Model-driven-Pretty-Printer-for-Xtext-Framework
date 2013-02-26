@@ -1,0 +1,23 @@
+operators "platform:/resource/gpp/settings/operators.ppo"
+
+Terminals: 
+	INT: <F c="#7F7F7F">
+	ML_COMMENT: <F i=italic, c="#00FF00">,<MC>
+	SL_COMMENT: <F i=italic, c="#00FF00">,<SC>
+	Keyword["^\\w.*$"]: <F w=bold,c="#7F0055">
+	default: <F>
+
+Non-terminals:
+	root? : <V>
+	['package'|'import',1-*] : <H>
+	[1-*,')','{'] : <H>
+	['{',*,'}'] : <V>
+	[*,'class',*] : <H>
+	[',',1] : <H>
+	
+
+
+
+
+
+

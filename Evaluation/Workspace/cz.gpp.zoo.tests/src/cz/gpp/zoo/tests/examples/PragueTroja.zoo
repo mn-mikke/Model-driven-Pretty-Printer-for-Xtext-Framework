@@ -1,0 +1,13 @@
+zoo "Prague Troja"
+
+animal "Kama":
+	age = 4
+	kind = "monkey"
+	legs = 4
+;
+
+animal "Ligu":
+	age = 2
+	legs = 0
+	kind = "snake"
+;

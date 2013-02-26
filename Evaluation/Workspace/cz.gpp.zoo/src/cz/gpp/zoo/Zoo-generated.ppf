@@ -1,0 +1,24 @@
+xtext "platform:/resource/cz.gpp.zoo/src/cz/gpp/zoo/Zoo.xtext"
+
+import "platform:/resource/cz.gpp.zoo/src/cz/gpp/zoo/ZooOperators.ppo"
+
+TBOX[Default]: <F>;
+TBOX[Keyword, "^\\w.*$"]: <F c="#FF0000">;
+
+PBOX[Zoo]:
+	<V>[
+		<H>['zoo' name:STRING]
+		animals:Animal
+	]
+;
+
+
+PBOX[Animal]:
+	<V>[
+		<H>['animal' <H>[name:STRING ':']]
+		(<I>[<H>['legs' '=' legs:INT]] & <I>[<H>['kind' '=' kind:STRING]] & <I>[<H>['age' '=' age:INT]])
+		';'
+	]
+;
+
+

@@ -1,0 +1,6 @@
+xtext  "TempXtextProvider.xtext"
+
+import "operators.ppo"
+
+
+TBOX[ID]: <FC w = bold, i = normal, f = "Arial">;

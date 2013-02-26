@@ -1,0 +1,137 @@
+«IMPORT it::xtypes::typesystem»
+
+«EXTENSION xtypes::extensions::Extensions»
+«EXTENSION xtypes::extensions::Types»
+«EXTENSION org::eclipse::xtend::util::stdlib::counter»
+
+«DEFINE typeStmntImpl FOR EnvironmentStatement-»
+newRuntimeEnvironmentEntry(«EXPAND mainExprImpl FOR this.left», «EXPAND mainExprImpl FOR this.right»)
+«ENDDEFINE»
+
+«DEFINE langExprImpl FOR TypingStatementExpression-»
+null
+«ENDDEFINE»
+
+«DEFINE langExprImpl FOR Null-»
+null
+«ENDDEFINE»
+
+«DEFINE langExprImpl FOR CompoundExpression-»
+«EXPAND mainExprImpl FOR this.mainExpression».«EXPAND langExprImpl FOR this.subExpression»«ENDDEFINE»
+
+«DEFINE mainExprImpl FOR TypingStatementExpression-»
+«EXPAND langExprImpl FOR this»«ENDDEFINE»
+
+«DEFINE mainExprImpl FOR ArrayIndex-»
+«EXPAND langExprImpl FOR this»«ENDDEFINE»
+
+«DEFINE mainExprImpl FOR VariableReference-»
+«EXPAND langExprImpl FOR this».getValue()«ENDDEFINE»
+
+«DEFINE mainExprImpl FOR IndexedVariable-»
+«EXPAND langExprImpl FOR this»«ENDDEFINE»
+
+«DEFINE langExprImpl FOR SubExpression-»
+«ENDDEFINE»
+
+«DEFINE langExprImpl FOR Feature-»
+«this.feature.name.namedElementToGetMethod()»«ENDDEFINE»
+
+«DEFINE langExprImpl FOR Indexed-»
+«this.feature.name.namedElementToGetMethod()».get(«EXPAND mainExprImpl FOR this.index»)«ENDDEFINE»
+
+«DEFINE langExprImpl FOR VariableReference-»
+«this.varRef.getVariableGeneratedName()»«ENDDEFINE»
+
+«DEFINE langExprImpl FOR IndexedVariable-»
+«this.varRef.getVariableGeneratedName()».getValue().get(«EXPAND mainExprImpl FOR this.index»)«ENDDEFINE»
+
+«DEFINE langExprImpl FOR ArrayIndex-»
+«EXPAND langExprImpl FOR (Expression)this»«ENDDEFINE»
+
+«DEFINE langExprImpl FOR IntegerConstant-»
+«this.integer»«ENDDEFINE»
+
+«DEFINE langExprImpl FOR StringConstant-»
+"«this.value»"«ENDDEFINE»
+
+«DEFINE langExprImpl FOR Length-»
+length(«EXPAND langExprImpl FOR this.argument»)«ENDDEFINE»
+
+«DEFINE langExprImpl FOR GetAll-»
+getAll(«EXPAND mainExprImpl FOR this.expression»,
+	"«this.mainfeature.name»",
+	"«this.extendfeature.name»",
+	«this.getExpressionTypeWithoutMulti().getQualifiedTypeName()».class)«ENDDEFINE»
+
+«DEFINE langExprImpl FOR Container-»
+container(«EXPAND mainExprImpl FOR this.argument»)«ENDDEFINE»
+
+«DEFINE langExprImpl FOR CastTo-»
+castto(«EXPAND mainExprImpl FOR this.expression», «this.type.getQualifiedTypeName()».class)«ENDDEFINE»
+
+«DEFINE langExprImpl FOR NewName-»
+newName("«this.argument»")«ENDDEFINE»
+
+«DEFINE langExprImpl FOR Clone-»
+clone(«EXPAND mainExprImpl FOR this.argument»)«ENDDEFINE»
+
+«DEFINE langExprImpl FOR EnvironmentAccess-»
+env(«this.envId.getEnvGeneratedName()», «EXPAND mainExprImpl FOR this.argument»)«ENDDEFINE»
+
+«DEFINE assignImpl(Expression right) FOR Expression-»
+«EXPAND langExprImpl FOR this»«ENDDEFINE»
+
+«DEFINE assignImpl(Expression right) FOR ArrayIndex-»
+«EXPAND langExprImpl FOR this»«ENDDEFINE»
+
+«DEFINE assignImpl(Expression right) FOR VariableReference-»
+assignment(«this.varRef.getVariableGeneratedName()»,
+	«EXPAND langExprImpl FOR right»)
+«ENDDEFINE»
+
+«DEFINE assignImpl(Expression right) FOR IndexedVariable-»
+«this.varRef.getVariableGeneratedName()».getValue()
+	.set(«EXPAND mainExprImpl FOR this.index»,
+		«EXPAND langExprImpl FOR right»)«ENDDEFINE»
+
+«DEFINE assignImpl(Expression right) FOR CompoundExpression-»
+«EXPAND checkInit FOR this»
+«EXPAND mainExprImpl FOR this.mainExpression».
+«EXPAND assignImpl(right) FOR this.subExpression»«ENDDEFINE»
+
+«DEFINE assignImpl(Expression right) FOR SubExpression-»
+«ENDDEFINE»
+
+«DEFINE assignImpl(Expression right) FOR Feature-»
+«this.feature.name.namedElementToSetMethod()»(«EXPAND mainExprImpl FOR right»)«ENDDEFINE»
+
+«DEFINE assignImpl(Expression right) FOR Indexed-»
+«this.feature.name.namedElementToGetMethod()».set(«EXPAND mainExprImpl FOR this.index»,
+		«EXPAND mainExprImpl FOR right»)«ENDDEFINE»
+
+«DEFINE checkInit FOR CompoundExpression-»
+«EXPAND checkInit FOR this.mainExpression»
+«ENDDEFINE»
+
+«DEFINE checkInit FOR Expression»«ENDDEFINE»
+
+«DEFINE checkInit FOR VariableReference»
+// check «this.varRef.getVariableGeneratedName()»
+if («this.varRef.getVariableGeneratedName()».getValue() == null) {
+	«this.varRef.getVariableGeneratedName()».setValue(
+			factory.«this.varRef.getVariableTypeName().namedElementToCreateMethod()»()
+		);
+}
+«ENDDEFINE»
+
+«DEFINE errorImpl FOR FailureError»«ENDDEFINE»
+
+«DEFINE errorImpl FOR ErrorString-»
+"«this.string»"«ENDDEFINE»
+
+«DEFINE errorImpl FOR ErrorExpression-»
+stringRep(«EXPAND mainExprImpl FOR this.expression»)«ENDDEFINE»
+
+«DEFINE errorImpl FOR ComposedError-»
+«EXPAND errorImpl FOR this.left» + «EXPAND errorImpl FOR this.right»«ENDDEFINE»

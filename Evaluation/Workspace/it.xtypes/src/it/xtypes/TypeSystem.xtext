@@ -1,0 +1,315 @@
+grammar it.xtypes.TypeSystem with org.eclipse.xtext.common.Terminals
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate typesystem "http://xtypes.sf.net/TypeSystem"
+
+TypeSystemDefinition:
+	('typesystem' name=ID)?
+	'grammar' ePackage=[ecore::EPackage|STRING]
+	('genmodel' genModel=STRING)?
+	(
+	'judgments'
+	judgmentDescriptions += JudgmentDescription+
+	'end'
+	)?
+	rules += Rule*
+	;
+
+JudgmentDescription:
+	judgmentsymbol = STRING
+	relation = STRING
+	'kind' EqualsOp kind=STRING
+	(
+	('success' EqualsOp success=STRING)? &
+	('fail' EqualsOp fail=STRING)? &
+	('nomatch' EqualsOp nomatch=STRING)? &
+	(binary?='binary')?
+	)
+;
+
+Rule:
+	Axiom | RuleWithPremises;
+
+Axiom:
+	'axiom' name=ID typejudgment=TypingJudgmentWithEnvironment;
+
+RuleWithPremises:
+	'rule' name=ID
+	'derives'
+	typejudgment=TypingJudgmentWithEnvironment
+	'from'
+	premises += TypingJudgment+
+;
+
+TypingJudgment:
+	Quantification |
+	VariableDeclarationWithType |
+	OrTypingJudgment |
+	StandardOperation |
+	TypingJudgmentWithEnvironment
+;
+
+OrTypingJudgment:
+	'(' branches += OrBranch (OrSeparator branches += OrBranch )+ ')'
+	(error=ErrorSpecification)?
+; 
+
+OrBranch:
+	judgments += TypingJudgment+
+;
+
+VariableDeclaration :
+	VariableSimpleDeclaration |
+	VariableDeclarationWithType
+;
+
+VariableDeclarationWithType:
+	'var' expressionType=ExpressionType name=ID (op=AssignOp right=Expression)?
+;
+
+ExpressionType:
+	CollectionType | EClassifierType | BasicType
+;
+
+CollectionType:
+	collection='List' '[' type=ExpressionType ']'
+;
+
+EClassifierType:
+	eclassifier=[ecore::EClassifier]
+;
+
+BasicType:
+	basic=('String'|'Integer'|'Object')
+;
+
+VariableSimpleDeclaration:
+	name=ID
+;
+
+Quantification: 
+	(ForEach | ForAll | Exists) (error=ErrorSpecification)? 
+;
+
+ForEach:
+	'foreach' expression=Expression 'as' variable=VariableSimpleDeclaration '{'
+		judgments += TypingJudgment+
+	'}'
+;
+
+ForAll:
+	'forall' variable=VariableSimpleDeclaration 'in' expression=Expression '{'
+		judgments += TypingJudgment+
+	'}'
+;
+
+Exists:
+	(not ?= '!')? 'exists' variable=VariableSimpleDeclaration 'in' expression=Expression '{'
+		judgments += TypingJudgment+
+	'}'
+;
+
+StandardOperation:
+	EnvironmentOperation |
+	ListOperation |
+	Assignment |
+	Equals |
+	Fail |
+	Success
+;
+
+EnvironmentOperation:
+	{EnvironmentAssignment} left=EnvironmentId AssignOp right=Environment |
+	{EnvironmentIncrement} left=EnvironmentId PlusOp EqualsOp right=EnvironmentStatement |
+	{EnvironmentDecrement} left=EnvironmentId MinusOp EqualsOp right=TypingStatementExpression 
+;
+
+ListOperation:
+	{ListIncrement} left=Expression PlusOp EqualsOp right=Expression |
+	{ListDecrement} left=Expression MinusOp EqualsOp right=Expression 
+;
+
+Assignment:
+	left=Expression AssignOp right=Expression
+;
+
+Equals:
+	left=Expression op=(EqualsOp|NotEqualsOp) right=Expression
+	(error=ErrorSpecification)? 
+;
+
+Fail:
+	{Fail} 'fail' (error=ErrorSpecification)?
+;
+
+Success:
+	{Success} 'success'
+;
+
+TypingJudgmentWithEnvironment:
+	environment=Environment 
+	typejudgmentsymbol=TypeJudgmentSymbol 
+	typingstatement=TypingStatement
+	(error=ErrorSpecification)?
+;
+
+ErrorSpecification:
+	'error' EqualsOp failureError=FailureError
+;
+
+FailureError:
+	TerminalError
+	({ComposedError.left = current}
+		op=PlusOp
+		right=FailureError)*
+;
+
+TerminalError returns FailureError:
+	{ErrorString} errString=STRING |
+	{ErrorExpression} expression=Expression
+;
+
+TypingStatement:
+	left=TypingStatementExpression relation=TypeRelation right=TypingStatementExpression
+;
+
+TypingStatementExpression:
+	Expression
+;
+
+Environment:
+	TerminalEnvironment
+	({EnvironmentComposition.currentEnvironment = current}
+		op=EnvironmentComposition
+		subEnvironment=Environment)*
+;
+
+TerminalEnvironment returns Environment:
+	EnvironmentId |
+	EnvironmentStatement |
+	EmptyEnvironment
+;
+
+EnvironmentId:
+	environmentId=ID
+;
+
+EnvironmentStatement:
+	left=TypingStatementExpression relation=MappingRelation right=TypingStatementExpression
+;
+
+EmptyEnvironment:
+	empty='empty'
+;
+
+Expression:
+	VariableDeclarationWithType |
+	{EnvironmentAccess} 'env' '(' envId=EnvironmentId ',' argument=Expression ')' |
+	{Length} 'len' '(' argument=Expression ')' |
+	{GetAll} 'getall' '(' 
+		expression=Expression ','
+		mainfeature=[ecore::EStructuralFeature] ',' 
+		extendfeature=[ecore::EStructuralFeature] ')' |
+	{Container} 'container' '(' argument=Expression ')' |
+	{CastTo} '(' type=ExpressionType ')' expression=Expression |
+	{Null} 'null' |
+	{NewName} 'newname' '(' argument=STRING ')' |
+	{Clone} 'clone' '(' argument=Expression ')' |
+	TerminalExpression 
+	({CompoundExpression.mainExpression = current} 
+		op='.' 
+		subExpression=SubExpression)*
+;
+
+TerminalExpression returns Expression:
+	StringConstant |
+	IntegerConstant |
+	VariableAccess
+;
+
+StringConstant:
+	value=STRING
+;
+
+IntegerConstant:
+    value=INT
+;
+
+VariableAccess:
+	VariableReference | IndexedVariable
+;
+
+VariableReference:
+	'$' varRef=[VariableDeclaration]
+;
+
+IndexedVariable:
+	'$' varRef=[VariableDeclaration] '[' index=ArrayIndex ']'
+;
+
+SubExpression:
+	{Indexed} feature=[ecore::ENamedElement] '[' index=ArrayIndex ']' |
+	{Feature} feature=[ecore::ENamedElement]
+;
+
+ArrayIndex :
+	IntegerConstant | 
+	Expression
+;
+
+Alternative:
+	'|'
+;
+
+OrSeparator:
+	Alternative | 'or'
+;
+
+MappingRelation:
+	'->'
+;
+
+TypeRelation:
+	(AssignOp | EqualsOp | '<'|'>'|'!'|'-'| Colon |'~')+
+;
+
+TypeJudgmentSymbol:
+	Alternative+ TypeRelation
+; 
+
+AssignOp:
+	':='
+;
+
+EqualsOp:
+	'='
+;
+
+PlusOp:
+	'+'
+;
+
+MinusOp:
+	'-'
+;
+
+NotEqualsOp:
+	'!='
+;
+
+Comma:
+	','
+;
+
+ListComposition:
+	Colon Colon
+;
+
+Colon:
+	':'
+;
+
+EnvironmentComposition:
+	Comma | ListComposition
+;

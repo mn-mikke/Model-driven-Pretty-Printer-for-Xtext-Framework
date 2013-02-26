@@ -1,0 +1,21 @@
+import it::xtypes::typesystem;
+import org::eclipse::emf::ecore;
+
+extension xtypes::extensions::Extensions;
+extension xtypes::extensions::Types;
+
+String typeSystemMethod(JudgmentDescription judgmentDescription) :
+	judgmentDescription.kind
+;
+
+String typeSystemMethodAs(JudgmentDescription judgmentDescription, Rule rule) :
+	judgmentDescription.kind + "As" + rule.getRightType().getTypeNameDesc()
+;
+
+String typeSystemMethodCheck(JudgmentDescription judgmentDescription) :
+	"check" + judgmentDescription.kind.toFirstUpper()
+;
+
+String typeSystemApplyRule(JudgmentDescription judgmentDescription) :
+	"apply" + judgmentDescription.kind.toFirstUpper() + "Rule"
+;

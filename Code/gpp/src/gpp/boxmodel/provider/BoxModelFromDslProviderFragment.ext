@@ -1,0 +1,11 @@
+import org::eclipse::xtext;
+import org::eclipse::xtext::generator;
+
+extension org::eclipse::xtext::generator::Naming;
+
+String boxModelProviderName(Grammar grammar):
+	boxModelProviderQualifiedName(grammar, getNaming());	
+
+private String boxModelProviderQualifiedName(Grammar grammar, Naming naming):
+	JAVA gpp.boxmodel.provider.BoxModelFromDslProviderFragment.getBoxModelProviderName(org.eclipse.xtext.Grammar, org.eclipse.xtext.generator.Naming);
+	

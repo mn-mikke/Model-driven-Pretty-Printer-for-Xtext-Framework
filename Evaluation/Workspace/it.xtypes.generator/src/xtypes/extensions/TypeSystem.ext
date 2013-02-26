@@ -1,0 +1,12 @@
+import it::xtypes::typesystem;
+import org::eclipse::emf::ecore;
+
+extension xtypes::extensions::Extensions;
+
+String typeSystemClassName(TypeSystemDefinition this) :
+	this.name.toFirstUpper() + "TypeSystemDefinition"
+;
+
+String typeSystemName(TypeSystemDefinition this) :
+	if (this.name.length > 0) then (this.name) else ("type system")
+;

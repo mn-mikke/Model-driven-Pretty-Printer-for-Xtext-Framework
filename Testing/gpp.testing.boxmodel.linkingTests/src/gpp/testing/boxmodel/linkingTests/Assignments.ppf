@@ -1,0 +1,57 @@
+xtext  "platform:/resource/gpp.testing.boxmodel.linkingTests/src/gpp/testing/boxmodel/linkingTests/Assignments.xtext"  
+
+import "operators.ppo"
+
+TBOX[default]: <F>,<C>; 
+
+PBOX[TestModel]: 
+	<H>[ 
+		ass4:([ ecore::EClass ]|([Rule4]|'text'| [Rule3]|[ecore::EClass]|Rule2|[Rule1])) 
+		ass1:<H>[(<H>[<F>[Rule1]]|Rule2|Rule3|Rule4|Rule5|Rule6|Rule7)]
+		ass2:<H>[(<V>[(Rule1|<V>[(Rule2|Rule3)]|Rule4)]|Rule5|<H>[<F>[Rule6]]|Rule7)]
+		ass3:<H>[<F>[Rule1]|Rule2|<F>[((<H>[<F>[Rule3|Rule4]])|Rule5)]]
+	]
+;
+
+PBOX[Rule1]:
+ 	<V>[
+ 		<H>[<F>[name1:ID]]
+	 ]
+; 
+
+PBOX[Rule2]:
+	<V>[
+		 name2:STRING
+	]
+;
+
+PBOX[Rule3]:
+	<V>[
+		name3:INT
+	]
+;
+PBOX[Rule4]: 
+	<V>[
+		name4:Rule3
+	]
+;
+	
+PBOX[Rule5]: 
+	<V>[
+		name5:'?'
+	]
+;
+
+PBOX[Rule6]:
+	<V>[
+		name6:[Rule4]
+	]
+;
+
+PBOX[Rule7]:
+	<V>[ 
+		name7:[ecore::EClass]
+	]
+;
+ 
+
